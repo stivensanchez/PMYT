@@ -1,0 +1,12 @@
+<%= simple_form_for @group, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :nombre %>
+  <%= error_span(@group[:nombre]) %>
+  <%= f.input :num_ficha %>
+  <%= error_span(@group[:num_ficha]) %>
+  <%= f.input :modulo_id %>
+  <%= error_span(@group[:modulo_id]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                groups_path, :class => 'btn btn-default' %>
+<% end %>

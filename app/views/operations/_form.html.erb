@@ -1,0 +1,14 @@
+<%= simple_form_for [@modulo,@operation], :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :nombre %>
+  <%= error_span(@operation[:nombre]) %>
+  <%= f.input :descripcion %>
+  <%= error_span(@operation[:descripcion]) %>
+  <%= f.input :maquina_id %>
+  <%= error_span(@operation[:maquina_id]) %>
+  <%= f.input :modulo_id %>
+  <%= error_span(@operation[:modulo_id]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+  modulo_operations_path(@modulo), :class => 'btn btn-default' %>
+<% end %>
