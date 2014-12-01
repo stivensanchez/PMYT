@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :opers
+
   resources :instructors
 
   resources :groups
@@ -28,6 +30,10 @@ Rails.application.routes.draw do
   
   resources :modulos do
     resources :instructors
+  end
+  
+  resources :groups do
+    resources :opers
   end
   
   
