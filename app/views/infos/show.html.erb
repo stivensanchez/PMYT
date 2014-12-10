@@ -1,0 +1,37 @@
+<%- model_class = Info -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:descripcion) %>:</strong></dt>
+  <dd><%= @info.descripcion %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:tallas) %>:</strong></dt>
+  <dd><%= @info.tallas %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:observaciones) %>:</strong></dt>
+  <dd><%= @info.observaciones %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:medidas_prenda) %>:</strong></dt>
+  <dd><%= @info.medidas_prenda %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:piesas_prenda) %>:</strong></dt>
+  <dd><%= @info.piesas_prenda %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:PPP) %>:</strong></dt>
+  <dd><%= @info.PPP %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:margen_costura) %>:</strong></dt>
+  <dd><%= @info.margen_costura %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:hilos_SP) %>:</strong></dt>
+  <dd><%= @info.hilos_SP %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:SAM) %>:</strong></dt>
+  <dd><%= @info.SAM %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:ficha_id) %>:</strong></dt>
+  <dd><%= @info.ficha_id %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              info_path_(info), :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_info_path(info), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              info_path(@info),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

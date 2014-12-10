@@ -1,0 +1,26 @@
+<%= simple_form_for [@ficha,@info], :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :descripcion %>
+  <%= error_span(@info[:descripcion]) %>
+  <%= f.input :tallas %>
+  <%= error_span(@info[:tallas]) %>
+  <%= f.input :observaciones %>
+  <%= error_span(@info[:observaciones]) %>
+  <%= f.input :medidas_prenda %>
+  <%= error_span(@info[:medidas_prenda]) %>
+  <%= f.input :piesas_prenda %>
+  <%= error_span(@info[:piesas_prenda]) %>
+  <%= f.input :PPP %>
+  <%= error_span(@info[:PPP]) %>
+  <%= f.input :margen_costura %>
+  <%= error_span(@info[:margen_costura]) %>
+  <%= f.input :hilos_SP %>
+  <%= error_span(@info[:hilos_SP]) %>
+  <%= f.input :SAM %>
+  <%= error_span(@info[:SAM]) %>
+  <%= f.input :ficha_id %>
+  <%= error_span(@info[:ficha_id]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                ficha_infos_path(@ficha), :class => 'btn btn-default' %>
+<% end %>

@@ -1,0 +1,51 @@
+<%- model_class = Info -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:descripcion) %></th>
+      <th><%= model_class.human_attribute_name(:tallas) %></th>
+      <th><%= model_class.human_attribute_name(:observaciones) %></th>
+      <th><%= model_class.human_attribute_name(:medidas_prenda) %></th>
+      <th><%= model_class.human_attribute_name(:piesas_prenda) %></th>
+      <th><%= model_class.human_attribute_name(:PPP) %></th>
+      <th><%= model_class.human_attribute_name(:margen_costura) %></th>
+      <th><%= model_class.human_attribute_name(:hilos_SP) %></th>
+      <th><%= model_class.human_attribute_name(:SAM) %></th>
+      
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @infos.each do |info| %>
+      <tr>
+        <td><%= info.descripcion %></td>
+        <td><%= info.tallas %></td>
+        <td><%= info.observaciones %></td>
+        <td><%= info.medidas_prenda %></td>
+        <td><%= info.piesas_prenda %></td>
+        <td><%= info.PPP %></td>
+        <td><%= info.margen_costura %></td>
+        <td><%= info.hilos_SP %></td>
+        <td><%= info.SAM %></td>
+        <td>
+          <%= link_to 'Ver', @info, :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_ficha_info_path(@ficha,info), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      ficha_info_path(@ficha,info),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_ficha_info_path(@ficha),
+            :class => 'btn btn-primary' %>
+<%= link_to 'Atras', fichas_path, :class => 'btn btn-primary' %>

@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141201205316) do
+ActiveRecord::Schema.define(version: 20141210195440) do
+
+  create_table "fichas", force: true do |t|
+    t.string   "referencia"
+    t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "groups", force: true do |t|
     t.string   "nombre"
@@ -22,6 +29,23 @@ ActiveRecord::Schema.define(version: 20141201205316) do
   end
 
   add_index "groups", ["modulo_id"], name: "index_groups_on_modulo_id"
+
+  create_table "infos", force: true do |t|
+    t.text     "descripcion"
+    t.string   "tallas"
+    t.text     "observaciones"
+    t.string   "medidas_prenda"
+    t.string   "piesas_prenda"
+    t.string   "PPP"
+    t.string   "margen_costura"
+    t.text     "hilos_SP"
+    t.string   "SAM"
+    t.integer  "ficha_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "infos", ["ficha_id"], name: "index_infos_on_ficha_id"
 
   create_table "instructors", force: true do |t|
     t.integer  "tipo_doc_id"

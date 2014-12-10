@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  descripcion: MyText
+  tallas: MyString
+  observaciones: MyText
+  medidas_prenda: MyString
+  piesas_prenda: MyString
+  PPP: MyString
+  margen_costura: MyString
+  hilos_SP: MyText
+  SAM: MyString
+  ficha_id: 
+
+two:
+  descripcion: MyText
+  tallas: MyString
+  observaciones: MyText
+  medidas_prenda: MyString
+  piesas_prenda: MyString
+  PPP: MyString
+  margen_costura: MyString
+  hilos_SP: MyText
+  SAM: MyString
+  ficha_id: 

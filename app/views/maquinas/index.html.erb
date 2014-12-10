@@ -13,6 +13,13 @@
     </tr>
   </thead>
   <tbody>
+    <% if @maquinas.count == 0 %>
+      <tr>
+        <td colspan="3">
+          No hay ninguna maquina.  click en el boton de nuevo para agregar una nueva maquina.
+        </td>
+      </tr>
+    <% else %>
     <% @maquinas.each do |maquina| %>
       <tr>
         <td><%= link_to maquina.id, maquina_path(maquina) %></td>
@@ -28,6 +35,7 @@
                       :class => 'btn btn-xs btn-danger' %>
         </td>
       </tr>
+    <% end %>
     <% end %>
   </tbody>
 </table>
