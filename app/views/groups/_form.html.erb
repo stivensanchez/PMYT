@@ -1,10 +1,12 @@
-<%= simple_form_for [@modulo,@group], :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :nombre %>
-  <%= error_span(@group[:nombre]) %>
-  <%= f.input :num_ficha %>
-  <%= error_span(@group[:num_ficha]) %>
-  <%= f.input :modulo_id %>
-  <%= error_span(@group[:modulo_id]) %>
+<%= simple_form_for [@modulo,@group], :html => { :class => 'form-group' } do |f| %>
+<div class="form-group">
+  <%= f.label :Nombre%>
+  <%= f.text_field :nombre, class: "form-control",         placeholder: "Ingrese el nombre" %>
+</div>  
+<div class="form-group">
+  <%= f.label :Numero_ficha%>
+  <%= f.text_field :num_ficha, class: "form-control",         placeholder: "Ingrese el numero de ficha" %>
+</div>  
 
   <%= f.button :submit, :class => 'btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

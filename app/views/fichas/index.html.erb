@@ -5,7 +5,7 @@
 <div class="well">
     <%= link_to 'Nueva Ficha',
             new_ficha_path,
-            :class => 'btn btn-primary' %>
+            :class => 'btn btn-primary btn-lg active' %>
 </div>
 <table class="table table-bordered table-striped">
   <thead>
@@ -19,16 +19,16 @@
   <tbody>
     <% @fichas.each do |ficha| %>
       <tr>
-        <td><%= link_to ficha.referencia, ficha_infos_path(ficha) %></td>
+        <td><%= link_to ficha.referencia, ficha_infos_path(ficha), :class => 'btn btn-default btn-xs btn-lg active' %></td>
         <td><%= ficha.nombre %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_ficha_path(ficha), :class => 'btn btn-default btn-xs' %>
+                      edit_ficha_path(ficha), :class => 'btn btn-default btn-xs btn-lg active' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       ficha_path(ficha),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-xs btn-danger' %>
+                      :class => 'btn btn-xs btn-danger btn-lg active' %>
         </td>
       </tr>
     <% end %>

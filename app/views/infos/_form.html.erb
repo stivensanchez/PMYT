@@ -1,24 +1,40 @@
-<%= simple_form_for [@ficha,@info], :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :descripcion %>
-  <%= error_span(@info[:descripcion]) %>
-  <%= f.input :tallas %>
-  <%= error_span(@info[:tallas]) %>
-  <%= f.input :observaciones %>
-  <%= error_span(@info[:observaciones]) %>
-  <%= f.input :medidas_prenda %>
-  <%= error_span(@info[:medidas_prenda]) %>
-  <%= f.input :piesas_prenda %>
-  <%= error_span(@info[:piesas_prenda]) %>
-  <%= f.input :PPP %>
-  <%= error_span(@info[:PPP]) %>
-  <%= f.input :margen_costura %>
-  <%= error_span(@info[:margen_costura]) %>
-  <%= f.input :hilos_SP %>
-  <%= error_span(@info[:hilos_SP]) %>
-  <%= f.input :SAM %>
-  <%= error_span(@info[:SAM]) %>
-  <%= f.input :ficha_id %>
-  <%= error_span(@info[:ficha_id]) %>
+<%= simple_form_for [@ficha,@info], :html => { :class => 'form-group' } do |f| %>
+<div class="form-group">
+  <%= f.label :Descripcion%>
+  <%= f.text_field :descripcion, class: "form-control",         placeholder: "Ingrese una descripcion" %>
+</div>
+<div class="form-group">
+  <%= f.label :Tallas%>
+  <%= f.text_field :tallas, class: "form-control",         placeholder: "Ingrese las tallas" %>
+</div>
+<div class="form-group">
+  <%= f.label :Observaciones%>
+  <%= f.text_area :observaciones, class: "form-control",         placeholder: "Ingrese una observacion" %>
+</div>
+<div class="form-group">
+  <%= f.label :Medidas_por_prenda%>
+  <%= f.text_field :medidas_prenda, class: "form-control",         placeholder: "Ingrese las medidas por prenda" %>
+</div>
+<div class="form-group">
+  <%= f.label :Piesas_por_prenda%>
+  <%= f.text_field :piesas_prenda, class: "form-control",         placeholder: "Ingrese las piesas por prenda" %>
+</div>
+<div class="form-group">
+  <%= f.label :PPP%>
+  <%= f.text_field :PPP, class: "form-control",         placeholder: "Ingrese el PPP" %>
+</div>
+<div class="form-group">
+  <%= f.label :Margen_costura %>
+  <%= f.text_field :margen_costura, class: "form-control",         placeholder: "Ingrese el margen de costura" %>
+</div>
+<div class="form-group">
+  <%= f.label :Hilos_SP%>
+  <%= f.text_area :hilos_SP, class: "form-control",         placeholder: "Ingrese hilos S/P" %>
+</div>
+<div class="form-group">
+  <%= f.label :SAM%>
+  <%= f.text_field :SAM, class: "form-control",         placeholder: "Ingrese el tiempo sam" %>
+</div>  
 
   <%= f.button :submit, :class => 'btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
