@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  resources :developments
+
+  resources :prendas
+
+  resources :measures
+
   resources :infos
 
   resources :fichas
@@ -43,6 +49,22 @@ Rails.application.routes.draw do
   
   resources :fichas do
     resources :infos
+  end
+  
+  resources :fichas do
+    resources :infos
+  end
+  
+  resources :infos do
+    resources :measures
+  end
+  
+  resources :infos do
+    resources :prendas
+  end
+  
+  resources :infos do
+    resources :developments
   end
   
   

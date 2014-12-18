@@ -1,0 +1,34 @@
+<%= simple_form_for [@ficha,@info,@development], :html => { :class => 'form-group' } do |f| %>
+<div class="form-group">
+  <%= f.label :Operacion %>
+  <%= f.text_field :operation_id, class: "form-control" %>
+</div>  
+<div class="form-group">
+  <%= f.label :Maquina %>
+  <%= f.text_field :maquina, class: "form-control"%>
+</div>
+<div class="form-group">
+  <%= f.label :Calibre_aguja %>
+  <%= f.text_field :calibre_aguja, class: "form-control",         placeholder: "Ingrese el calibre de aguja" %>
+</div>
+<div class="form-group">
+  <%= f.label :PPP %>
+  <%= f.text_field :ppp, class: "form-control",         placeholder: "Ingrese el PPP" %>
+</div>
+<div class="form-group">
+  <%= f.label :Margen_costura %>
+  <%= f.text_field :margen_costura, class: "form-control",         placeholder: "Ingrese la margen de costura" %>
+</div>
+<div class="form-group">
+  <%= f.label :Guia_Y_Accesorios %>
+  <%= f.text_field :guia_accesorios, class: "form-control",         placeholder: "Ingrese las guias y accesorios" %>
+</div>
+<div class="form-group">
+  <%= f.label :Observaciones %>
+  <%= f.text_area :observaciones, class: "form-control",         placeholder: "Ingrese las observaciones" %>
+</div>  
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                info_developments_path(@info), :class => 'btn btn-default' %>
+<% end %>

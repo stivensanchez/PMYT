@@ -1,1 +1,1 @@
-json.extract! @info, :id, :descripcion, :tallas, :observaciones, :medidas_prenda, :piesas_prenda, :PPP, :margen_costura, :hilos_SP, :SAM, :ficha_id, :created_at, :updated_at
+json.extract! @info, :id, :referencia, :talla, :talla_promedio, :color, :tela, :descripcion, :especificaciones, :modulo_id, :ficha_id, :created_at, :updated_at

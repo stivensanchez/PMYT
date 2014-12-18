@@ -18,7 +18,7 @@ class InfosControllerTest < ActionController::TestCase
 
   test "should create info" do
     assert_difference('Info.count') do
-      post :create, info: { PPP: @info.PPP, SAM: @info.SAM, descripcion: @info.descripcion, ficha_id: @info.ficha_id, hilos_SP: @info.hilos_SP, margen_costura: @info.margen_costura, medidas_prenda: @info.medidas_prenda, observaciones: @info.observaciones, piesas_prenda: @info.piesas_prenda, tallas: @info.tallas }
+      post :create, info: { color: @info.color, descripcion: @info.descripcion, especificaciones: @info.especificaciones, ficha_id: @info.ficha_id, modulo_id: @info.modulo_id, referencia: @info.referencia, talla: @info.talla, talla_promedio: @info.talla_promedio, tela: @info.tela }
     end
 
     assert_redirected_to info_path(assigns(:info))
@@ -35,7 +35,7 @@ class InfosControllerTest < ActionController::TestCase
   end
 
   test "should update info" do
-    patch :update, id: @info, info: { PPP: @info.PPP, SAM: @info.SAM, descripcion: @info.descripcion, ficha_id: @info.ficha_id, hilos_SP: @info.hilos_SP, margen_costura: @info.margen_costura, medidas_prenda: @info.medidas_prenda, observaciones: @info.observaciones, piesas_prenda: @info.piesas_prenda, tallas: @info.tallas }
+    patch :update, id: @info, info: { color: @info.color, descripcion: @info.descripcion, especificaciones: @info.especificaciones, ficha_id: @info.ficha_id, modulo_id: @info.modulo_id, referencia: @info.referencia, talla: @info.talla, talla_promedio: @info.talla_promedio, tela: @info.tela }
     assert_redirected_to info_path(assigns(:info))
   end
 

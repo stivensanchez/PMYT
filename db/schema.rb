@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141210195440) do
+ActiveRecord::Schema.define(version: 20141218200935) do
+
+  create_table "developments", force: true do |t|
+    t.integer  "operation_id"
+    t.string   "maquina"
+    t.string   "calibre_aguja"
+    t.string   "ppp"
+    t.string   "margen_costura"
+    t.string   "guia_accesorios"
+    t.text     "observaciones"
+    t.integer  "info_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "developments", ["info_id"], name: "index_developments_on_info_id"
+  add_index "developments", ["operation_id"], name: "index_developments_on_operation_id"
 
   create_table "fichas", force: true do |t|
     t.string   "referencia"
@@ -31,21 +47,21 @@ ActiveRecord::Schema.define(version: 20141210195440) do
   add_index "groups", ["modulo_id"], name: "index_groups_on_modulo_id"
 
   create_table "infos", force: true do |t|
+    t.string   "referencia"
+    t.string   "talla"
+    t.string   "talla_promedio"
+    t.string   "color"
+    t.string   "tela"
     t.text     "descripcion"
-    t.string   "tallas"
-    t.text     "observaciones"
-    t.string   "medidas_prenda"
-    t.string   "piesas_prenda"
-    t.string   "PPP"
-    t.string   "margen_costura"
-    t.text     "hilos_SP"
-    t.string   "SAM"
+    t.text     "especificaciones"
+    t.integer  "modulo_id"
     t.integer  "ficha_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "infos", ["ficha_id"], name: "index_infos_on_ficha_id"
+  add_index "infos", ["modulo_id"], name: "index_infos_on_modulo_id"
 
   create_table "instructors", force: true do |t|
     t.integer  "tipo_doc_id"
@@ -71,6 +87,16 @@ ActiveRecord::Schema.define(version: 20141210195440) do
   end
 
   add_index "maquinas", ["modulo_id"], name: "index_maquinas_on_modulo_id"
+
+  create_table "measures", force: true do |t|
+    t.string   "medidas"
+    t.string   "tolerancia"
+    t.integer  "info_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "measures", ["info_id"], name: "index_measures_on_info_id"
 
   create_table "modulos", force: true do |t|
     t.string   "nombre"
@@ -105,6 +131,17 @@ ActiveRecord::Schema.define(version: 20141210195440) do
 
   add_index "opers", ["group_id"], name: "index_opers_on_group_id"
   add_index "opers", ["tipo_doc_id"], name: "index_opers_on_tipo_doc_id"
+
+  create_table "prendas", force: true do |t|
+    t.string   "nombre"
+    t.string   "cantidad"
+    t.text     "observaciones"
+    t.integer  "info_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "prendas", ["info_id"], name: "index_prendas_on_info_id"
 
   create_table "tipo_docs", force: true do |t|
     t.string   "nombre"

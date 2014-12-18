@@ -13,3 +13,38 @@
  *= require_tree .
  *= require_self
  */
+
+.uno{
+ border: solid 1px;
+ padding: 3px ;
+}
+.dos{
+ border: solid 1px;
+  padding: 3px;
+}
+.tres{
+ border: solid 1px;
+  padding: 3px;
+}
+.cuatro{
+ border: solid 1px;
+  padding: 3px;
+}
+.cinco{
+ border: solid 1px;
+  padding: 3px;
+}
+.seis{
+ border: solid 1px;
+  padding: 3px;
+}
+.siete{
+ border: solid 1px;
+  padding: 3px;
+}
+.ocho{
+ border: solid 1px;
+  padding: 3px;
+}
+
+

@@ -42,7 +42,7 @@ class InfosController < ApplicationController
   def update
     respond_to do |format|
       if @info.update(info_params)
-        format.html { redirect_to ficha_infos_path(@ficha), notice: 'Info was successfully updated.' }
+        format.html { redirect_to area_infos_path(@ficha), notice: 'Info was successfully updated.' }
         format.json { render :show, status: :ok, location: @info }
       else
         format.html { render :edit }
@@ -70,6 +70,6 @@ class InfosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def info_params
-      params.require(:info).permit(:descripcion, :tallas, :observaciones, :medidas_prenda, :piesas_prenda, :PPP, :margen_costura, :hilos_SP, :SAM, :ficha_id)
+      params.require(:info).permit(:referencia, :talla, :talla_promedio, :color, :tela, :descripcion, :especificaciones, :modulo_id, :ficha_id)
     end
 end

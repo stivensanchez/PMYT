@@ -1,0 +1,18 @@
+<%= simple_form_for [@ficha,@info,@prenda], :html => { :class => 'form-group' } do |f| %>
+<div class="form-group">
+  <%= f.label :Nombre%>
+  <%= f.text_field :nombre, class: "form-control",         placeholder: "Ingrese el nombre" %>
+</div>
+<div class="form-group">
+  <%= f.label :Cantidad%>
+  <%= f.text_field :cantidad, class: "form-control",         placeholder: "Ingrese la cantidad" %>
+</div>
+<div class="form-group">
+  <%= f.label :Observaciones %>
+  <%= f.text_field :observaciones, class: "form-control",         placeholder: "Ingrese una observacion" %>
+</div>  
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                info_prendas_path(@info), :class => 'btn btn-default' %>
+<% end %>

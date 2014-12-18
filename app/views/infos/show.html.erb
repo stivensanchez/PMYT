@@ -4,30 +4,28 @@
 </div>
 
 <dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:referencia) %>:</strong></dt>
+  <dd><%= @info.referencia %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:talla) %>:</strong></dt>
+  <dd><%= @info.talla %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:talla_promedio) %>:</strong></dt>
+  <dd><%= @info.talla_promedio %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:color) %>:</strong></dt>
+  <dd><%= @info.color %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:tela) %>:</strong></dt>
+  <dd><%= @info.tela %></dd>
   <dt><strong><%= model_class.human_attribute_name(:descripcion) %>:</strong></dt>
   <dd><%= @info.descripcion %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:tallas) %>:</strong></dt>
-  <dd><%= @info.tallas %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:observaciones) %>:</strong></dt>
-  <dd><%= @info.observaciones %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:medidas_prenda) %>:</strong></dt>
-  <dd><%= @info.medidas_prenda %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:piesas_prenda) %>:</strong></dt>
-  <dd><%= @info.piesas_prenda %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:PPP) %>:</strong></dt>
-  <dd><%= @info.PPP %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:margen_costura) %>:</strong></dt>
-  <dd><%= @info.margen_costura %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:hilos_SP) %>:</strong></dt>
-  <dd><%= @info.hilos_SP %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:SAM) %>:</strong></dt>
-  <dd><%= @info.SAM %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:especificaciones) %>:</strong></dt>
+  <dd><%= @info.especificaciones %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:modulo_id) %>:</strong></dt>
+  <dd><%= @info.modulo_id %></dd>
   <dt><strong><%= model_class.human_attribute_name(:ficha_id) %>:</strong></dt>
   <dd><%= @info.ficha_id %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
-              info_path_(info), :class => 'btn btn-default'  %>
+              info_path(info), :class => 'btn btn-default'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_info_path(info), :class => 'btn btn-default' %>
 <%= link_to t('.destroy', :default => t("helpers.links.destroy")),

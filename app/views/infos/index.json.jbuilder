@@ -1,4 +1,4 @@
 json.array!(@infos) do |info|
-  json.extract! info, :id, :descripcion, :tallas, :observaciones, :medidas_prenda, :piesas_prenda, :PPP, :margen_costura, :hilos_SP, :SAM, :ficha_id
+  json.extract! info, :id, :referencia, :talla, :talla_promedio, :color, :tela, :descripcion, :especificaciones, :modulo_id, :ficha_id
   json.url info_url(info, format: :json)
 end

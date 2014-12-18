@@ -1,0 +1,14 @@
+<%= simple_form_for [@ficha,@info,@measure], :html => { :class => 'form-group' } do |f| %>
+<div class="form-group">
+  <%= f.label :Medidas%>
+  <%= f.text_field :medidas, class: "form-control",         placeholder: "Ingrese las medidas" %>
+</div>
+<div class="form-group">
+  <%= f.label :Tolerancia %>
+  <%= f.text_field :tolerancia, class: "form-control",         placeholder: "Ingrese la tolerancia" %>
+</div>
+  
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                info_measures_path(@info), :class => 'btn btn-default' %>
+<% end %>
