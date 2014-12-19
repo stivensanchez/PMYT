@@ -69,28 +69,24 @@
      <% end %> 
     </div>  
       
-    <div>
+    <div class="list-group-item">
       <% @infos.each do |info| %>
          <%= link_to 'Medidas(' + info.measures.count.to_s+ ')', info_measures_path(info) %>
       <% end %>  
     </div>   
         
-    <div>
+    <div class="list-group-item">
       <% @infos.each do |info| %>
          <%= link_to 'Prendas(' + info.prendas.count.to_s+ ')', info_prendas_path(info) %>
       <% end %>  
     </div>    
        
-      <div>
+      <div class="list-group-item">
       <% @infos.each do |info| %>
          <%= link_to 'Desarrollo(' + info.developments.count.to_s+ ')', info_developments_path(info) %>
       <% end %>  
     </div>    
-       
-        
-        
-       
-        
+       <br>
       <div>
         <% @infos.each do |info| %>  
             <%= link_to t('.edit', :default => t("helpers.links.edit")),
