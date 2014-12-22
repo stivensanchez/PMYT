@@ -5,89 +5,116 @@
             new_ficha_info_path(@ficha),
             :class => 'btn btn-primary btn-lg active' %>
 </div>
-    <li class="list-group-item">
-      <P><center>CENTRO DE FORMACION EN DISEÑO CONFECION Y MODA</center></P>
-    </li>
-<li class="list-group-item"><center>FICHA TECNICA</center></li>
-</div>
-
-    <div class="uno">  
-      <%= model_class.human_attribute_name(:referencia) %>
+ <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><center>CENTRO DE FORMACION EN DISEÑO CONFECION Y MODA</center></h3>
+        </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><center>FICHA TECNICA</center></h3>
+        </div>
+<br>
+<br>
+<div class="uno">
+    <div class="list-group-item">  
+      <%= model_class.human_attribute_name(:REF) %>
       :
      <% @infos.each do |info| %>  
       <%= info.referencia %>
      <% end %>
     </div>
-    <div class="dos"> 
-      <%= model_class.human_attribute_name(:talla) %>
+</div>  
+<div class="dos">      
+    <div class="list-group-item"> 
+      <%= model_class.human_attribute_name(:TALLA) %>
       :
      <% @infos.each do |info| %>
       <%= info.talla %>
      <% end %> 
     </div>
-    <div class="tres">  
-      <%= model_class.human_attribute_name(:talla_promedio) %>
+</div>  
+<div class="tres">      
+    <div class="list-group-item">  
+      <%= model_class.human_attribute_name(:TALLA_PROMEDIO) %>
       :
      <% @infos.each do |info| %> 
       <%= info.talla_promedio %>
      <% end %> 
     </div>
-    <div class="cuatro"> 
-      <%= model_class.human_attribute_name(:color) %>
+</div>
+<div class="cuatro">      
+    <div class="list-group-item"> 
+      <%= model_class.human_attribute_name(:COLOR) %>
       :
       <% @infos.each do |info| %>  
        <%= info.color %>
      <% end %> 
     </div>
-    <div class="cinco">
-      <%= model_class.human_attribute_name(:tela) %>
+</div>
+      
+<div class="cinco">      
+    <div class="list-group-item">
+      <%= model_class.human_attribute_name(:TELA) %>
       :
      <% @infos.each do |info| %> 
       <%= info.tela %>
      <% end %> 
     </div>
-    <div class="seis">  
-      <%= model_class.human_attribute_name(:descripcion) %>
-      :
+</div>
+<div class="seis">     
+        <center><%= model_class.human_attribute_name(:DESCRIPCION) %>
+        :</center>
+      
      <% @infos.each do |info| %> 
        <%= info.descripcion %>
      <% end %> 
-    </div>  
-    <div class="siete">
-      <%= model_class.human_attribute_name(:especificaciones) %>
-      :
-     <% @infos.each do |info| %> 
-      <%= info.especificaciones %>
-     <% end %> 
-    </div>
+      </div>
+     
+      <div class="imagen">
+      </div>
 
-    <div class="ocho"> 
-      <%= model_class.human_attribute_name(:modulo_id) %>
+
+      <div class="panel-heading"><center>OBSERVACIONES Y ESPECIFICACIONES</center></div>
+      <div class="siete">
+             <% @infos.each do |info| %> 
+             <%= info.especificaciones %>
+             <% end %> 
+      </div>
+
+      
+      
+<div class="ocho">      
+    <div class="list-group-item"> 
+      <%= model_class.human_attribute_name(:MODULO_id) %>
       :
       <% @infos.each do |info| %>  
       <%= info.modulo_id %>
      <% end %> 
     </div>  
-      
+</div>   
+
+<div class="diez">
     <div class="list-group-item">
       <% @infos.each do |info| %>
-         <%= link_to 'Medidas(' + info.measures.count.to_s+ ')', info_measures_path(info) %>
+         <center><%= link_to 'CUADRO DE MEDIDAS', info_measures_path(info), :class => 'btn btn-default btn-xs btn-lg active' %></center>
       <% end %>  
     </div>   
         
     <div class="list-group-item">
       <% @infos.each do |info| %>
-         <%= link_to 'Prendas(' + info.prendas.count.to_s+ ')', info_prendas_path(info) %>
+         <center><%= link_to 'PIEZAS POR PRENDA', info_prendas_path(info), :class => 'btn btn-default btn-xs btn-lg active' %></center>
       <% end %>  
     </div>    
        
       <div class="list-group-item">
       <% @infos.each do |info| %>
-         <%= link_to 'Desarrollo(' + info.developments.count.to_s+ ')', info_developments_path(info) %>
+         <center><%= link_to 'DEDARROLLO', info_developments_path(info), :class => 'btn btn-default btn-xs btn-lg active' %></center>
       <% end %>  
-    </div>    
+    </div>  
+</div>  
+      </div> 
        <br>
-      <div>
+      <div class="nueve">
         <% @infos.each do |info| %>  
             <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_ficha_info_path(@ficha,info), :class => 'btn btn-default btn-xs btn-lg active' %>
@@ -98,7 +125,5 @@
                       :class => 'btn btn-xs btn-danger btn-lg active' %>
        <% end %>
      </div>  
-
-
-
-_________________________________________________
+     
+     
