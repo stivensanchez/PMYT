@@ -1,5 +1,5 @@
 <%- model_class = Measure -%>
-<div class="page-header">
+  <div class="well">
     <h1><center>Cuadro <small>Medidas</small></h1>
 </div>
     <div class="well">
@@ -12,6 +12,7 @@
     <tr>
       <th><%= model_class.human_attribute_name(:medidas) %></th>
       <th><%= model_class.human_attribute_name(:tolerancia) %></th>
+     
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -20,6 +21,7 @@
       <tr>
         <td><%= measure.medidas %></td>
         <td><%= measure.tolerancia %></td>
+        
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_info_measure_path(@info,measure), :class => 'btn btn-default btn-xs btn-lg active' %>
@@ -33,5 +35,15 @@
     <% end %>
   </tbody>
 </table>
+
+<div class="">
+  <% @measures.each do |measure| %>
+ <%= link_to 'Insumos(' + measure.materials.count.to_s+ ')', measure_materials_path(measure)%>
+  <% end %>
+</div>  
+
+<div>
+<%= render 'measures/index1' %>
+</div>
 
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141218200935) do
+ActiveRecord::Schema.define(version: 20141223215801) do
 
   create_table "developments", force: true do |t|
     t.integer  "operation_id"
@@ -87,6 +87,17 @@ ActiveRecord::Schema.define(version: 20141218200935) do
   end
 
   add_index "maquinas", ["modulo_id"], name: "index_maquinas_on_modulo_id"
+
+  create_table "materials", force: true do |t|
+    t.string   "nombre"
+    t.string   "cantidad"
+    t.text     "observaciones"
+    t.integer  "measure_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "materials", ["measure_id"], name: "index_materials_on_measure_id"
 
   create_table "measures", force: true do |t|
     t.string   "medidas"

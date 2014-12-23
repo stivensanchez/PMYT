@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :materials
+
   resources :developments
 
   resources :prendas
@@ -66,6 +68,11 @@ Rails.application.routes.draw do
   resources :infos do
     resources :developments
   end
+  
+  resources :measures do
+    resources :materials
+  end
+  
   
   
   # The priority is based upon order of creation: first created -> highest priority.
