@@ -4,7 +4,6 @@ class CreateMaterials < ActiveRecord::Migration
       t.string :nombre
       t.string :cantidad
       t.text :observaciones
-      t.references :measure, index: true
 
       t.timestamps
     end

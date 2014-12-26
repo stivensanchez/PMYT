@@ -36,14 +36,8 @@
   </tbody>
 </table>
 
-<div class="">
-  <% @measures.each do |measure| %>
- <%= link_to 'Insumos(' + measure.materials.count.to_s+ ')', measure_materials_path(measure)%>
-  <% end %>
-</div>  
-
 <div>
-<%= render 'measures/index1' %>
+  <%= render 'materials/index' %>
 </div>
 
 

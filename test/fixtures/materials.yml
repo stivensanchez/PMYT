@@ -4,10 +4,8 @@ one:
   nombre: MyString
   cantidad: MyString
   observaciones: MyText
-  measure_id: 
 
 two:
   nombre: MyString
   cantidad: MyString
   observaciones: MyText
-  measure_id: 
