@@ -7,17 +7,17 @@
 </div>
  <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title"><center>CENTRO DE FORMACION EN DISEÑO CONFECION Y MODA</center></h3>
+          <h3 class="panel-title"><center><b>CENTRO DE FORMACION EN DISEÑO CONFECION Y MODA</b></center></h3>
         </div>
     <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title"><center>FICHA TECNICA</center></h3>
+          <h3 class="panel-title"><center><b>FICHA TECNICA</b></center></h3>
         </div>
 <br>
 <br>
 <div class="uno">
     <div class="list-group-item">  
-      <%= model_class.human_attribute_name(:REF) %>
+      <b>REF</b>
       :
      <% @infos.each do |info| %>  
       <%= info.referencia %>
@@ -26,7 +26,7 @@
 </div>  
 <div class="dos">      
     <div class="list-group-item"> 
-      <%= model_class.human_attribute_name(:TALLA) %>
+      <b>TALLA</b>
       :
      <% @infos.each do |info| %>
       <%= info.talla %>
@@ -35,7 +35,7 @@
 </div>  
 <div class="tres">      
     <div class="list-group-item">  
-      <%= model_class.human_attribute_name(:TALLA_PROMEDIO) %>
+      <b>T/PROMEDIO</b>
       :
      <% @infos.each do |info| %> 
       <%= info.talla_promedio %>
@@ -44,7 +44,7 @@
 </div>
 <div class="cuatro">      
     <div class="list-group-item"> 
-      <%= model_class.human_attribute_name(:COLOR) %>
+      <b>COLOR</b>
       :
       <% @infos.each do |info| %>  
        <%= info.color %>
@@ -54,7 +54,7 @@
       
 <div class="cinco">      
     <div class="list-group-item">
-      <%= model_class.human_attribute_name(:TELA) %>
+      <b>TELA</b>
       :
      <% @infos.each do |info| %> 
       <%= info.tela %>
@@ -62,7 +62,7 @@
     </div>
 </div>
 <div class="seis">     
-        <center><%= model_class.human_attribute_name(:DESCRIPCION) %>
+  <center><b>DESCRIPCION</b>
         :</center>
       
      <% @infos.each do |info| %> 
@@ -74,7 +74,7 @@
       </div>
 
 
-      <div class="panel-heading"><center>OBSERVACIONES Y ESPECIFICACIONES</center></div>
+      <div class="panel-heading"><center><b>OBSERVACIONES Y ESPECIFICACIONES</b></center></div>
       <div class="siete">
              <% @infos.each do |info| %> 
              <%= info.especificaciones %>
@@ -85,7 +85,7 @@
       
 <div class="ocho">      
     <div class="list-group-item"> 
-      <%= model_class.human_attribute_name(:MODULO_id) %>
+      <b>MODULO</b>
       :
       <% @infos.each do |info| %>  
       <%= info.modulo_id %>
