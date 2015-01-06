@@ -1,0 +1,50 @@
+<%- model_class = Ensamble -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:operation_id) %></th>
+      <th><%= model_class.human_attribute_name(:xamp) %></th>
+      <th><%= model_class.human_attribute_name(:maquina) %></th>
+      <th><%= model_class.human_attribute_name(:calibre_aguja) %></th>
+      <th><%= model_class.human_attribute_name(:ppp) %></th>
+      <th><%= model_class.human_attribute_name(:margen_costura) %></th>
+      <th><%= model_class.human_attribute_name(:guia_accesorios_string) %></th>
+      <th><%= model_class.human_attribute_name(:observaciones) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @ensambles.each do |ensamble| %>
+      <tr>
+        <td><%= link_to ensamble.id, ensamble_path(ensamble) %></td>
+        <td><%= ensamble.operation_id %></td>
+        <td><%= ensamble.xamp %></td>
+        <td><%= ensamble.maquina %></td>
+        <td><%= ensamble.calibre_aguja %></td>
+        <td><%= ensamble.ppp %></td>
+        <td><%= ensamble.margen_costura %></td>
+        <td><%= ensamble.guia_accesorios_string %></td>
+        <td><%= ensamble.observaciones %></td>
+        <td><%=l ensamble.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_ensamble_path(ensamble), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      ensamble_path(ensamble),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_ensamble_path,
+            :class => 'btn btn-primary' %>

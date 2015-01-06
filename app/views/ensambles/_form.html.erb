@@ -1,0 +1,22 @@
+<%= simple_form_for @ensamble, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :operation_id %>
+  <%= error_span(@ensamble[:operation_id]) %>
+  <%= f.input :xamp %>
+  <%= error_span(@ensamble[:xamp]) %>
+  <%= f.input :maquina %>
+  <%= error_span(@ensamble[:maquina]) %>
+  <%= f.input :calibre_aguja %>
+  <%= error_span(@ensamble[:calibre_aguja]) %>
+  <%= f.input :ppp %>
+  <%= error_span(@ensamble[:ppp]) %>
+  <%= f.input :margen_costura %>
+  <%= error_span(@ensamble[:margen_costura]) %>
+  <%= f.input :guia_accesorios_string %>
+  <%= error_span(@ensamble[:guia_accesorios_string]) %>
+  <%= f.input :observaciones %>
+  <%= error_span(@ensamble[:observaciones]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                ensambles_path, :class => 'btn btn-default' %>
+<% end %>

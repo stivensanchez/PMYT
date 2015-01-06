@@ -1,0 +1,2 @@
+module EnsamblesHelper
+end

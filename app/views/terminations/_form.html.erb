@@ -1,0 +1,22 @@
+<%= simple_form_for @termination, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :operation_id %>
+  <%= error_span(@termination[:operation_id]) %>
+  <%= f.input :xamp %>
+  <%= error_span(@termination[:xamp]) %>
+  <%= f.input :maquina %>
+  <%= error_span(@termination[:maquina]) %>
+  <%= f.input :calibre_aguja %>
+  <%= error_span(@termination[:calibre_aguja]) %>
+  <%= f.input :ppp %>
+  <%= error_span(@termination[:ppp]) %>
+  <%= f.input :margen_costura %>
+  <%= error_span(@termination[:margen_costura]) %>
+  <%= f.input :guia_accesorios_string %>
+  <%= error_span(@termination[:guia_accesorios_string]) %>
+  <%= f.input :observaciones %>
+  <%= error_span(@termination[:observaciones]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                terminations_path, :class => 'btn btn-default' %>
+<% end %>

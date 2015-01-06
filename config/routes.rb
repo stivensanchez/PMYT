@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :terminations
+
+  resources :ensambles
+
   resources :materials
 
   resources :developments

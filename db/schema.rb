@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141230160753) do
+ActiveRecord::Schema.define(version: 20150106202619) do
 
   create_table "developments", force: true do |t|
     t.integer  "operation_id"
@@ -28,6 +28,21 @@ ActiveRecord::Schema.define(version: 20141230160753) do
 
   add_index "developments", ["info_id"], name: "index_developments_on_info_id"
   add_index "developments", ["operation_id"], name: "index_developments_on_operation_id"
+
+  create_table "ensambles", force: true do |t|
+    t.integer  "operation_id"
+    t.string   "xamp"
+    t.string   "maquina"
+    t.string   "calibre_aguja"
+    t.string   "ppp"
+    t.string   "margen_costura"
+    t.string   "guia_accesorios_string"
+    t.text     "observaciones"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ensambles", ["operation_id"], name: "index_ensambles_on_operation_id"
 
   create_table "fichas", force: true do |t|
     t.string   "referencia"
@@ -150,6 +165,21 @@ ActiveRecord::Schema.define(version: 20141230160753) do
   end
 
   add_index "prendas", ["info_id"], name: "index_prendas_on_info_id"
+
+  create_table "terminations", force: true do |t|
+    t.integer  "operation_id"
+    t.string   "xamp"
+    t.string   "maquina"
+    t.string   "calibre_aguja"
+    t.string   "ppp"
+    t.string   "margen_costura"
+    t.string   "guia_accesorios_string"
+    t.text     "observaciones"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "terminations", ["operation_id"], name: "index_terminations_on_operation_id"
 
   create_table "tipo_docs", force: true do |t|
     t.string   "nombre"
