@@ -1,3 +1,4 @@
+
 <%- model_class = Info -%>
 <div class="page-header">
     <div class="well">
@@ -15,6 +16,7 @@
         </div>
 <br>
 <br>
+     <div class="prueba">
 <div class="uno">
     <div class="list-group-item">  
       <b>REF</b>
@@ -80,9 +82,6 @@
              <%= info.especificaciones %>
              <% end %> 
       </div>
-
-      
-      
 <div class="ocho">      
     <div class="list-group-item"> 
       <b>MODULO</b>
@@ -92,7 +91,8 @@
      <% end %> 
     </div>  
 </div>   
-
+       <br>
+        </div> 
 <div class="diez">
     <div class="list-group-item">
       <% @infos.each do |info| %>
@@ -112,7 +112,7 @@
       <% end %>  
     </div>  
 </div>  
-      </div> 
+     
        <br>
       <div class="nueve">
         <% @infos.each do |info| %>  
@@ -125,5 +125,5 @@
                       :class => 'btn btn-xs btn-danger btn-lg active' %>
        <% end %>
      </div>  
-     
-     
+   
+ 
