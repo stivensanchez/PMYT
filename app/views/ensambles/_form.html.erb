@@ -1,22 +1,37 @@
-<%= simple_form_for @ensamble, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :operation_id %>
-  <%= error_span(@ensamble[:operation_id]) %>
-  <%= f.input :xamp %>
-  <%= error_span(@ensamble[:xamp]) %>
-  <%= f.input :maquina %>
-  <%= error_span(@ensamble[:maquina]) %>
-  <%= f.input :calibre_aguja %>
-  <%= error_span(@ensamble[:calibre_aguja]) %>
-  <%= f.input :ppp %>
-  <%= error_span(@ensamble[:ppp]) %>
-  <%= f.input :margen_costura %>
-  <%= error_span(@ensamble[:margen_costura]) %>
-  <%= f.input :guia_accesorios_string %>
-  <%= error_span(@ensamble[:guia_accesorios_string]) %>
-  <%= f.input :observaciones %>
-  <%= error_span(@ensamble[:observaciones]) %>
+<%= simple_form_for @ensamble, :html => { :class => 'form-group' } do |f| %>
+<div class="form-group">
+  <%= f.label :Operacion %>
+  <%= f.text_field :operation_id, class: "form-control" %>
+</div>
+<div class="form-group">
+  <%= f.label :Sam %>
+  <%= f.text_field :sam, class: "form-control" %>
+</div>
+<div class="form-group">
+  <%= f.label :Maquina%>
+  <%= f.text_field :maquina, class: "form-control" %>
+</div>
+<div class="form-group">
+  <%= f.label :Calibre_Aguja%>
+  <%= f.text_field :calibre_aguja, class: "form-control", placeholder: "Ingrese el calibre de aguja" %>
+</div>
+<div class="form-group">
+  <%= f.label :PPP%>
+  <%= f.text_field :ppp, class: "form-control",         placeholder: "Ingrese el PPP" %>
+</div>
+<div class="form-group">
+  <%= f.label :Margen_Costura%>
+  <%= f.text_field :margen_costura, class: "form-control", placeholder: "Ingrese la mergen de costura" %>
+</div>
+<div class="form-group">
+  <%= f.label :Guia_Accesorios%>
+  <%= f.text_field :guia_accesorios, class: "form-control", placeholder: "Ingrese la guia y accesorios" %>
+</div>
+<div class="form-group">
+  <%= f.label :Observaciones %>
+  <%= f.text_field :observaciones, class: "form-control", placeholder: "Ingrese las observaciones" %>
+</div>
 
   <%= f.button :submit, :class => 'btn-primary' %>
-  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                ensambles_path, :class => 'btn btn-default' %>
+ <%= link_to 'Atras', '/infos/4/developments', :class => 'btn btn-default' %>
 <% end %>

@@ -2,6 +2,7 @@ class CreateDevelopments < ActiveRecord::Migration
   def change
     create_table :developments do |t|
       t.references :operation, index: true
+      t.string :sam
       t.string :maquina
       t.string :calibre_aguja
       t.string :ppp

@@ -168,12 +168,12 @@ ActiveRecord::Schema.define(version: 20150106202619) do
 
   create_table "terminations", force: true do |t|
     t.integer  "operation_id"
-    t.string   "xamp"
+    t.string   "samp"
     t.string   "maquina"
     t.string   "calibre_aguja"
     t.string   "ppp"
     t.string   "margen_costura"
-    t.string   "guia_accesorios_string"
+    t.string   "guia_accesorios"
     t.text     "observaciones"
     t.datetime "created_at"
     t.datetime "updated_at"

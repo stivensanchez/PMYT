@@ -69,6 +69,6 @@ class EnsamblesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ensamble_params
-      params.require(:ensamble).permit(:operation_id, :xamp, :maquina, :calibre_aguja, :ppp, :margen_costura, :guia_accesorios_string, :observaciones)
+      params.require(:ensamble).permit(:operation_id, :sam, :maquina, :calibre_aguja, :ppp, :margen_costura, :guia_accesorios, :observaciones)
     end
 end
