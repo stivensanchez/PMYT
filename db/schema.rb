@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150106202619) do
+ActiveRecord::Schema.define(version: 20150113204732) do
 
   create_table "developments", force: true do |t|
     t.integer  "operation_id"
@@ -24,25 +24,21 @@ ActiveRecord::Schema.define(version: 20150106202619) do
     t.integer  "info_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "sam"
   end
-
-  add_index "developments", ["info_id"], name: "index_developments_on_info_id"
-  add_index "developments", ["operation_id"], name: "index_developments_on_operation_id"
 
   create_table "ensambles", force: true do |t|
     t.integer  "operation_id"
-    t.string   "xamp"
+    t.string   "sam"
     t.string   "maquina"
     t.string   "calibre_aguja"
     t.string   "ppp"
     t.string   "margen_costura"
-    t.string   "guia_accesorios_string"
+    t.string   "guia_accesorios"
     t.text     "observaciones"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "ensambles", ["operation_id"], name: "index_ensambles_on_operation_id"
 
   create_table "fichas", force: true do |t|
     t.string   "referencia"
@@ -73,6 +69,10 @@ ActiveRecord::Schema.define(version: 20150106202619) do
     t.integer  "ficha_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "infos", ["ficha_id"], name: "index_infos_on_ficha_id"
@@ -135,10 +135,12 @@ ActiveRecord::Schema.define(version: 20150106202619) do
     t.integer  "modulo_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "sam"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
-
-  add_index "operations", ["maquina_id"], name: "index_operations_on_maquina_id"
-  add_index "operations", ["modulo_id"], name: "index_operations_on_modulo_id"
 
   create_table "opers", force: true do |t|
     t.integer  "tipo_doc_id"
@@ -168,7 +170,7 @@ ActiveRecord::Schema.define(version: 20150106202619) do
 
   create_table "terminations", force: true do |t|
     t.integer  "operation_id"
-    t.string   "samp"
+    t.string   "sam"
     t.string   "maquina"
     t.string   "calibre_aguja"
     t.string   "ppp"
@@ -178,8 +180,6 @@ ActiveRecord::Schema.define(version: 20150106202619) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "terminations", ["operation_id"], name: "index_terminations_on_operation_id"
 
   create_table "tipo_docs", force: true do |t|
     t.string   "nombre"

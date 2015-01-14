@@ -16,7 +16,7 @@
   def new
     @operation = Operation.new
   end
-
+  
   # GET /operations/1/edit
   def edit
   end
@@ -70,6 +70,6 @@
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def operation_params
-      params.require(:operation).permit(:nombre, :sam, :descripcion, :maquina_id, :modulo_id)
+      params.require(:operation).permit(:nombre, :sam, :descripcion, :maquina_id, :modulo_id,:image)
     end
 end

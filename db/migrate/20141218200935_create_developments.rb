@@ -13,5 +13,6 @@ class CreateDevelopments < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_attachment :products, :image
   end
 end
