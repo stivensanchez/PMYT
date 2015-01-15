@@ -4,4 +4,5 @@ class Info < ActiveRecord::Base
   has_many :measures
   has_many :prendas
   has_many :developments
+  mount_uploader :image, ImageUploader
 end

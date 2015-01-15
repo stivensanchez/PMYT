@@ -26,7 +26,9 @@
         <td><%= operation.sam %></td>
         <td><%= operation.descripcion %></td>
         <td><%= operation.maquina_id %></td>
-        <td><%= image_tag operation.image.url(:thumb) %></td>
+        <td><%= image_tag(operation.image.url, height: '150', width: '150') %></td>
+        
+        
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
     edit_modulo_operation_path(@modulo,operation), :class => 'btn btn-default btn-xs btn-lg active' %>

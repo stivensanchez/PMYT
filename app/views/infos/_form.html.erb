@@ -32,7 +32,9 @@
   <%= f.text_field :modulo_id, class: "form-control" %>
 </div>  
 
- 
+<div class="form-group">
+  <%= f.file_field :image %>
+</div>  
   <%= f.button :submit, :class => 'btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
   ficha_infos_path(@ficha), :class => 'btn btn-default' %>

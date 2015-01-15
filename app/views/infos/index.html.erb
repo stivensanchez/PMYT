@@ -73,6 +73,11 @@
       </div>
      
       <div class="imagen">
+        <div class="pruebita">
+        <% @infos.each do |info| %>
+          <%= image_tag(info.image.url, height: '390', width: '707') %>
+        <% end %>
+        </div>
       </div>
 
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150113204732) do
+ActiveRecord::Schema.define(version: 20150114203822) do
 
   create_table "developments", force: true do |t|
     t.integer  "operation_id"
@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 20150113204732) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "image"
   end
 
   add_index "infos", ["ficha_id"], name: "index_infos_on_ficha_id"
@@ -135,7 +136,7 @@ ActiveRecord::Schema.define(version: 20150113204732) do
     t.integer  "modulo_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "sam"
+    t.float    "sam"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
