@@ -24,12 +24,12 @@ ActiveRecord::Schema.define(version: 20150114203822) do
     t.integer  "info_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "sam"
+    t.float    "sam"
   end
 
   create_table "ensambles", force: true do |t|
     t.integer  "operation_id"
-    t.string   "sam"
+    t.float    "sam"
     t.string   "maquina"
     t.string   "calibre_aguja"
     t.string   "ppp"
@@ -171,7 +171,7 @@ ActiveRecord::Schema.define(version: 20150114203822) do
 
   create_table "terminations", force: true do |t|
     t.integer  "operation_id"
-    t.string   "sam"
+    t.float    "sam"
     t.string   "maquina"
     t.string   "calibre_aguja"
     t.string   "ppp"

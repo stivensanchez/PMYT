@@ -15,6 +15,7 @@
     <%= f.label :Maquina %>  <br>
     <%= f.collection_select :maquina_id, Maquina.all, :id, :nombre, class: "form-control", prompt: "Seleccione Maquina" %>
 </div> 
+
  <div class="field">
   <%= f.label :Imagen %><br>
   <%= f.file_field :image %>
