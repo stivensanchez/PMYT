@@ -27,7 +27,7 @@
     <% @developments.each do |development| %>
       <tr>
         <td><%= link_to development.id, development_path(development) %></td>
-        <td><%= development.operation_id %></td>
+        <td><%= development.operation.nombre %></td>
         <td><%= development.sam %></td>
         <td><%= development.maquina %></td>
         <td><%= development.calibre_aguja %></td>
