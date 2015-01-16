@@ -70,6 +70,6 @@
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def operation_params
-      params.require(:operation).permit(:nombre, :sam, :descripcion, :maquina_id, :modulo_id,:image)
+      params.require(:operation).permit(:nombre, :sam, :descripcion, :maquina_id, :modulo_id,:image, :video)
     end
 end

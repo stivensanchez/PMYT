@@ -15,6 +15,7 @@
       <th><%= model_class.human_attribute_name(:sam) %></th>
       <th><%= model_class.human_attribute_name(:descripcion) %></th>
       <th><%= model_class.human_attribute_name(:maquina_id) %></th>
+      <th><%= model_class.human_attribute_name(:video) %></th>
       <th><%= model_class.human_attribute_name(:imagen) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -26,6 +27,7 @@
         <td><%= operation.sam %></td>
         <td><%= operation.descripcion %></td>
         <td><%= operation.maquina.nombre %></td>
+        <td><%= video_tag(operation.video.url, height: '150', widt: '150', controls: true) %>
         <td><%= image_tag(operation.image.url, height: '150', width: '150') %></td>
         
         

@@ -21,6 +21,11 @@
   <%= f.file_field :image %>
 </div>
 
+<div class="field">
+  <%= f.label :Video %><br>
+  <%= f.file_field :video %>
+</div>
+
   <%= f.button :submit, :class => 'btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
   modulo_operations_path(@modulo), :class => 'btn btn-default' %>
