@@ -9,6 +9,7 @@ class CreateEnsambles < ActiveRecord::Migration
       t.string :margen_costura
       t.string :guia_accesorios
       t.text :observaciones
+      t.string :imagen
 
       t.timestamps
     end

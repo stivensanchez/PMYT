@@ -19,6 +19,7 @@
       <th><%= model_class.human_attribute_name(:margen_costura) %></th>
       <th><%= model_class.human_attribute_name(:guia_accesorios) %></th>
       <th><%= model_class.human_attribute_name(:observaciones) %></th>
+      <th><%= model_class.human_attribute_name(:imagen)%></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -34,6 +35,7 @@
         <td><%= termination.margen_costura %></td>
         <td><%= termination.guia_accesorios %></td>
         <td><%= termination.observaciones %></td>
+        <td><%= termination.imagen %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_termination_path(termination), :class => 'btn btn-default btn-xs' %>

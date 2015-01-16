@@ -70,6 +70,6 @@ class DevelopmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def development_params
-      params.require(:development).permit(:operation_id, :sam, :maquina, :calibre_aguja, :ppp, :margen_costura, :guia_accesorios, :observaciones, :info_id,)
+      params.require(:development).permit(:operation_id, :sam, :maquina, :calibre_aguja, :ppp, :margen_costura, :guia_accesorios, :observaciones, :info_id, :imagen)
     end
 end

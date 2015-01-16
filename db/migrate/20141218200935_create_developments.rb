@@ -9,10 +9,10 @@ class CreateDevelopments < ActiveRecord::Migration
       t.string :margen_costura
       t.string :guia_accesorios
       t.text :observaciones
+      t.string :imagen
       t.references :info, index: true
 
       t.timestamps
     end
-    add_attachment :products, :image
   end
 end

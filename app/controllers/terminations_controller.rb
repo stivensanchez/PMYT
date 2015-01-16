@@ -69,6 +69,6 @@ class TerminationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def termination_params
-      params.require(:termination).permit(:operation_id, :sam, :maquina, :calibre_aguja, :ppp, :margen_costura, :guia_accesorios, :observaciones)
+      params.require(:termination).permit(:operation_id, :sam, :maquina, :calibre_aguja, :ppp, :margen_costura, :guia_accesorios, :observaciones, :imagen)
     end
 end
