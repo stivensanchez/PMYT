@@ -13,7 +13,7 @@
 </div>  
 <div class="form-group">
     <%= f.label :Maquina %>  <br>
-    <%= f.collection_select :maquina_id, Maquina.all, :id, :nombre, class: "form-control", prompt: "Seleccione Maquina" %>
+  <%= f.collection_select :maquina_id, Maquina.joins(:modulo).where({modulo_id: 1}), :id, :nombre, class: "form-control", prompt: "Seleccione Maquina" %>
 </div> 
 
  <div class="field">
