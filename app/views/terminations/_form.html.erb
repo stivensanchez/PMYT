@@ -1,7 +1,7 @@
 <%= simple_form_for @termination, :html => { :class => 'form-group' } do |f| %>
-  <div class="form-group">
-  <%= f.label :Operacion %>
-  <%= f.text_field :operation_id, class: "form-control" %>
+ <div class="form-group">
+  <%= f.label :Operacion %>  <br>
+  <%= f.collection_select :operation_id, Operation.all, :id, :nombre, class: "form-control", prompt: "Seleccione Operacion" %>
 </div>
 <div class="form-group">
   <%= f.label :Sam %>
