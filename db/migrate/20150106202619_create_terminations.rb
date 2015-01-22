@@ -2,7 +2,7 @@ class CreateTerminations < ActiveRecord::Migration
   def change
     create_table :terminations do |t|
       t.references :operation, index: true
-      t.double :sam
+      t.string :sam
       t.string :maquina
       t.string :calibre_aguja
       t.string :ppp

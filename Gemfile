@@ -44,5 +44,5 @@ gem 'twitter-bootstrap-rails'
 gem 'less-rails'
 
 gem 'carrierwave'
-gem 'rmagick'
+#gem 'rmagick', '2.13.2', :git=>'http://github.com/rmagick/rmagick.git'
 

@@ -15,30 +15,37 @@ ActiveRecord::Schema.define(version: 20150115213916) do
 
   create_table "developments", force: true do |t|
     t.integer  "operation_id"
+    t.string   "sam"
     t.string   "maquina"
     t.string   "calibre_aguja"
     t.string   "ppp"
     t.string   "margen_costura"
     t.string   "guia_accesorios"
     t.text     "observaciones"
+    t.string   "imagen"
     t.integer  "info_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.float    "sam"
   end
+
+  add_index "developments", ["info_id"], name: "index_developments_on_info_id"
+  add_index "developments", ["operation_id"], name: "index_developments_on_operation_id"
 
   create_table "ensambles", force: true do |t|
     t.integer  "operation_id"
-    t.float    "sam"
+    t.string   "sam"
     t.string   "maquina"
     t.string   "calibre_aguja"
     t.string   "ppp"
     t.string   "margen_costura"
     t.string   "guia_accesorios"
     t.text     "observaciones"
+    t.string   "imagen"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "ensambles", ["operation_id"], name: "index_ensambles_on_operation_id"
 
   create_table "fichas", force: true do |t|
     t.string   "referencia"
@@ -69,10 +76,6 @@ ActiveRecord::Schema.define(version: 20150115213916) do
     t.integer  "ficha_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
     t.string   "image"
   end
 
@@ -131,12 +134,12 @@ ActiveRecord::Schema.define(version: 20150115213916) do
 
   create_table "operations", force: true do |t|
     t.string   "nombre"
+    t.string   "sam"
     t.text     "descripcion"
     t.integer  "maquina_id"
     t.integer  "modulo_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.float    "sam"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -146,6 +149,9 @@ ActiveRecord::Schema.define(version: 20150115213916) do
     t.integer  "video_file_size"
     t.datetime "video_updated_at"
   end
+
+  add_index "operations", ["maquina_id"], name: "index_operations_on_maquina_id"
+  add_index "operations", ["modulo_id"], name: "index_operations_on_modulo_id"
 
   create_table "opers", force: true do |t|
     t.integer  "tipo_doc_id"
@@ -175,16 +181,19 @@ ActiveRecord::Schema.define(version: 20150115213916) do
 
   create_table "terminations", force: true do |t|
     t.integer  "operation_id"
-    t.float    "sam"
+    t.string   "sam"
     t.string   "maquina"
     t.string   "calibre_aguja"
     t.string   "ppp"
     t.string   "margen_costura"
     t.string   "guia_accesorios"
     t.text     "observaciones"
+    t.string   "imagen"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "terminations", ["operation_id"], name: "index_terminations_on_operation_id"
 
   create_table "tipo_docs", force: true do |t|
     t.string   "nombre"
