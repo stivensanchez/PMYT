@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :costs
+
+  resources :nivelations
+
   resources :terminations
 
   resources :ensambles
@@ -71,6 +75,14 @@ Rails.application.routes.draw do
   
   resources :infos do
     resources :developments
+  end
+  
+  resources :opers do
+    resources :nivelations
+  end
+  
+  resources :fichas do
+    resources :costs
   end
    
   # The priority is based upon order of creation: first created -> highest priority.

@@ -20,6 +20,7 @@
     <% @fichas.each do |ficha| %>
       <tr>
         <td><%= link_to ficha.referencia, ficha_infos_path(ficha), :class => 'btn btn-default btn-xs btn-lg active' %></td>
+        <td><%= link_to 'HOJA DE COSTOS', ficha_costs_path(ficha), :class => 'btn btn-default btn-xs btn-lg active' %></td>
         <td><%= ficha.nombre %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

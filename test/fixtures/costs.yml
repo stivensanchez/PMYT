@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  producto: MyString
+  lote: MyString
+  cant: MyString
+  und: MyString
+  detalle: MyString
+  vr_unit: MyString
+  vr_total: MyString
+  cant2: MyString
+  und2: MyString
+  detalle2: MyString
+  vr_unit2: MyString
+  vr_total2: MyString
+  t_costo_mat: MyString
+  t_costo_mano: MyString
+  cost_to_prod: MyString
+  cost_uni_prod: MyString
+  ficha_id: 
+
+two:
+  producto: MyString
+  lote: MyString
+  cant: MyString
+  und: MyString
+  detalle: MyString
+  vr_unit: MyString
+  vr_total: MyString
+  cant2: MyString
+  und2: MyString
+  detalle2: MyString
+  vr_unit2: MyString
+  vr_total2: MyString
+  t_costo_mat: MyString
+  t_costo_mano: MyString
+  cost_to_prod: MyString
+  cost_uni_prod: MyString
+  ficha_id: 

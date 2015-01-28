@@ -1,0 +1,51 @@
+<%- model_class = Cost -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:producto) %>:</strong></dt>
+  <dd><%= @cost.producto %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:lote) %>:</strong></dt>
+  <dd><%= @cost.lote %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:cant) %>:</strong></dt>
+  <dd><%= @cost.cant %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:und) %>:</strong></dt>
+  <dd><%= @cost.und %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:detalle) %>:</strong></dt>
+  <dd><%= @cost.detalle %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:vr_unit) %>:</strong></dt>
+  <dd><%= @cost.vr_unit %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:vr_total) %>:</strong></dt>
+  <dd><%= @cost.vr_total %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:cant2) %>:</strong></dt>
+  <dd><%= @cost.cant2 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:und2) %>:</strong></dt>
+  <dd><%= @cost.und2 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:detalle2) %>:</strong></dt>
+  <dd><%= @cost.detalle2 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:vr_unit2) %>:</strong></dt>
+  <dd><%= @cost.vr_unit2 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:vr_total2) %>:</strong></dt>
+  <dd><%= @cost.vr_total2 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:t_costo_mat) %>:</strong></dt>
+  <dd><%= @cost.t_costo_mat %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:t_costo_mano) %>:</strong></dt>
+  <dd><%= @cost.t_costo_mano %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:cost_to_prod) %>:</strong></dt>
+  <dd><%= @cost.cost_to_prod %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:cost_uni_prod) %>:</strong></dt>
+  <dd><%= @cost.cost_uni_prod %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:ficha_id) %>:</strong></dt>
+  <dd><%= @cost.ficha_id %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              costs_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_cost_path(@cost), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              cost_path(@cost),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

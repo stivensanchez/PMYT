@@ -42,7 +42,6 @@ gem 'spring',        group: :development
 gem 'simple_form'
 gem 'twitter-bootstrap-rails'
 gem 'less-rails'
-
+gem 'nested_form'
 gem 'carrierwave'
-#gem 'rmagick', '2.13.2', :git=>'http://github.com/rmagick/rmagick.git'
 

@@ -32,6 +32,7 @@
         <td><%= oper.correo %></td>
         <td><%= oper.telefono %></td>
         <td>
+          <%= link_to 'NIVELACION', oper_nivelations_path(oper), :class => 'btn btn-default btn-xs btn-lg active' %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_group_oper_path(@group,oper), :class => 'btn btn-default btn-xs btn-lg active' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),

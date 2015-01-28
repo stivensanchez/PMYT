@@ -1,0 +1,12 @@
+<%= simple_form_for @nivelation, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :oper_id %>
+  <%= error_span(@nivelation[:oper_id]) %>
+  <%= f.input :desempeño %>
+  <%= error_span(@nivelation[:desempeño]) %>
+  <%= f.input :comentario %>
+  <%= error_span(@nivelation[:comentario]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                nivelations_path, :class => 'btn btn-default' %>
+<% end %>

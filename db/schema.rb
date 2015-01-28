@@ -11,7 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150115213916) do
+ActiveRecord::Schema.define(version: 20150128220037) do
+
+  create_table "comentarios", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "costs", force: true do |t|
+    t.string   "producto"
+    t.string   "lote"
+    t.string   "cant"
+    t.string   "und"
+    t.string   "detalle"
+    t.string   "vr_unit"
+    t.string   "vr_total"
+    t.string   "cant2"
+    t.string   "und2"
+    t.string   "detalle2"
+    t.string   "vr_unit2"
+    t.string   "vr_total2"
+    t.string   "t_costo_mat"
+    t.string   "t_costo_mano"
+    t.string   "cost_to_prod"
+    t.string   "cost_uni_prod"
+    t.integer  "ficha_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "costs", ["ficha_id"], name: "index_costs_on_ficha_id"
 
   create_table "developments", force: true do |t|
     t.integer  "operation_id"
@@ -28,9 +57,6 @@ ActiveRecord::Schema.define(version: 20150115213916) do
     t.datetime "updated_at"
   end
 
-  add_index "developments", ["info_id"], name: "index_developments_on_info_id"
-  add_index "developments", ["operation_id"], name: "index_developments_on_operation_id"
-
   create_table "ensambles", force: true do |t|
     t.integer  "operation_id"
     t.string   "sam"
@@ -44,8 +70,6 @@ ActiveRecord::Schema.define(version: 20150115213916) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "ensambles", ["operation_id"], name: "index_ensambles_on_operation_id"
 
   create_table "fichas", force: true do |t|
     t.string   "referencia"
@@ -62,8 +86,6 @@ ActiveRecord::Schema.define(version: 20150115213916) do
     t.datetime "updated_at"
   end
 
-  add_index "groups", ["modulo_id"], name: "index_groups_on_modulo_id"
-
   create_table "infos", force: true do |t|
     t.string   "referencia"
     t.string   "talla"
@@ -79,9 +101,6 @@ ActiveRecord::Schema.define(version: 20150115213916) do
     t.string   "image"
   end
 
-  add_index "infos", ["ficha_id"], name: "index_infos_on_ficha_id"
-  add_index "infos", ["modulo_id"], name: "index_infos_on_modulo_id"
-
   create_table "instructors", force: true do |t|
     t.integer  "tipo_doc_id"
     t.string   "numero_doc"
@@ -94,9 +113,6 @@ ActiveRecord::Schema.define(version: 20150115213916) do
     t.datetime "updated_at"
   end
 
-  add_index "instructors", ["modulo_id"], name: "index_instructors_on_modulo_id"
-  add_index "instructors", ["tipo_doc_id"], name: "index_instructors_on_tipo_doc_id"
-
   create_table "maquinas", force: true do |t|
     t.string   "nombre"
     t.text     "descripcion"
@@ -104,8 +120,6 @@ ActiveRecord::Schema.define(version: 20150115213916) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "maquinas", ["modulo_id"], name: "index_maquinas_on_modulo_id"
 
   create_table "materials", force: true do |t|
     t.string   "nombre"
@@ -123,14 +137,22 @@ ActiveRecord::Schema.define(version: 20150115213916) do
     t.datetime "updated_at"
   end
 
-  add_index "measures", ["info_id"], name: "index_measures_on_info_id"
-
   create_table "modulos", force: true do |t|
     t.string   "nombre"
     t.text     "descripcion"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "nivelations", force: true do |t|
+    t.integer  "oper_id"
+    t.string   "desempeño"
+    t.string   "comentario"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "nivelations", ["oper_id"], name: "index_nivelations_on_oper_id"
 
   create_table "operations", force: true do |t|
     t.string   "nombre"
@@ -150,9 +172,6 @@ ActiveRecord::Schema.define(version: 20150115213916) do
     t.datetime "video_updated_at"
   end
 
-  add_index "operations", ["maquina_id"], name: "index_operations_on_maquina_id"
-  add_index "operations", ["modulo_id"], name: "index_operations_on_modulo_id"
-
   create_table "opers", force: true do |t|
     t.integer  "tipo_doc_id"
     t.string   "numero_documento"
@@ -165,9 +184,6 @@ ActiveRecord::Schema.define(version: 20150115213916) do
     t.datetime "updated_at"
   end
 
-  add_index "opers", ["group_id"], name: "index_opers_on_group_id"
-  add_index "opers", ["tipo_doc_id"], name: "index_opers_on_tipo_doc_id"
-
   create_table "prendas", force: true do |t|
     t.string   "nombre"
     t.string   "cantidad"
@@ -176,8 +192,6 @@ ActiveRecord::Schema.define(version: 20150115213916) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "prendas", ["info_id"], name: "index_prendas_on_info_id"
 
   create_table "terminations", force: true do |t|
     t.integer  "operation_id"
@@ -192,8 +206,6 @@ ActiveRecord::Schema.define(version: 20150115213916) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "terminations", ["operation_id"], name: "index_terminations_on_operation_id"
 
   create_table "tipo_docs", force: true do |t|
     t.string   "nombre"
