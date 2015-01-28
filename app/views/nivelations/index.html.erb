@@ -22,7 +22,6 @@
         <td><%= nivelation.comentario %></td>
         <td><%=l nivelation.created_at %></td>
         <td>
-          <%= link_to 'nivelacion', oper_nivelations_path(oper), :class => 'btn btn-default btn-xs btn-lg active' %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_nivelation_path(nivelation), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
