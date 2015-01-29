@@ -51,9 +51,9 @@
         <td><%=l cost.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_cost_path(cost), :class => 'btn btn-default btn-xs' %>
+                      edit_ficha_cost_path(@ficha,cost), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      cost_path(cost),
+                      ficha_cost_path(@ficha,cost),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-xs btn-danger' %>
@@ -64,5 +64,5 @@
 </table>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
-            new_cost_path,
+            new_ficha_cost_path(@ficha),
             :class => 'btn btn-primary' %>

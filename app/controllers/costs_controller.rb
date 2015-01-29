@@ -1,10 +1,10 @@
 class CostsController < ApplicationController
-  before_action :set_cost, only: [:show, :edit, :update, :destroy]
+  before_action :set_cost, only: [:show, :edit, :update, :destroy, :index, :new, :create]
 
   # GET /costs
   # GET /costs.json
   def index
-    @costs = Cost.all
+    @costs = @ficha.costs.all
   end
 
   # GET /costs/1
@@ -25,10 +25,10 @@ class CostsController < ApplicationController
   # POST /costs.json
   def create
     @cost = Cost.new(cost_params)
-
+    @cost.ficha_id = @ficha.id
     respond_to do |format|
       if @cost.save
-        format.html { redirect_to @cost, notice: 'Cost was successfully created.' }
+        format.html { redirect_to ficha_costs_path(@ficha), notice: 'Cost was successfully created.' }
         format.json { render :show, status: :created, location: @cost }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class CostsController < ApplicationController
   def update
     respond_to do |format|
       if @cost.update(cost_params)
-        format.html { redirect_to @cost, notice: 'Cost was successfully updated.' }
+        format.html { redirect_to ficha_costs_path(@ficha), notice: 'Cost was successfully updated.' }
         format.json { render :show, status: :ok, location: @cost }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class CostsController < ApplicationController
   def destroy
     @cost.destroy
     respond_to do |format|
-      format.html { redirect_to costs_url, notice: 'Cost was successfully destroyed.' }
+      format.html { redirect_to ficha_costs_url(@ficha), notice: 'Cost was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -64,7 +64,8 @@ class CostsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cost
-      @cost = Cost.find(params[:id])
+      @ficha = Ficha.find(params[:ficha_id])
+      @cost = Cost.find(params[:id]) if params[:id]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

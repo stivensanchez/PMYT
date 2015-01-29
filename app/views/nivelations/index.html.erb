@@ -17,15 +17,15 @@
     <% @nivelations.each do |nivelation| %>
       <tr>
         <td><%= link_to nivelation.id, nivelation_path(nivelation) %></td>
-        <td><%= nivelation.oper_id %></td>
+        <td><%= nivelation.oper.nombre %></td>
         <td><%= nivelation.desempeño %></td>
         <td><%= nivelation.comentario %></td>
         <td><%=l nivelation.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_nivelation_path(nivelation), :class => 'btn btn-default btn-xs' %>
+                      edit_oper_nivelation_path(@oper,nivelation), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      nivelation_path(nivelation),
+                      oper_nivelation_path(@oper,nivelation),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-xs btn-danger' %>
@@ -35,6 +35,6 @@
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_nivelation_path,
+<%= link_to t('.new Nivelation', :default => t("helpers.links.new")),
+            new_oper_nivelation_path(@oper),
             :class => 'btn btn-primary' %>

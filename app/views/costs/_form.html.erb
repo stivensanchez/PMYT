@@ -1,40 +1,74 @@
-<%= simple_form_for @cost, :html => { :class => 'form-horizontal' } do |f| %>
+<%= simple_form_for [@ficha,@cost], :html => { :class => 'form-horizontal' } do |f| %>
+  <div>
   <%= f.input :producto %>
   <%= error_span(@cost[:producto]) %>
+  </div>
+  <div>
   <%= f.input :lote %>
   <%= error_span(@cost[:lote]) %>
+  </div>
+  <div>
   <%= f.input :cant %>
   <%= error_span(@cost[:cant]) %>
+  </div>
+  <div>
   <%= f.input :und %>
   <%= error_span(@cost[:und]) %>
+  </div>
+  <div>
   <%= f.input :detalle %>
   <%= error_span(@cost[:detalle]) %>
+  </div>
+  <div>
   <%= f.input :vr_unit %>
   <%= error_span(@cost[:vr_unit]) %>
+  </div>
+  <div>
   <%= f.input :vr_total %>
   <%= error_span(@cost[:vr_total]) %>
+  </div>
+  <div>
   <%= f.input :cant2 %>
   <%= error_span(@cost[:cant2]) %>
+  </div>
+  <div>
   <%= f.input :und2 %>
   <%= error_span(@cost[:und2]) %>
+  </div>
+  <div>
   <%= f.input :detalle2 %>
   <%= error_span(@cost[:detalle2]) %>
+  </div>
+  <div>
   <%= f.input :vr_unit2 %>
   <%= error_span(@cost[:vr_unit2]) %>
+  </div>
+  <div>
   <%= f.input :vr_total2 %>
   <%= error_span(@cost[:vr_total2]) %>
+  </div>
+  <div>
   <%= f.input :t_costo_mat %>
   <%= error_span(@cost[:t_costo_mat]) %>
+  </div>
+  <div>
   <%= f.input :t_costo_mano %>
   <%= error_span(@cost[:t_costo_mano]) %>
+  </div>
+  <div>
   <%= f.input :cost_to_prod %>
   <%= error_span(@cost[:cost_to_prod]) %>
+  </div>
+  <div>
   <%= f.input :cost_uni_prod %>
   <%= error_span(@cost[:cost_uni_prod]) %>
+  </div>
+  <div>
   <%= f.input :ficha_id %>
   <%= error_span(@cost[:ficha_id]) %>
+  </div>
 
   <%= f.button :submit, :class => 'btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                costs_path, :class => 'btn btn-default' %>
+                ficha_costs_path(@ficha), :class => 'btn btn-default' %>
 <% end %>
