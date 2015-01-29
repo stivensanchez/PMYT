@@ -2,10 +2,12 @@
 
 one:
   oper_id: 
+  operation_id: 
   desempeño: MyString
-  comentario: MyString
+  comentario: MyText
 
 two:
   oper_id: 
+  operation_id: 
   desempeño: MyString
-  comentario: MyString
+  comentario: MyText

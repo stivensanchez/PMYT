@@ -101,7 +101,11 @@
 .letraa{
   margin: -5px 0px 0px 0px;
 }
-.list-group-item{
+.fondo{
+  border: solid 1px;
+  border-color: black;
+  border-radius: 5px;
+  background-color: ghostwhite;
   padding: 30px;
 }
 
@@ -138,4 +142,12 @@
 
 .cant{
   margin:1px 0px 0px 0px;
+}
+
+.undd{
+  border:solid 1px;
+  border-color: grey;
+  width: 156px;
+  height: 24px;
+  margin: -48px 0px 0px 155px;
 }

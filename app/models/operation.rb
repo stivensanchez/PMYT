@@ -11,5 +11,5 @@ class Operation < ActiveRecord::Base
   has_many :developments
   belongs_to :maquina
   belongs_to :modulo
-  belongs_to :nivelation
+  has_many :nivelations
 end

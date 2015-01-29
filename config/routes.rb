@@ -84,6 +84,11 @@ Rails.application.routes.draw do
   resources :fichas do
     resources :costs
   end
+  
+  resources :operations do
+    resources :nivelations
+  end
+    
    
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

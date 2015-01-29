@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150128220037) do
+ActiveRecord::Schema.define(version: 20150129204902) do
 
   create_table "comentarios", force: true do |t|
     t.datetime "created_at"
@@ -146,13 +146,15 @@ ActiveRecord::Schema.define(version: 20150128220037) do
 
   create_table "nivelations", force: true do |t|
     t.integer  "oper_id"
+    t.integer  "operation_id"
     t.string   "desempeño"
-    t.string   "comentario"
+    t.text     "comentario"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "nivelations", ["oper_id"], name: "index_nivelations_on_oper_id"
+  add_index "nivelations", ["operation_id"], name: "index_nivelations_on_operation_id"
 
   create_table "operations", force: true do |t|
     t.string   "nombre"
