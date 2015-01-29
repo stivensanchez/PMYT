@@ -1,14 +1,21 @@
-<%= simple_form_for @nivelation, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :oper_id %>
-  <%= error_span(@nivelation[:oper_id]) %>
-  <%= f.input :operation_id %>
-  <%= error_span(@nivelation[:operation_id]) %>
-  <%= f.input :desempeño %>
-  <%= error_span(@nivelation[:desempeño]) %>
-  <%= f.input :comentario %>
-  <%= error_span(@nivelation[:comentario]) %>
+<%= simple_form_for [@oper,@nivelation], :html => { :class => 'form-horizontal' } do |f| %>
+ 
+  <div class="form-group">
+  <%= f.label :operacion %>
+  <%= f.text_field :operation_id, class: "form-control",   placeholder: "Ingrese operacion" %>
+</div>
 
-  <%= f.button :submit, :class => 'btn-primary' %>
-  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                nivelations_path, :class => 'btn btn-default' %>
+<div class="form-group">
+  <%= f.label :desempeño %>
+  <%= f.text_field :desempeño, class: "form-control", placeholder: "Ingrese desempeño /100" %>
+  </div>
+  
+  <div class="form-group">
+  <%= f.label :comentario %>
+  <%= f.text_field :comentario, class: "form-control", placeholder: "Ingrese comentario" %>
+  </div>
+
+  <%= f.button :submit, 'Crear nivelación', :class => 'btn-primary' %>
+  <%= link_to 'Cancelar', 
+                oper_nivelations_path(@oper), :class => 'btn btn-default' %>
 <% end %>

@@ -1,10 +1,10 @@
 class NivelationsController < ApplicationController
-  before_action :set_nivelation, only: [:show, :edit, :update, :destroy]
+  before_action :set_nivelation, only: [:show, :edit, :update, :destroy, :index, :new, :create]
 
   # GET /nivelations
   # GET /nivelations.json
   def index
-    @nivelations = @oper.nivelation.all
+    @nivelations = @oper.nivelations.all
   end
 
   # GET /nivelations/1
@@ -25,10 +25,10 @@ class NivelationsController < ApplicationController
   # POST /nivelations.json
   def create
     @nivelation = Nivelation.new(nivelation_params)
-
+    @nivelation.oper_id = @oper.id
     respond_to do |format|
       if @nivelation.save
-        format.html { redirect_to @nivelation, notice: 'Nivelation was successfully created.' }
+        format.html { redirect_to  oper_nivelations_path(@oper), notice: 'Nivelation was successfully created.' }
         format.json { render :show, status: :created, location: @nivelation }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class NivelationsController < ApplicationController
   def update
     respond_to do |format|
       if @nivelation.update(nivelation_params)
-        format.html { redirect_to @nivelation, notice: 'Nivelation was successfully updated.' }
+        format.html { redirect_to oper_nivelations_path(@oper), notice: 'Nivelation was successfully updated.' }
         format.json { render :show, status: :ok, location: @nivelation }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class NivelationsController < ApplicationController
   def destroy
     @nivelation.destroy
     respond_to do |format|
-      format.html { redirect_to nivelations_url, notice: 'Nivelation was successfully destroyed.' }
+      format.html { redirect_to oper_nivelations_url(@oper), notice: 'Nivelation was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -64,7 +64,8 @@ class NivelationsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_nivelation
-      @nivelation = Nivelation.find(params[:id])
+      @oper = Oper.find(params[:oper_id])
+      @nivelation = Nivelation.find(params[:id]) if params[:id]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

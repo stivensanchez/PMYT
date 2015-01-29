@@ -20,8 +20,15 @@
    <%= f.label :CANT, :class => 'letraa' %>
    :
   </div>
+  
+  <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><center><b>Costeo de Materiales</b></center></h3>
+        </div>
+  </div>  
+  
   <div class="cant">
-   <%= f.text_field :cant %>
+   <%= f.text_field :cant, :class => 'tamaño' %>
   </div>
   
   <div class="undd">
@@ -29,21 +36,40 @@
    :
   </div>
   <div class="und">
-   <%= f.text_field :und %>
+   <%= f.text_field :und, :class => 'tamaño' %>
   </div>
   
+  <div class="detallee">
+   <%= f.label :DETALLE %>  
+   :
+  </div>
   <div class="detalle">
-  <%= f.label :DETALLE %>  
-  <%= f.text_field :detalle %>
+  <%= f.text_field :detalle, :class => 'tamaño2' %>
+  </div>
+  
+  <div class="vr_unitt">
+   <%= f.label :VR_UNIT %>
+   :
   </div>
   <div class="vr_unit">
-  <%= f.label :VR_UNIT %>
-  <%= f.text_field :vr_unit %>
+  <%= f.text_field :vr_unit, :class => 'tamaño' %>
+  </div>
+  
+  <div class="vr_totall">
+   <%= f.label :VR_TOTAL %> 
+   :
   </div>
   <div class="vr_total">
-  <%= f.label :VR_TOTAL %>  
-  <%= f.text_field :vr_total %>
+   <%= f.text_field :vr_total, :class => 'tamaño' %>
   </div>
+  
+  <div class="t_costo_matt">
+   <%= f.label :TOTAL_COSTO_DE_MATERIALES %>  
+  </div>
+  <div class="t_costo_mat">
+   <%= f.text_field :t_costo_mat %>
+  </div>
+    
   <div class="cant2">
   <%= f.label :CANT %>  
   <%= f.text_field :cant2 %>
@@ -63,10 +89,6 @@
   <div class="vr_total2">
   <%= f.label :VR_TOTAL %>  
   <%= f.text_field :vr_total2 %>
-  </div>
-  <div class="t_costo_mat">
-  <%= f.label :TOTAL_COSTO_DE_MATERIALES %>  
-  <%= f.text_field :t_costo_mat %>
   </div>
   <div class="t_costo_mano">
   <%= f.label :TOTAL_COSTO_DE_MANO_DE_OBRA %> 

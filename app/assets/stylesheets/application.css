@@ -135,19 +135,98 @@
 .cantt{
   border:solid 1px;
   border-color: grey;
-  width: 156px;
+  width: 100px;
   height: 24px;
   margin: 1px 0px 0px 0px;
 }
 
 .cant{
-  margin:1px 0px 0px 0px;
+  margin:-18px 0px 0px 0px;
+}
+
+.tamaño{
+  width: 100px;
+}
+.tamaño2{
+  width: 258px;
 }
 
 .undd{
   border:solid 1px;
   border-color: grey;
-  width: 156px;
+  width: 100px;
   height: 24px;
-  margin: -48px 0px 0px 155px;
+  margin: -90px 0px 0px 100px;
+}
+
+.und{
+  margin: 42px 0px 0px 100px;
+}
+
+.detallee{
+  border:solid 1px;
+  border-color: grey;
+  width: 258px;
+  height: 24px;
+  margin: -90px 0px 0px 200px;
+}
+
+.detalle{
+  margin: 42px 0px 0px 200px;
+}
+
+.vr_unitt{
+  border:solid 1px;
+  border-color: grey;
+  width: 100px;
+  height: 24px;
+  margin: -90px 0px 0px 456px;
+}
+
+.vr_unit{
+  margin: 42px 0px 0px 456px;
+}
+
+.vr_totall{
+  border:solid 1px;
+  border-color: grey;
+  width: 100px;
+  height: 24px;
+  margin: -90px 0px 0px 556px;
+}
+
+.vr_total{
+  margin: 42px 0px 0px 556px;
+}
+
+.t_costo_matt{
+  border:solid 1px;
+  border-color: grey;
+  width: 200px;
+  height: 24px;
+  margin: 1px 0px 0px 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:1000px){
+  .fondo{
+    padding: 30px;
+  }
+}
+
+@media screen and (min-width:1000px){
+   .fondo{
+      padding: 5% 15% 5% 15%;
+   }
 }
