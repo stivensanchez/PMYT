@@ -33,9 +33,9 @@
         <td><%= link_to 'Grupos(' + modulo.groups.count.to_s+ ')',
               modulo_groups_path(modulo),:class => 'btn btn-default btn-xs btn-lg active' %>
         <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+          <%= link_to 'Editar', 
                       edit_modulo_path(modulo), :class => 'btn btn-default btn-xs btn-lg active' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+          <%= link_to 'Eliminar', 
                       modulo_path(modulo),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },

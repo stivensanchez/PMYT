@@ -1,11 +1,10 @@
 <%- model_class = Cost -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <h1><center>Hoja de <small>Costos</small></center></h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:producto) %></th>
       <th><%= model_class.human_attribute_name(:lote) %></th>
       <th><%= model_class.human_attribute_name(:cant) %></th>
@@ -22,15 +21,12 @@
       <th><%= model_class.human_attribute_name(:t_costo_mano) %></th>
       <th><%= model_class.human_attribute_name(:cost_to_prod) %></th>
       <th><%= model_class.human_attribute_name(:cost_uni_prod) %></th>
-      <th><%= model_class.human_attribute_name(:ficha_id) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @costs.each do |cost| %>
       <tr>
-        <td><%= link_to cost.id, cost_path(cost) %></td>
         <td><%= cost.producto %></td>
         <td><%= cost.lote %></td>
         <td><%= cost.cant %></td>
@@ -47,8 +43,6 @@
         <td><%= cost.t_costo_mano %></td>
         <td><%= cost.cost_to_prod %></td>
         <td><%= cost.cost_uni_prod %></td>
-        <td><%= cost.ficha_id %></td>
-        <td><%=l cost.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_ficha_cost_path(@ficha,cost), :class => 'btn btn-default btn-xs' %>

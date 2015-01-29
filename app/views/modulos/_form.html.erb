@@ -7,7 +7,7 @@
   <%= f.label :Descripcion%>
   <%= f.text_area :descripcion, class: "form-control",         placeholder: "Ingrese uns descripcion" %>
 </div>
-  <%= f.button :submit, :class => 'btn-primary' %>
-  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+  <%= f.button :submit,'Crear Modulo', :class => 'btn-primary' %>
+  <%= link_to 'Cancelar', 
                 modulos_path, :class => 'btn btn-default' %>
 <% end %>

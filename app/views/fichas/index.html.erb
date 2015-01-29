@@ -1,6 +1,6 @@
 <%- model_class = Ficha -%>
-<div class="page-header">
-    <h1><center>Fichas Tecnicas</center></h1>
+<div class="well">
+    <h1><center>Fichas <small>Tecnicas</small></center></h1>
 </div>
 <div class="well">
     <%= link_to 'Nueva Ficha',
@@ -13,19 +13,20 @@
     <tr>
       <th><%= model_class.human_attribute_name(:referencia) %></th>
       <th><%= model_class.human_attribute_name(:nombre) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th><%= model_class.human_attribute_name(:hoja_de_costos) %></th>
+      <th><%= model_class.human_attribute_name(:acciones) %></th>
     </tr>
   </thead>
   <tbody>
     <% @fichas.each do |ficha| %>
       <tr>
         <td><%= link_to ficha.referencia, ficha_infos_path(ficha), :class => 'btn btn-default btn-xs btn-lg active' %></td>
-        <td><%= link_to 'HOJA DE COSTOS', ficha_costs_path(ficha), :class => 'btn btn-default btn-xs btn-lg active' %></td>
         <td><%= ficha.nombre %></td>
+        <td><%= link_to 'HOJA DE COSTOS', ficha_costs_path(ficha), :class => 'btn btn-default btn-xs btn-lg active' %></td>
         <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+          <%= link_to 'Editar',
                       edit_ficha_path(ficha), :class => 'btn btn-default btn-xs btn-lg active' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+          <%= link_to 'Elimnar',
                       ficha_path(ficha),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },

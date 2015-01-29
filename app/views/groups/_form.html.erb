@@ -8,7 +8,7 @@
   <%= f.text_field :num_ficha, class: "form-control",         placeholder: "Ingrese el numero de ficha" %>
 </div>  
 
-  <%= f.button :submit, :class => 'btn-primary' %>
-  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+  <%= f.button :submit, 'Crear grupo', :class => 'btn-primary' %>
+  <%= link_to 'Cancelar', 
   modulo_groups_path(), :class => 'btn btn-default' %>
 <% end %>

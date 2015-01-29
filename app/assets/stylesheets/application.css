@@ -95,4 +95,47 @@
    }
 }
 
+.letra{
+  margin: -5px 0px 0px 150px;
+}
+.letraa{
+  margin: -5px 0px 0px 0px;
+}
+.list-group-item{
+  padding: 30px;
+}
 
+.productoo{
+  border: solid 1px;
+  border-color: grey;
+  width: 200px;
+  height: 24px;
+}
+
+.producto{
+  margin: -24px 0px 0px 200px;
+}
+
+.lotee{
+  border:solid 1px;
+  border-color: grey;
+  width: 200px;
+  height: 24px;
+  margin: -24px 0px 0px 300px;
+}
+
+.lote{
+  margin: -24px 0px 0px 500px;
+}
+
+.cantt{
+  border:solid 1px;
+  border-color: grey;
+  width: 156px;
+  height: 24px;
+  margin: 1px 0px 0px 0px;
+}
+
+.cant{
+  margin:1px 0px 0px 0px;
+}
