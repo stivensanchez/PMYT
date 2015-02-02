@@ -1,10 +1,10 @@
 class EnsamblesController < ApplicationController
-  before_action :set_ensamble, only: [:show, :edit, :update, :destroy]
+  before_action :set_ensamble, only: [:show, :edit, :update, :destroy, :index, :new, :create]
 
   # GET /ensambles
   # GET /ensambles.json
   def index
-    @ensambles = Ensamble.all
+    @ensambles = @info.ensambles.all
   end
 
   # GET /ensambles/1
@@ -25,10 +25,10 @@ class EnsamblesController < ApplicationController
   # POST /ensambles.json
   def create
     @ensamble = Ensamble.new(ensamble_params)
-
+    @ensamble.info_id = @info.id
     respond_to do |format|
       if @ensamble.save
-        format.html { redirect_to '/infos/1/developments', notice: 'Ensamble was successfully created.' }
+        format.html { redirect_to info_developments_path(@info), notice: 'Ensamble was successfully created.' }
         format.json { render :show, status: :created, location: @ensamble }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class EnsamblesController < ApplicationController
   def update
     respond_to do |format|
       if @ensamble.update(ensamble_params)
-        format.html { redirect_to @ensamble, notice: 'Ensamble was successfully updated.' }
+        format.html { redirect_to info_developments_path(@info), notice: 'Ensamble was successfully updated.' }
         format.json { render :show, status: :ok, location: @ensamble }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class EnsamblesController < ApplicationController
   def destroy
     @ensamble.destroy
     respond_to do |format|
-      format.html { redirect_to '/infos/1/developments', notice: 'Ensamble was successfully destroyed.' }
+      format.html { redirect_to info_developments_url(@info), notice: 'Ensamble was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -64,11 +64,12 @@ class EnsamblesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_ensamble
-      @ensamble = Ensamble.find(params[:id]) if params[:id]
+      @info = Info.find(params[:info_id])
+      @ensamble = Ensamble.find(params[:id]) if params[:id] if params[:id]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ensamble_params
-      params.require(:ensamble).permit(:operation_id, :sam, :maquina, :calibre_aguja, :ppp, :margen_costura, :guia_accesorios, :observaciones, :imagen)
+      params.require(:ensamble).permit(:operation_id, :sam, :maquina, :calibre_aguja, :ppp, :margen_costura, :guia_accesorios, :observaciones, :imagen, :info_id)
     end
 end

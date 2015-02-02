@@ -18,8 +18,7 @@
       <th><%= model_class.human_attribute_name(:Operaciones) %></th>
       <th><%= model_class.human_attribute_name(:Instructores) %></th>
       <th><%= model_class.human_attribute_name(:Grupos) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
-    </tr>
+       <th><%= model_class.human_attribute_name(:Acciones) %></th>
   </thead>
   <tbody>
     <% @modulos.each do |modulo| %>

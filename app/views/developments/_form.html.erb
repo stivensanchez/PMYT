@@ -7,7 +7,7 @@
 
 <div class="form-group">
   <%= f.label :Sam %>
-  <%= f.text_field :sam, class: "form-control"%>
+  <%= f.text_field :sam, class: "form-control",  prompt: "Escriba sam"%>
 </div>
 <div class="form-group">
   <%= f.label :Maquina %>
@@ -38,7 +38,7 @@
   <%= f.text_field :imagen, class: "form-control"%>
 </div>  
 
-  <%= f.button :submit, :class => 'btn-primary' %>
-  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+  <%= f.button :submit, 'Crear Operación', :class => 'btn-primary' %>
+  <%= link_to 'Cancelar', 
                 info_developments_path(@info), :class => 'btn btn-default' %>
 <% end %>

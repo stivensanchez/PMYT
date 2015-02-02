@@ -1,6 +1,6 @@
 <%- model_class = TipoDoc -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+<div class="well">
+  <h1><center>Tipo <small>Documento</small></center></h1>
 </div>
 <table class="table table-striped">
   <thead>
@@ -9,7 +9,7 @@
       <th><%= model_class.human_attribute_name(:nombre) %></th>
       <th><%= model_class.human_attribute_name(:descripcion) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+       <th><%= model_class.human_attribute_name(:Acciones) %></th>
     </tr>
   </thead>
   <tbody>
@@ -20,9 +20,9 @@
         <td><%= tipo_doc.descripcion %></td>
         <td><%=l tipo_doc.created_at %></td>
         <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+          <%= link_to 'Editar', 
                       edit_tipo_doc_path(tipo_doc), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+          <%= link_to 'Eliminar', 
                       tipo_doc_path(tipo_doc),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },

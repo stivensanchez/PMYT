@@ -12,7 +12,7 @@
   <%= f.text_field :observaciones, class: "form-control",         placeholder: "Ingrese una observacion" %>
 </div>  
 
-  <%= f.button :submit, :class => 'btn-primary' %>
-  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+  <%= f.button :submit, 'Crear Piezas', :class => 'btn-primary' %>
+  <%= link_to 'Cancelar', 
                 info_prendas_path(@info), :class => 'btn btn-default' %>
 <% end %>

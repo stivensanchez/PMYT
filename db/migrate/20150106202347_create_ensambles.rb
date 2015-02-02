@@ -10,6 +10,7 @@ class CreateEnsambles < ActiveRecord::Migration
       t.string :guia_accesorios
       t.text :observaciones
       t.string :imagen
+      t.references :info, index: true
 
       t.timestamps
     end

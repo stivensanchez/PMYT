@@ -1,6 +1,6 @@
 <%- model_class = TipoDoc -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+<div class="well">
+  <h1><center>Tipo <small>Documento</small></center></h1>
 </div>
 
 <dl class="dl-horizontal">
@@ -10,5 +10,5 @@
   <dd><%= @tipo_doc.descripcion %></dd>
 </dl>
 
-<%= link_to t('.back', :default => t("helpers.links.back")),
+<%= link_to 'Atras', 
               tipo_docs_path, :class => 'btn btn-default'  %>

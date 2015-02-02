@@ -1,6 +1,6 @@
 <%- model_class = Development -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+<div class="well">
+  <h1><center>Operación Agregada</center></h1>
 </div>
 
 <dl class="dl-horizontal">
@@ -22,6 +22,6 @@
   <dd><%= @development.info_id %></dd>
 </dl>
 
-<%= link_to t('.back', :default => t("helpers.links.back")),
+<%= link_to 'atras', 
   development_path(development), :class => 'btn btn-default'  %>
 

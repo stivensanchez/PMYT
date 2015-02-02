@@ -1,35 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :costs
-
-  resources :nivelations
-
-  resources :terminations
-
-  resources :ensambles
-
-  resources :materials
-
-  resources :developments
-
-  resources :prendas
-
-  resources :measures
-
-  resources :infos
-
-  resources :fichas
-
-  resources :opers
-
-  resources :instructors
-
-  resources :groups
-
-  resources :maquinas
-
-  resources :modulos 
-
   resources :tipo_docs
   
   resources :modulos do
@@ -70,11 +40,24 @@ Rails.application.routes.draw do
   end
   
   resources :infos do
+    resources :materials
+  end
+  
+  
+  resources :infos do
     resources :prendas
   end
   
   resources :infos do
     resources :developments
+  end
+  
+  resources :infos do
+    resources :ensambles 
+  end
+  
+  resources :infos do
+    resources :terminations
   end
   
   resources :opers do
