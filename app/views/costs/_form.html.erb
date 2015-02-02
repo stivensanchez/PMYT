@@ -67,13 +67,23 @@
    <%= f.label :TOTAL_COSTO_DE_MATERIALES %>  
   </div>
   <div class="t_costo_mat">
-   <%= f.text_field :t_costo_mat %>
+   <%= f.text_field :t_costo_mat, :class => 'tamaño' %>
   </div>
+  
+  <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><center><b>Costeo de Mano de Obra</b></center></h3>
+        </div>
+  </div> 
     
-  <div class="cant2">
-  <%= f.label :CANT %>  
-  <%= f.text_field :cant2 %>
+  <div class="cantt2">
+   <%= f.label :CANT %>
+   :
   </div>
+  <div class="cant2">
+   <%= f.text_field :cant2 %>
+  </div>
+  
   <div class="und2">
   <%= f.label :UND %>  
   <%= f.text_field :und2 %>

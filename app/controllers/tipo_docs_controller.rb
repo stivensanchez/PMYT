@@ -28,7 +28,7 @@ class TipoDocsController < ApplicationController
 
     respond_to do |format|
       if @tipo_doc.save
-        format.html { redirect_to @tipo_doc, notice: 'Tipo doc was successfully created.' }
+        format.html { redirect_to tipo_docs_path, notice: 'Tipo doc was successfully created.' }
         format.json { render :show, status: :created, location: @tipo_doc }
       else
         format.html { render :new }

@@ -28,7 +28,7 @@ class FichasController < ApplicationController
 
     respond_to do |format|
       if @ficha.save
-        format.html { redirect_to @ficha, notice: 'Ficha was successfully created.' }
+        format.html { redirect_to fichas_path, notice: 'Ficha was successfully created.' }
         format.json { render :show, status: :created, location: @ficha }
       else
         format.html { render :new }

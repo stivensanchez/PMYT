@@ -26,7 +26,6 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
     @group.modulo_id = @modulo.id
-
     respond_to do |format|
       if @group.save
         format.html { redirect_to modulo_groups_path(@modulo), notice: 'Group was successfully created.' }

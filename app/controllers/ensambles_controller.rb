@@ -28,7 +28,7 @@ class EnsamblesController < ApplicationController
 
     respond_to do |format|
       if @ensamble.save
-        format.html { redirect_to @ensamble, notice: 'Ensamble was successfully created.' }
+        format.html { redirect_to '/infos/1/developments', notice: 'Ensamble was successfully created.' }
         format.json { render :show, status: :created, location: @ensamble }
       else
         format.html { render :new }
@@ -56,7 +56,7 @@ class EnsamblesController < ApplicationController
   def destroy
     @ensamble.destroy
     respond_to do |format|
-      format.html { redirect_to ensambles_url, notice: 'Ensamble was successfully destroyed.' }
+      format.html { redirect_to '/infos/1/developments', notice: 'Ensamble was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -64,7 +64,7 @@ class EnsamblesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_ensamble
-      @ensamble = Ensamble.find(params[:id])
+      @ensamble = Ensamble.find(params[:id]) if params[:id]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

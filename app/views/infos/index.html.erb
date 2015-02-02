@@ -2,7 +2,7 @@
 <%- model_class = Info -%>
 <div class="page-header">
     <div class="well">
-        <%= link_to t('.Nuevo', :default => t("helpers.links.new")),
+        <%= link_to 'Nuevo', 
             new_ficha_info_path(@ficha),
             :class => 'btn btn-primary btn-lg active' %>
 </div>
@@ -121,10 +121,10 @@
        <br>
       <div class="nueve">
         <% @infos.each do |info| %>  
-            <%= link_to t('.edit', :default => t("helpers.links.edit")),
+            <%= link_to 'Editar', 
                       edit_ficha_info_path(@ficha,info), :class => 'btn btn-default btn-xs btn-lg active' %>
-            <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      ficha_info_path(@ficha,info),
+            <%= link_to 'Eliminar', 
+            ficha_info_path(@ficha,info),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-xs btn-danger btn-lg active' %>

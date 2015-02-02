@@ -33,7 +33,7 @@
 <div class="form-group">
   <%= f.file_field :image %>
 </div>  
-  <%= f.button :submit, :class => 'btn-primary' %>
-  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+  <%= f.button :submit, 'crear ficha', :class => 'btn-primary' %>
+  <%= link_to 'cancelar', 
   ficha_infos_path(@ficha), :class => 'btn btn-default' %>
 <% end %>

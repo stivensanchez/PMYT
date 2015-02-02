@@ -42,7 +42,7 @@ class DevelopmentsController < ApplicationController
   def update
     respond_to do |format|
       if @development.update(development_params)
-        format.html { redirect_to info_developmets_path(@info), notice: 'Development was successfully updated.' }
+        format.html { redirect_to info_developments_path(@info), notice: 'Development was successfully updated.' }
         format.json { render :show, status: :ok, location: @development }
       else
         format.html { render :edit }

@@ -8,7 +8,7 @@
   <%= f.text_field :tolerancia, class: "form-control",         placeholder: "Ingrese la tolerancia" %>
 </div>
   
-  <%= f.button :submit, :class => 'btn-primary' %>
-  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+  <%= f.button :submit, 'Crear medidas', :class => 'btn-primary' %>
+  <%= link_to 'Cancelar', 
                 info_measures_path(@info), :class => 'btn btn-default' %>
 <% end %>

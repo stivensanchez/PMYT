@@ -28,7 +28,7 @@ class TerminationsController < ApplicationController
 
     respond_to do |format|
       if @termination.save
-        format.html { redirect_to @termination, notice: 'Termination was successfully created.' }
+        format.html { redirect_to '/infos/1/developments', notice: 'Termination was successfully created.' }
         format.json { render :show, status: :created, location: @termination }
       else
         format.html { render :new }
@@ -56,7 +56,7 @@ class TerminationsController < ApplicationController
   def destroy
     @termination.destroy
     respond_to do |format|
-      format.html { redirect_to terminations_url, notice: 'Termination was successfully destroyed.' }
+      format.html { redirect_to '/infos/1/developments', notice: 'Termination was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

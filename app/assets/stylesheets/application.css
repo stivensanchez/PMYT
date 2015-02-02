@@ -202,13 +202,26 @@
 .t_costo_matt{
   border:solid 1px;
   border-color: grey;
-  width: 200px;
+  width: 556px;
   height: 24px;
   margin: 1px 0px 0px 0px;
 }
 
+.t_costo_mat{
+  margin: -24px 0px 0px 556px;
+}
 
+.cantt2{
+  border:solid 1px;
+  border-color: grey;
+  width: 100px;
+  height: 24px;
+  margin: -18px 0px 0px 0px;
+}
 
+.cant2{
+  margin: -24px 0px 0px 100px;
+}
 
 
 
