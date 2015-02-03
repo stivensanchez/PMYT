@@ -10,6 +10,7 @@ class FichasController < ApplicationController
   # GET /fichas/1
   # GET /fichas/1.json
   def show
+    redirect_to fichas_path
   end
 
   # GET /fichas/new

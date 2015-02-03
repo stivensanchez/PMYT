@@ -1,10 +1,10 @@
 class TerminationsController < ApplicationController
-  before_action :set_termination, only: [:show, :edit, :update, :destroy]
+  before_action :set_termination, only: [:show, :edit, :update, :destroy, :index, :new, :create]
 
   # GET /terminations
   # GET /terminations.json
   def index
-    @terminations = Termination.all
+    @terminations = @info.terminations.all
   end
 
   # GET /terminations/1
@@ -25,10 +25,10 @@ class TerminationsController < ApplicationController
   # POST /terminations.json
   def create
     @termination = Termination.new(termination_params)
-
+    @termination.info_id = @info.id
     respond_to do |format|
       if @termination.save
-        format.html { redirect_to '/infos/1/developments', notice: 'Termination was successfully created.' }
+        format.html { redirect_to info_developments_path(@info), notice: 'Termination was successfully created.' }
         format.json { render :show, status: :created, location: @termination }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class TerminationsController < ApplicationController
   def update
     respond_to do |format|
       if @termination.update(termination_params)
-        format.html { redirect_to @termination, notice: 'Termination was successfully updated.' }
+        format.html { redirect_to info_developments_path(@info), notice: 'Termination was successfully updated.' }
         format.json { render :show, status: :ok, location: @termination }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class TerminationsController < ApplicationController
   def destroy
     @termination.destroy
     respond_to do |format|
-      format.html { redirect_to '/infos/1/developments', notice: 'Termination was successfully destroyed.' }
+      format.html { redirect_to info_developments_url(@info), notice: 'Termination was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -64,11 +64,12 @@ class TerminationsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_termination
-      @termination = Termination.find(params[:id])
+      @info = Info.find(params[:info_id])
+      @termination = Termination.find(params[:id]) if params[:id]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def termination_params
-      params.require(:termination).permit(:operation_id, :sam, :maquina, :calibre_aguja, :ppp, :margen_costura, :guia_accesorios, :observaciones, :imagen)
+      params.require(:termination).permit(:operation_id, :sam, :maquina, :calibre_aguja, :ppp, :margen_costura, :guia_accesorios, :observaciones, :imagen, :info_id)
     end
 end

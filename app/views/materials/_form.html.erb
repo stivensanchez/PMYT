@@ -1,11 +1,11 @@
 <%= simple_form_for [@ficha,@info,@material], :html => { :class => 'form-group' } do |f| %>
 <div class="form-group">
   <%= f.label :Nombre_Insumo %>
-  <%= f.text_field :nombre, class: "form-control",         placeholder: "Ingrese el nombre del consumo" %>
+  <%= f.text_field :nombre, class: "form-control", placeholder: "Ingrese el nombre del consumo" %>
 </div>
 <div class="form-group">
   <%= f.label :Cantidad_Consumo %>
-  <%= f.text_field :cantidad, class: "form-control",         placeholder: "Ingrese la cantidad de consumo" %>
+  <%= f.text_field :cantidad, class: "form-control", placeholder: "Ingrese la cantidad de consumo" %>
 </div>
 <div class="form-group">
   <%= f.label :Observaciones %>
@@ -13,5 +13,5 @@
 </div>
   <%= f.button :submit,  'Crear materiales', :class => 'btn-primary' %>
   <%= link_to 'Cancelar', 
-                info_materials_path(@info), :class => 'btn btn-default' %>
+                info_measures_path(@info), :class => 'btn btn-default' %>
 <% end %>

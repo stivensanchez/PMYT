@@ -10,7 +10,7 @@
 <table class="table table-bordered table-striped table-hover table-condensed">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
+      
       <th><%= model_class.human_attribute_name(:operation_id) %></th>
       <th><%= model_class.human_attribute_name(:sam) %></th>
       <th><%= model_class.human_attribute_name(:maquina) %></th>
@@ -26,7 +26,7 @@
   <tbody>
     <% @developments.each do |development| %>
       <tr>
-        <td><%= link_to development.id, development_path(development) %></td>
+        
         <td><%= development.operation.nombre %></td>
         <td><%= development.sam %></td>
         <td><%= development.maquina %></td>

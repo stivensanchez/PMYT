@@ -1,6 +1,6 @@
 <%- model_class = Modulo -%>
-<div class="well">
-  <h1><center>Modulo</center></h1>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
 <dl class="dl-horizontal">
@@ -10,6 +10,5 @@
   <dd><%= @modulo.descripcion %></dd>
 </dl>
 
-<%= link_to 'Atras', 
+<%= link_to t('.back', :default => t("helpers.links.back")),
               modulos_path, :class => 'btn btn-default'  %>
-
