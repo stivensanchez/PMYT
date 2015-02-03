@@ -2,23 +2,22 @@
 <div class="well">
   <h1><center>Tipo <small>Documento</small></center></h1>
 </div>
-<table class="table table-striped">
+<div class="well">
+  <%= link_to 'Nuevo', new_tipo_doc_path, :class => 'btn btn-primary btn-lg active' %>
+</div>
+<table class="table table-bordered table-striped table-hover table-condensed">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:nombre) %></th>
       <th><%= model_class.human_attribute_name(:descripcion) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-       <th><%= model_class.human_attribute_name(:Acciones) %></th>
+      <th><%= model_class.human_attribute_name(:Acciones) %></th>
     </tr>
   </thead>
   <tbody>
     <% @tipo_docs.each do |tipo_doc| %>
       <tr>
-        <td><%= link_to tipo_doc.id, tipo_doc_path(tipo_doc) %></td>
         <td><%= tipo_doc.nombre %></td>
         <td><%= tipo_doc.descripcion %></td>
-        <td><%=l tipo_doc.created_at %></td>
         <td>
           <%= link_to 'Editar', 
                       edit_tipo_doc_path(tipo_doc), :class => 'btn btn-default btn-xs' %>
@@ -33,6 +32,3 @@
   </tbody>
 </table>
 
-<%= link_to 'Nuevo', 
-            new_tipo_doc_path,
-            :class => 'btn btn-primary' %>

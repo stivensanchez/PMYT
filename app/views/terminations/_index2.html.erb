@@ -27,7 +27,7 @@
     <% @terminations = @info.terminations.all.each do |termination| %>
       <tr>
         
-        <td><%= termination.operation_id %></td>
+        <td><%= termination.operation.nombre %></td>
         <td><%= termination.sam %></td>
         <td><%= termination.maquina %></td>
         <td><%= termination.calibre_aguja %></td>

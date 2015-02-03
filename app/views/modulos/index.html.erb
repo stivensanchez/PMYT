@@ -11,7 +11,6 @@
   <thead>
     <br>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:nombre) %></th>
       <th><%= model_class.human_attribute_name(:descripcion) %></th>
       <th><%= model_class.human_attribute_name(:Maquinas) %></th>
@@ -23,7 +22,6 @@
   <tbody>
     <% @modulos.each do |modulo| %>
       <tr>
-        <td><%= link_to modulo.id, modulo_path(modulo) %></td>
         <td><%= modulo.nombre %></td>
         <td><%= modulo.descripcion %></td>
         <td><%= link_to 'Maquinas(' + modulo.maquinas.count.to_s+ ')', modulo_maquinas_path(modulo), :class => 'btn btn-default btn-xs btn-lg active' %></td>

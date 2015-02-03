@@ -10,7 +10,6 @@
 <table class="table table-bordered table-striped table-hover table-condensed">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:tipo_doc_id) %></th>
       <th><%= model_class.human_attribute_name(:numero_documento) %></th>
       <th><%= model_class.human_attribute_name(:nombre) %></th>
@@ -24,8 +23,7 @@
   <tbody>
     <% @opers.each do |oper| %>
       <tr>
-        <td><%= link_to oper.id, oper_path(oper) %></td>
-        <td><%= oper.tipo_doc_id %></td>
+        <td><%= oper.tipo_doc.nombre %></td>
         <td><%= oper.numero_documento %></td>
         <td><%= oper.nombre %></td>
         <td><%= oper.apellido %></td>

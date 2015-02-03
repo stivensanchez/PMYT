@@ -10,7 +10,6 @@
 <table class="table table-bordered table-striped table-hover table-condensed">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:tipo_doc_id) %></th>
       <th><%= model_class.human_attribute_name(:numero_doc) %></th>
       <th><%= model_class.human_attribute_name(:nombres) %></th>
@@ -24,8 +23,7 @@
   <tbody>
     <% @instructors.each do |instructor| %>
       <tr>
-        <td><%= link_to instructor.id, instructor_path(instructor) %></td>
-        <td><%= instructor.tipo_doc_id %></td>
+        <td><%= instructor.tipo_doc.nombre %></td>
         <td><%= instructor.numero_doc %></td>
         <td><%= instructor.nombres %></td>
         <td><%= instructor.apellidos %></td>

@@ -27,7 +27,7 @@
     <% @ensambles = @info.ensambles.all.each do |ensamble| %>
       <tr>
         
-        <td><%= ensamble.operation_id %></td>
+        <td><%= ensamble.operation.nombre %></td>
         <td><%= ensamble.sam %></td>
         <td><%= ensamble.maquina %></td>
         <td><%= ensamble.calibre_aguja %></td>

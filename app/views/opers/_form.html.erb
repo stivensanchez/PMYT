@@ -1,7 +1,7 @@
 <%= simple_form_for [@modulo,@group,@oper], :html => { :class => 'form-group' } do |f| %>
 <div class="form-group">
-  <%= f.label :Tipo_documento %>
-  <%= f.text_field :tipo_doc_id, class: "form-control" %>
+  <%= f.label :Tipo_Documento %> <br>
+  <%= f.collection_select :tipo_doc_id, TipoDoc.all, :id, :nombre, class: "form-contol", prompt: "Seleccione" %>
 </div>  
 <div class="form-group">
   <%= f.label :Numero_documento%>
@@ -9,19 +9,19 @@
 </div>
 <div class="form-group">
   <%= f.label :Nombres%>
-  <%= f.text_field :nombre, class: "form-control",         placeholder: "Ingrese los nombres" %>
+  <%= f.text_field :nombre, class: "form-control", placeholder: "Ingrese los nombres" %>
 </div>
 <div class="form-group">
   <%= f.label :Apellidos%>
-  <%= f.text_field :apellido, class: "form-control",         placeholder: "Ingrese los apellidos" %>
+  <%= f.text_field :apellido, class: "form-control", placeholder: "Ingrese los apellidos" %>
 </div>
 <div class="form-group">
   <%= f.label :Correo%>
-  <%= f.text_field :correo, class: "form-control",         placeholder: "Ingrese el telefono" %>
+  <%= f.text_field :correo, class: "form-control", placeholder: "Ingrese el telefono" %>
 </div>
 <div class="form-group">
   <%= f.label :Telefono%>
-  <%= f.text_field :telefono, class: "form-control",         placeholder: "Ingrese el telefono" %>
+  <%= f.text_field :telefono, class: "form-control", placeholder: "Ingrese el telefono" %>
 </div>  
  
 
@@ -29,3 +29,4 @@
   <%= link_to 'Cancelar',
                 group_opers_path(@group), :class => 'btn btn-default' %>
 <% end %>
+
