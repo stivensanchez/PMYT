@@ -95,12 +95,6 @@
    }
 }
 
-.letra{
-  margin: -5px 0px 0px 150px;
-}
-.letraa{
-  margin: -5px 0px 0px 0px;
-}
 .fondo{
   border: solid 1px;
   border-color: black;
@@ -220,16 +214,92 @@
 }
 
 .cant2{
-  margin: -24px 0px 0px 100px;
+  margin: 0px 0px 0px 0px;
 }
 
+.undd2{
+  border:solid 1px;
+  border-color: grey;
+  width: 100px;
+  height: 24px;
+  margin: -48px 0px 0px 100px;
+}
 
+.und2{
+  margin: 0px 0px 0px 100px;
+}
 
+.detallee2{
+  border:solid 1px;
+  border-color: grey;
+  width: 258px;
+  height: 24px;
+  margin: -48px 0px 0px 200px;
+}
 
+.detalle2{
+  margin:0px 0px 0px 200px;
+}
 
+.vr_unitt2{
+  border:solid 1px;
+  border-color: grey;
+  width: 100px;
+  height: 24px;
+  margin: -48px 0px 0px 457px;
+}
 
+.vr_unit2{
+  margin: 0px 0px 0px 457px;
+}
 
+.vr_totall2{
+  border:solid 1px;
+  border-color: grey;
+  width: 100px;
+  height: 24px;
+  margin: -48px 0px 0px 557px;
+}
 
+.vr_total2{
+  margin: 0px 0px 0px 557px;
+}
+
+.t_costo_manoo{
+  border:solid 1px;
+  border-color: grey;
+  width: 557px;
+  height: 24px;
+  margin: 1px 0px 0px 0px;
+}
+
+.t_costo_mano{
+  margin: -24px 0px 0px 557px;
+}
+
+.cost_to_prodd{
+  border:solid 1px;
+  border-color: grey;
+  width: 557px;
+  height: 24px;
+  margin: 1px 0px 0px 0px;
+}
+
+.cost_to_prod{
+  margin: -24px 0px 0px 557px;
+}
+
+.cost_uni_prodd{
+  border:solid 1px;
+  border-color: grey;
+  width: 557px;
+  height: 24px;
+  margin: 1px 0px 0px 0px;
+}
+
+.cost_uni_prod{
+  margin: -24px 0px 0px 557px;
+}
 
 
 @media screen and (max-width:1000px){
@@ -243,3 +313,4 @@
       padding: 5% 15% 5% 15%;
    }
 }
+

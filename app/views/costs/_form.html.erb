@@ -1,24 +1,21 @@
 <%= simple_form_for [@ficha,@cost], :html => { :class => 'form-horizontal' } do |f| %>
 <div class="fondo"> 
     <div class="productoo">
-      <%= f.label :PRODUCTO, :class => 'letraa' %>
-      :
+      <strong><center>PRODUCTO</center></strong>
     </div>
   <div class="producto">
       <%= f.text_field :producto %>
   </div>  
   
   <div class="lotee">
-   <%= f.label :LOTE, :class => 'letra' %>
-   :
+   <strong><center>LOTE</center></strong>
   </div>
   <div class="lote">
   <%= f.text_field :lote %>
   </div>
   
   <div class="cantt">
-   <%= f.label :CANT, :class => 'letraa' %>
-   :
+   <strong><center>CANT</strong></center>
   </div>
   
   <div class="panel panel-default">
@@ -32,39 +29,35 @@
   </div>
   
   <div class="undd">
-   <%= f.label :UND %>
-   :
+   <strong><center>UND</strong></center> 
   </div>
   <div class="und">
    <%= f.text_field :und, :class => 'tamaño' %>
   </div>
   
   <div class="detallee">
-   <%= f.label :DETALLE %>  
-   :
+   <strong><center>DETALLE</strong></center>
   </div>
   <div class="detalle">
   <%= f.text_field :detalle, :class => 'tamaño2' %>
   </div>
   
   <div class="vr_unitt">
-   <%= f.label :VR_UNIT %>
-   :
+   <strong><center>VR_UNIT</strong></center>
   </div>
   <div class="vr_unit">
   <%= f.text_field :vr_unit, :class => 'tamaño' %>
   </div>
   
   <div class="vr_totall">
-   <%= f.label :VR_TOTAL %> 
-   :
+   <strong><center>VR_TOTAL</strong></center>
   </div>
   <div class="vr_total">
    <%= f.text_field :vr_total, :class => 'tamaño' %>
   </div>
   
   <div class="t_costo_matt">
-   <%= f.label :TOTAL_COSTO_DE_MATERIALES %>  
+   <strong><center>TOTAL COSTO DE MATERIALES</strong></center> 
   </div>
   <div class="t_costo_mat">
    <%= f.text_field :t_costo_mat, :class => 'tamaño' %>
@@ -77,41 +70,61 @@
   </div> 
     
   <div class="cantt2">
-   <%= f.label :CANT %>
-   :
+   <strong><center>CANT</strong></center>
   </div>
   <div class="cant2">
-   <%= f.text_field :cant2 %>
+   <%= f.text_field :cant2, :class => 'tamaño' %>
   </div>
     
+  <div class="undd2">
+   <strong><center>UND</strong></center> 
+  </div>
   <div class="und2">
-  <%= f.label :UND %>  
-  <%= f.text_field :und2 %>
+   <%= f.text_field :und2, :class => 'tamaño' %>
+  </div>
+  
+  <div class="detallee2">
+   <strong><center>DETALLE</strong></center>
   </div>
   <div class="detalle2">
-  <%= f.label :DETALLE %>  
-  <%= f.text_field :detalle2 %>
+   <%= f.text_field :detalle2, :class => 'tamaño2' %>
+  </div>
+  
+  <div class="vr_unitt2">
+   <strong><center>VR_UNIT</strong></center>
   </div>
   <div class="vr_unit2">
-  <%= f.label :VR_UNIT %>
-  <%= f.text_field :vr_unit2 %>
+   <%= f.text_field :vr_unit2, :class => 'tamaño' %>
+  </div>
+  
+  <div class="vr_totall2">
+   <strong><center>VR_TOTAL</strong></center>
   </div>
   <div class="vr_total2">
-  <%= f.label :VR_TOTAL %>  
-  <%= f.text_field :vr_total2 %>
+   <%= f.text_field :vr_total2, :class => 'tamaño' %>
+  </div>
+  
+  <div class="t_costo_manoo">
+   <strong><center>TOTAL COSTO DE MANO DE OBRA</strong></center>
   </div>
   <div class="t_costo_mano">
-  <%= f.label :TOTAL_COSTO_DE_MANO_DE_OBRA %> 
-  <%= f.text_field :t_costo_mano %>
+   <%= f.text_field :t_costo_mano, :class => 'tamaño' %>
+  </div>
+  
+  <div class="cost_to_prodd">
+   <strong><center>COSTO TOTAL DE PRODUCCION DEL LOTE</center></strong>
   </div>
   <div class="cost_to_prod">
-  <%= f.label :COSTO_TOTAL_DE_PRODUCCION_DEL_LOTE %>  
-  <%= f.text_field :cost_to_prod %>
+   <%= f.text_field :cost_to_prod, :class => 'tamaño' %>
+  </div>
+  
+  <div class="cost_uni_prodd">
+   <strong><center>COSTO UNITARIO DE PRODUCCION</center></strong>
   </div>
   <div class="cost_uni_prod">
-  <%= f.label :COSTO_UNITARIO_DE_PRODUCCION %>  
-  <%= f.text_field :cost_uni_prod %>
+   <%= f.text_field :cost_uni_prod, :class => 'tamaño' %>
   </div>
+  
 </div>  
   <br>
 
