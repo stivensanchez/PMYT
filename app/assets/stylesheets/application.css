@@ -116,6 +116,14 @@
   margin: -24px 0px 0px 200px;
 }
 
+.productoI{
+  margin: -24px 0px 0px 200px;
+  border: solid 1px;
+  border-color: grey;
+  height: 24px;
+  width: 136px;
+}
+
 .lotee{
   border:solid 1px;
   border-color: grey;
@@ -124,8 +132,24 @@
   margin: -24px 0px 0px 300px;
 }
 
+.loteee{
+  border:solid 1px;
+  border-color: grey;
+  width: 200px;
+  height: 24px;
+  margin: -24px 0px 0px 336px;
+}
+
 .lote{
   margin: -24px 0px 0px 500px;
+}
+
+.loteI{
+  margin: -24px 0px 0px 536px;
+  border: solid 1px;
+  border-color: grey;
+  height: 24px;
+  width: 120px;
 }
 
 .cantt{
@@ -140,6 +164,13 @@
   margin:-18px 0px 0px 0px;
 }
 
+.cantI{
+  margin: -18px 0px 0px 0px;
+  border:solid 1px;
+  border-color:grey;
+  height: 24px;
+  width: 100px;
+}
 .tamaño{
   width: 100px;
 }
@@ -159,6 +190,14 @@
   margin: 42px 0px 0px 100px;
 }
 
+.undI{
+  margin: 42px 0px 0px 100px;
+  border:solid 1px;
+  border-color:grey;
+  height: 24px;
+  width: 100px;
+}
+
 .detallee{
   border:solid 1px;
   border-color: grey;
@@ -169,6 +208,14 @@
 
 .detalle{
   margin: 42px 0px 0px 200px;
+}
+
+.detalleI{
+  margin: 42px 0px 0px 200px;
+  border:solid 1px;
+  border-color:grey;
+  height: 24px;
+  width: 258px;
 }
 
 .vr_unitt{
@@ -183,6 +230,14 @@
   margin: 42px 0px 0px 456px;
 }
 
+.vr_unitI{
+  margin: 42px 0px 0px 456px;
+  border:solid 1px;
+  border-color:grey;
+  height: 24px;
+  width: 100px;
+}
+
 .vr_totall{
   border:solid 1px;
   border-color: grey;
@@ -193,6 +248,14 @@
 
 .vr_total{
   margin: 42px 0px 0px 556px;
+}
+
+.vr_totalI{
+  margin: 42px 0px 0px 556px;
+  border:solid 1px;
+  border-color:grey;
+  height: 24px;
+  width: 100px;
 }
 
 .t_costo_matt{
@@ -207,6 +270,14 @@
   margin: -24px 0px 0px 556px;
 }
 
+.t_costo_matI{
+  margin: -24px 0px 0px 556px;
+  border:solid 1px;
+  border-color:grey;
+  height: 24px;
+  width: 100px;
+}
+
 .cantt2{
   border:solid 1px;
   border-color: grey;
@@ -217,6 +288,14 @@
 
 .cant2{
   margin: 0px 0px 0px 0px;
+}
+
+.cantI2{
+  margin: 0px 0px 0px 0px;
+  border:solid 1px;
+  border-color:grey;
+  height: 24px;
+  width: 100px;
 }
 
 .undd2{
@@ -231,6 +310,14 @@
   margin: 0px 0px 0px 100px;
 }
 
+.undI2{
+  margin: 0px 0px 0px 100px;
+  border:solid 1px;
+  border-color: grey;
+  height: 24px;
+  width: 100px;
+}
+
 .detallee2{
   border:solid 1px;
   border-color: grey;
@@ -241,6 +328,14 @@
 
 .detalle2{
   margin:0px 0px 0px 200px;
+}
+
+.detalleI2 {
+  margin: 0px 0px 0px 200px;
+  border:solid 1px;
+  border-color:grey;
+  height:24px;
+  width:258px;
 }
 
 .vr_unitt2{
@@ -255,6 +350,14 @@
   margin: 0px 0px 0px 457px;
 }
 
+.vr_unitI2{
+  margin: 0px 0px 0px 457px;
+  border:solid 1px;
+  border-color:grey;
+  height:24px;
+  width:100px;
+}
+
 .vr_totall2{
   border:solid 1px;
   border-color: grey;
@@ -265,6 +368,14 @@
 
 .vr_total2{
   margin: 0px 0px 0px 557px;
+}
+
+.vr_totalI2{
+  margin: 0px 0px 0px 557px;
+  border:solid 1px;
+  border-color:grey;
+  height: 24px;
+  width: 100px;
 }
 
 .t_costo_manoo{
@@ -279,6 +390,14 @@
   margin: -24px 0px 0px 557px;
 }
 
+.t_costo_manoI{
+  margin: -24px 0px 0px 557px;
+  border:solid 1px;
+  border-color:grey;
+  height:24px;
+  width:100px;
+}
+
 .cost_to_prodd{
   border:solid 1px;
   border-color: grey;
@@ -291,6 +410,14 @@
   margin: -24px 0px 0px 557px;
 }
 
+.cost_to_prodI{
+  margin: -24px 0px 0px 557px;
+  border:solid 1px;
+  border-color:grey;
+  height:24px;
+  width:100px;
+}
+
 .cost_uni_prodd{
   border:solid 1px;
   border-color: grey;
@@ -301,6 +428,14 @@
 
 .cost_uni_prod{
   margin: -24px 0px 0px 557px;
+}
+
+.cost_uni_prodI{
+  margin: -24px 0px 0px 557px;
+  border:solid 1px;
+  border-color: grey;
+  height:24px;
+  width:100px;
 }
 
 

@@ -9,129 +9,140 @@
 </div>
   <div class="fondo">
     <div class="productoo">
-      <%= model_class.human_attribute_name(:producto) %>
+      <strong><center>PRODUCTO</center></strong>
     </div>
-    <div class="producto">
+    <div class="productoI">
       <% @costs.each do |cost|%>
           <%= cost.producto %>
       <% end %>    
     </div>
-    <div class="">
-      <%= model_class.human_attribute_name(:lote) %>
+    <div class="loteee">
+      <strong><center>LOTE</center></strong>
     </div>
-    <div class=>
+    <div class="loteI">
       <% @costs.each do |cost| %>
          <%= cost.lote %>
       <% end %>
     </div>  
-    <div class="">
-      <%= model_class.human_attribute_name(:cant) %>
+    <div class="cantt">
+      <strong><center>CANT</strong></center>
     </div>
-    <div class="">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><center><b>Costeo de Materiales</b></center></h3>
+        </div>
+  </div>  
+    <div class="cantI">
       <% @costs.each do |cost| %>
          <%= cost.cant %>
       <% end %>
     </div>
-    <div class="">
-      <%= model_class.human_attribute_name(:und) %>
+    <div class="undd">
+      <strong><center>UND</strong></center>
     </div>
-    <div class="">
+    <div class="undI">
       <% @costs.each do |cost| %>
          <%= cost.und %>
       <% end %>
     </div>
-    <div class="">
-      <%= model_class.human_attribute_name(:detalle) %>
+    <div class="detallee">
+      <strong><center>DETALLE</strong></center>
     </div>
-    <div class="">
+    <div class="detalleI">
       <% @costs.each do |cost| %>
          <%= cost.detalle %>
       <% end %>
     </div>
-    <div class="">
-      <%= model_class.human_attribute_name(:vr_unit) %>
+    <div class="vr_unitt">
+      <strong><center>VR_UNIT</strong></center>
     </div>
-    <div class="">
+    <div class="vr_unitI">
       <% @costs.each do |cost| %>
          <%= cost.vr_unit %>
       <% end %>
     </div>
-    <div class="">
-      <%= model_class.human_attribute_name(:vr_total) %>
+    <div class="vr_totall">
+      <strong><center>VR_TOTAL</strong></center>
     </div>
-    <div class="">
+    <div class="vr_totalI">
       <% @costs.each do |cost| %>
          <%= cost.vr_total %>
       <% end %>
     </div>
-    <div class="">
-      <%= model_class.human_attribute_name(:cant2) %>
+    <div class="t_costo_matt">
+      <strong><center>TOTAL COSTO DE MATERIALES</strong></center>
     </div>
-    <div class="">
-      <% @costs.each do |cost| %>
-         <%= cost.cant2 %>
-      <% end %>
-    </div>
-    <div class="">
-      <%= model_class.human_attribute_name(:und2) %>
-    </div>
-    <div class="">
-      <% @costs.each do |cost| %>
-         <%= cost.und2 %>
-      <% end %>
-    </div>
-    <div class="">
-      <%= model_class.human_attribute_name(:detalle2) %>
-    </div>
-    <div class="">
-      <% @costs.each do |cost| %>
-         <%= cost.detalle2 %>
-      <% end %>
-    </div>
-    <div class="">
-      <%= model_class.human_attribute_name(:vr_unit2) %>
-    </div>
-    <div class="">
-      <% @costs.each do |cost| %>
-         <%= cost.vr_unit2 %>
-      <% end %>
-    </div>
-    <div class="">
-      <%= model_class.human_attribute_name(:vr_total2) %>
-    </div>
-    <div class="">
-      <% @costs.each do |cost| %>
-         <%= cost.vr_total2 %>
-      <% end %>
-    </div>
-    <div class="">
-      <%= model_class.human_attribute_name(:t_costo_mat) %>
-    </div>
-    <div class="">
+    <div class="t_costo_matI">
       <% @costs.each do |cost| %>
          <%= cost.t_costo_mat %>
       <% end %>
     </div>
-    <div class="">
-      <%= model_class.human_attribute_name(:t_costo_mano) %>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><center><b>Costeo de Mano de Obra</b></center></h3>
+        </div>
+  </div> 
+    <div class="cantt2">
+      <strong><center>CANT</strong></center>
     </div>
-    <div class="">
+    <div class="cantI2">
+      <% @costs.each do |cost| %>
+         <%= cost.cant2 %>
+      <% end %>
+    </div>
+    <div class="undd2">
+      <strong><center>UND</strong></center>
+    </div>
+    <div class="undI2">
+      <% @costs.each do |cost| %>
+         <%= cost.und2 %>
+      <% end %>
+    </div>
+    <div class="detallee2">
+      <strong><center>DETALLE</strong></center>
+    </div>
+    <div class="detalleI2">
+      <% @costs.each do |cost| %>
+         <%= cost.detalle2 %>
+      <% end %>
+    </div>
+    <div class="vr_unitt2">
+      <strong><center>VR_UNIT</strong></center>
+    </div>
+    <div class="vr_unitI2">
+      <% @costs.each do |cost| %>
+         <%= cost.vr_unit2 %>
+      <% end %>
+    </div>
+    <div class="vr_totall2">
+      <strong><center>VR_TOTAL</strong></center>
+    </div>
+    <div class="vr_totalI2">
+      <% @costs.each do |cost| %>
+         <%= cost.vr_total2 %>
+      <% end %>
+    </div>
+    
+    <div class="t_costo_manoo">
+      <strong><center>TOTAL COSTO DE MANO DE OBRA</strong></center>
+    </div>
+    <div class="t_costo_manoI">
       <% @costs.each do |cost| %>
          <%= cost.t_costo_mano %>
       <% end %>
     </div>
-    <div class="">
-      <%= model_class.human_attribute_name(:cost_to_prod) %>
+    <div class="cost_to_prodd">
+      <strong><center>COSTO TOTAL DE PRODUCCION DEL LOTE</center></strong>
     </div>
-    <div class="">
+    <div class="cost_to_prodI">
       <% @costs.each do |cost| %>
          <%= cost.cost_to_prod %>
       <% end %>
     </div>
-    <div class="">
-      <%= model_class.human_attribute_name(:cost_uni_prod) %>
+    <div class="cost_uni_prodd">
+      <strong><center>COSTO UNITARIO DE PRODUCCION</center></strong>
     </div>
-    <div class="">
+    <div class="cost_uni_prodI">
       <% @costs.each do |cost| %>
          <%= cost.cost_uni_prod %>
       <% end %>
