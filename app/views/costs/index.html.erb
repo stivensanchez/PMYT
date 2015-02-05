@@ -71,35 +71,74 @@
       <% @costs.each do |cost| %>
          <%= cost.cant2 %>
       <% end %>
-    </div>  
+    </div>
+    <div class="">
       <%= model_class.human_attribute_name(:und2) %>
+    </div>
+    <div class="">
+      <% @costs.each do |cost| %>
+         <%= cost.und2 %>
+      <% end %>
+    </div>
+    <div class="">
       <%= model_class.human_attribute_name(:detalle2) %>
+    </div>
+    <div class="">
+      <% @costs.each do |cost| %>
+         <%= cost.detalle2 %>
+      <% end %>
+    </div>
+    <div class="">
       <%= model_class.human_attribute_name(:vr_unit2) %>
+    </div>
+    <div class="">
+      <% @costs.each do |cost| %>
+         <%= cost.vr_unit2 %>
+      <% end %>
+    </div>
+    <div class="">
       <%= model_class.human_attribute_name(:vr_total2) %>
+    </div>
+    <div class="">
+      <% @costs.each do |cost| %>
+         <%= cost.vr_total2 %>
+      <% end %>
+    </div>
+    <div class="">
       <%= model_class.human_attribute_name(:t_costo_mat) %>
+    </div>
+    <div class="">
+      <% @costs.each do |cost| %>
+         <%= cost.t_costo_mat %>
+      <% end %>
+    </div>
+    <div class="">
       <%= model_class.human_attribute_name(:t_costo_mano) %>
+    </div>
+    <div class="">
+      <% @costs.each do |cost| %>
+         <%= cost.t_costo_mano %>
+      <% end %>
+    </div>
+    <div class="">
       <%= model_class.human_attribute_name(:cost_to_prod) %>
+    </div>
+    <div class="">
+      <% @costs.each do |cost| %>
+         <%= cost.cost_to_prod %>
+      <% end %>
+    </div>
+    <div class="">
       <%= model_class.human_attribute_name(:cost_uni_prod) %>
-      <%=t '.actions', :default => t("helpers.actions") %>
-    
-    <% @costs.each do |cost| %>
-      
-        
-        
-        
-        
-        
-        
-        
-        <%= cost.und2 %>
-        <%= cost.detalle2 %>
-        <%= cost.vr_unit2 %>
-        <%= cost.vr_total2 %>
-        <%= cost.t_costo_mat %>
-        <%= cost.t_costo_mano %>
-        <%= cost.cost_to_prod %>
-        <%= cost.cost_uni_prod %>
-        
+    </div>
+    <div class="">
+      <% @costs.each do |cost| %>
+         <%= cost.cost_uni_prod %>
+      <% end %>
+    </div>
+  </div><br>
+    <div class=>
+         <% @costs.each do |cost| %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_ficha_cost_path(@ficha,cost), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
@@ -107,8 +146,8 @@
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-xs btn-danger' %>
-    <% end %>
-  </div>  
+         <% end %>
+    </div>  
   
 
 
