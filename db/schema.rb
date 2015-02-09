@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 20150129204902) do
     t.string   "imagen"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "info_id"
   end
 
   create_table "fichas", force: true do |t|
@@ -127,6 +128,7 @@ ActiveRecord::Schema.define(version: 20150129204902) do
     t.text     "observaciones"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "info_id"
   end
 
   create_table "measures", force: true do |t|
@@ -207,6 +209,7 @@ ActiveRecord::Schema.define(version: 20150129204902) do
     t.string   "imagen"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "info_id"
   end
 
   create_table "tipo_docs", force: true do |t|

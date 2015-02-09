@@ -9,7 +9,7 @@ class CreateDevelopments < ActiveRecord::Migration
       t.string :margen_costura
       t.string :guia_accesorios
       t.text :observaciones
-      t.string :imagen
+      t.references :oper, index: true
       t.references :info, index: true
 
       t.timestamps

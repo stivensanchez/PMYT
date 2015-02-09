@@ -35,6 +35,10 @@
   <%= f.label :Imagen %>
   <%= f.text_field :imagen, class: "form-control" %>
 </div>  
+<div class="form-group">
+  <%= f.label :Operaria %>
+  <%= f.text_field :oper_id %>
+</div>
   <%= f.button :submit, 'Crear ensamble', :class => 'btn-primary' %>
  <%= link_to 'Cancelar', info_ensambles_path(@info), :class => 'btn btn-default' %>
 <% end %>

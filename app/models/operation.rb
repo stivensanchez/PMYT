@@ -9,6 +9,8 @@ class Operation < ActiveRecord::Base
   validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif", "image/flv"]
   
   has_many :developments
+  has_many :ensambles
+  has_many :terminations
   belongs_to :maquina
   belongs_to :modulo
   has_many :nivelations

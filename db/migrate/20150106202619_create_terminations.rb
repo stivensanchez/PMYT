@@ -11,6 +11,7 @@ class CreateTerminations < ActiveRecord::Migration
       t.text :observaciones
       t.string :imagen
       t.references :info, index: true
+      t.references :oper, index: true
 
       t.timestamps
     end

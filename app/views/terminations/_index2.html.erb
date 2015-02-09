@@ -20,6 +20,7 @@
       <th><%= model_class.human_attribute_name(:guia_accesorios) %></th>
       <th><%= model_class.human_attribute_name(:observaciones) %></th>
       <th><%= model_class.human_attribute_name(:imagen)%></th>
+      <th><%= model_class.human_attribute_name(:operario) %></th>
       <th><%= model_class.human_attribute_name(:Acciones) %></th>
     </tr>
   </thead>
@@ -36,6 +37,7 @@
         <td><%= termination.guia_accesorios %></td>
         <td><%= termination.observaciones %></td>
         <td><%= termination.imagen %></td>
+        <td><%= termination.oper_id%></td>
         <td>
           <%= link_to 'Editar',
                       edit_info_termination_path(@info,termination), :class => 'btn btn-default btn-xs' %>

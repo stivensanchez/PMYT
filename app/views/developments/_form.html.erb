@@ -1,4 +1,4 @@
-<%= simple_form_for [@ficha,@info,@development], :html => { :class => 'form-group' } do |f| %>
+<%= simple_form_for [@ficha,@info,@development,], :html => { :class => 'form-group' } do |f| %>
 
 <div class="form-group">
   <%= f.label :Operacion %>  <br>
@@ -34,9 +34,11 @@
   <%= f.text_area :observaciones, class: "form-control", placeholder: "Ingrese las observaciones" %>
 </div>  
 <div class="form-group">
-  <%= f.label :Imagen%>
-  <%= f.text_field :imagen, class: "form-control"%>
+  <%= f.label :Operaria %>
+  <%= f.collection_select :oper_id, Oper.all, :id, :nombre, class: "form-control", prompt: "Seleccione Operario" %>
 </div>  
+
+
 
   <%= f.button :submit, 'Crear Operación', :class => 'btn-primary' %>
   <%= link_to 'Cancelar', 

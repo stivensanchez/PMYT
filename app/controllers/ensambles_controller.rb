@@ -65,11 +65,11 @@ class EnsamblesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_ensamble
       @info = Info.find(params[:info_id])
-      @ensamble = Ensamble.find(params[:id]) if params[:id] if params[:id]
+      @ensamble = Ensamble.find(params[:id]) if params[:id] 
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ensamble_params
-      params.require(:ensamble).permit(:operation_id, :sam, :maquina, :calibre_aguja, :ppp, :margen_costura, :guia_accesorios, :observaciones, :imagen, :info_id)
+      params.require(:ensamble).permit(:operation_id, :sam, :maquina, :calibre_aguja, :ppp, :margen_costura, :guia_accesorios, :observaciones, :imagen, :info_id, :oper_id)
     end
 end
