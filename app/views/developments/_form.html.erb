@@ -1,4 +1,4 @@
-<%= simple_form_for [@ficha,@info,@development,], :html => { :class => 'form-group' } do |f| %>
+<%= simple_form_for [@ficha,@info,@development], :html => { :class => 'form-group' } do |f| %>
 
 <div class="form-group">
   <%= f.label :Operacion %>  <br>
@@ -9,7 +9,7 @@
   <%= f.label :Sam %>
   <%= f.text_field :sam, class: "form-control",  prompt: "Escriba sam"%>
 </div>
-<div class="form-group">
+<div class="form-group"> 
   <%= f.label :Maquina %>
   <%= f.text_field :maquina, class: "form-control"%>
 </div>
@@ -34,7 +34,7 @@
   <%= f.text_area :observaciones, class: "form-control", placeholder: "Ingrese las observaciones" %>
 </div>  
 <div class="form-group">
-  <%= f.label :Operaria %>
+  <%= f.label :Operaria %> <br>
   <%= f.collection_select :oper_id, Oper.all, :id, :nombre, class: "form-control", prompt: "Seleccione Operario" %>
 </div>  
 

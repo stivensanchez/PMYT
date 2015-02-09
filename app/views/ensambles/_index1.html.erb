@@ -19,7 +19,6 @@
       <th><%= model_class.human_attribute_name(:margen_costura) %></th>
       <th><%= model_class.human_attribute_name(:guia_accesorios) %></th>
       <th><%= model_class.human_attribute_name(:observaciones) %></th>
-      <th><%= model_class.human_attribute_name(:imagen)%></th>
       <th><%= model_class.human_attribute_name(:Operario)%></th>
       <th><%= model_class.human_attribute_name(:Acciones) %></th>
     </tr>
@@ -36,7 +35,6 @@
         <td><%= ensamble.margen_costura %></td>
         <td><%= ensamble.guia_accesorios %></td>
         <td><%= ensamble.observaciones %></td>
-        <td><%= ensamble.imagen %></td>
         <td><%= ensamble.oper.nombre %></td>
         <td>
           <%= link_to 'Editar',
