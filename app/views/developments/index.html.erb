@@ -11,10 +11,10 @@
   <thead>
     <tr>
       
-      <th><%= model_class.human_attribute_name(:operation_id) %></th>
+      <th><%= model_class.human_attribute_name(:operación) %></th>
       <th><%= model_class.human_attribute_name(:sam) %></th>
       <th><%= model_class.human_attribute_name(:maquina) %></th>
-      <th><%= model_class.human_attribute_name(:calibre_aguja) %></th>
+      <th><%= model_class.human_attribute_name(:nombre_calibre_aguja) %></th>
       <th><%= model_class.human_attribute_name(:ppp) %></th>
       <th><%= model_class.human_attribute_name(:margen_costura) %></th>
       <th><%= model_class.human_attribute_name(:guia_accesorios) %></th>
@@ -60,3 +60,4 @@ ______________________________________________
 
 <%= render 'terminations/index2' %>
 
+<%= link_to 'atras', fichas_path, :class => 'btn btn-primary btn-lg active' %>
