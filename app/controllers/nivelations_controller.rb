@@ -70,6 +70,6 @@ class NivelationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def nivelation_params
-      params.require(:nivelation).permit(:oper_id, :operation_id, :desempeño, :comentario)
+      params.require(:nivelation).permit(:oper_id, :development_id, :desempeño, :comentario)
     end
 end

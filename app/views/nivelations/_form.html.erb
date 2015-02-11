@@ -2,7 +2,7 @@
  
   <div class="form-group">
   <%= f.label :operacion %>
-  <%= f.text_field :operation_id, class: "form-control",   placeholder: "Ingrese operacion" %>
+  <%= f.collection_select :development_id, Development.all, :id, :oper_id, class: "form-control" %>
 </div>
 
 <div class="form-group">

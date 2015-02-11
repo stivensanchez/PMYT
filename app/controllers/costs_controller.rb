@@ -70,6 +70,6 @@ class CostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cost_params
-      params.require(:cost).permit(:producto, :lote, :cant, :und, :detalle, :vr_unit, :vr_total, :cant2, :und2, :detalle2, :vr_unit2, :vr_total2, :t_costo_mat, :t_costo_mano, :cost_to_prod, :cost_uni_prod, :ficha_id)
+      params.require(:cost).permit(:producto, :lote, :cant, :cant001, :cant002, :cant003, :cant004, :cant005, :cant006, :und, :und001, :und002, :und003, :und004, :und005, :und006, :detalle, :detalle001, :detalle002, :detalle003, :detalle004, :detalle005, :detalle006, :vr_unit, :vr_unit001, :vr_unit002, :vr_unit003, :vr_unit004, :vr_unit005, :vr_unit006, :vr_total, :vr_total001, :vr_total002, :vr_total003, :vr_total004, :vr_total005, :vr_total006, :cant2, :und2, :detalle2, :vr_unit2, :vr_total2, :t_costo_mat, :t_costo_mano, :cost_to_prod, :cost_uni_prod, :ficha_id)
     end
 end

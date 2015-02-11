@@ -164,6 +164,7 @@
   margin:-18px 0px 0px 0px;
 }
 
+
 .cantI{
   margin: -18px 0px 0px 0px;
   border:solid 1px;
@@ -183,7 +184,7 @@
   border-color: grey;
   width: 100px;
   height: 24px;
-  margin: -90px 0px 0px 100px;
+  margin: -234px 0px 0px 100px;
 }
 
 .und{
@@ -198,12 +199,36 @@
   width: 100px;
 }
 
+.und001{
+  margin: 0px 0px 0px 100px;
+}
+
+.und002{
+  margin: 0px 0px 0px 100px;
+}
+
+.und003{
+  margin: 0px 0px 0px 100px;
+}
+
+.und004{
+  margin: 0px 0px 0px 100px;
+}
+
+.und005{
+  margin: 0px 0px 0px 100px;
+}
+
+.und006{
+  margin: 0px 0px 0px 100px;
+}
+
 .detallee{
   border:solid 1px;
   border-color: grey;
   width: 258px;
   height: 24px;
-  margin: -90px 0px 0px 200px;
+  margin: -234px 0px 0px 200px;
 }
 
 .detalle{
@@ -218,12 +243,36 @@
   width: 258px;
 }
 
+.detalle001{
+  margin: 0px 0px 0px 200px;  
+}
+
+.detalle002{
+  margin: 0px 0px 0px 200px;
+}
+
+.detalle003{
+  margin: 0px 0px 0px 200px;
+}
+
+.detalle004{
+  margin: 0px 0px 0px 200px;
+}
+
+.detalle005{
+  margin: 0px 0px 0px 200px;
+}
+
+.detalle006{
+  margin: 0px 0px 0px 200px;
+}
+
 .vr_unitt{
   border:solid 1px;
   border-color: grey;
   width: 100px;
   height: 24px;
-  margin: -90px 0px 0px 456px;
+  margin: -234px 0px 0px 456px;
 }
 
 .vr_unit{
@@ -238,12 +287,36 @@
   width: 100px;
 }
 
+.vr_unit001{
+  margin: 0px 0px 0px 456px;
+}
+
+.vr_unit002{
+  margin: 0px 0px 0px 456px;
+}
+
+.vr_unit003{
+  margin: 0px 0px 0px 456px;  
+}
+
+.vr_unit004{
+  margin: 0px 0px 0px 456px;
+}
+
+.vr_unit005{
+  margin: 0px 0px 0px 456px;
+}
+
+.vr_unit006{
+  margin: 0px 0px 0px 456px;  
+}
+
 .vr_totall{
   border:solid 1px;
   border-color: grey;
   width: 100px;
   height: 24px;
-  margin: -90px 0px 0px 556px;
+  margin: -234px 0px 0px 556px;
 }
 
 .vr_total{
@@ -258,12 +331,36 @@
   width: 100px;
 }
 
+.vr_total001{
+  margin: 0px 0px 0px 556px;
+}
+
+.vr_total002{
+  margin: 0px 0px 0px 556px;
+}
+
+.vr_total003{
+  margin: 0px 0px 0px 556px;  
+}
+
+.vr_total004{
+  margin: 0px 0px 0px 556px;
+}
+
+.vr_total005{
+  margin: 0px 0px 0px 556px;  
+}
+
+.vr_total006{
+  margin: 0px 0px 0px 556px;  
+}
+
 .t_costo_matt{
   border:solid 1px;
   border-color: grey;
   width: 556px;
   height: 24px;
-  margin: 1px 0px 0px 0px;
+  margin: 23px 0px 0px 0px;
 }
 
 .t_costo_mat{
