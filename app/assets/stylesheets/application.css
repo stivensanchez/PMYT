@@ -184,7 +184,7 @@
   border-color: grey;
   width: 100px;
   height: 24px;
-  margin: -234px 0px 0px 100px;
+  margin: -258px 0px 0px 100px;
 }
 
 .und{
@@ -223,12 +223,16 @@
   margin: 0px 0px 0px 100px;
 }
 
+.und007{
+ margin: 0px 0px 0px 100px;  
+}
+
 .detallee{
   border:solid 1px;
   border-color: grey;
   width: 258px;
   height: 24px;
-  margin: -234px 0px 0px 200px;
+  margin: -258px 0px 0px 200px;
 }
 
 .detalle{
@@ -267,12 +271,16 @@
   margin: 0px 0px 0px 200px;
 }
 
+.detalle007{
+  margin: 0px 0px 0px 200px;
+}
+
 .vr_unitt{
   border:solid 1px;
   border-color: grey;
   width: 100px;
   height: 24px;
-  margin: -234px 0px 0px 456px;
+  margin: -258px 0px 0px 456px;
 }
 
 .vr_unit{
@@ -311,12 +319,16 @@
   margin: 0px 0px 0px 456px;  
 }
 
+.vr_unit007{
+  margin: 0px 0px 0px 456px;
+}
+
 .vr_totall{
   border:solid 1px;
   border-color: grey;
   width: 100px;
   height: 24px;
-  margin: -234px 0px 0px 556px;
+  margin: -258px 0px 0px 556px;
 }
 
 .vr_total{
@@ -355,12 +367,16 @@
   margin: 0px 0px 0px 556px;  
 }
 
+.vr_total007{
+  margin: 0px 0px 0px 556px;  
+}
+
 .t_costo_matt{
   border:solid 1px;
   border-color: grey;
   width: 556px;
   height: 24px;
-  margin: 23px 0px 0px 0px;
+  margin: 1px 0px 0px 0px;
 }
 
 .t_costo_mat{
@@ -400,10 +416,38 @@
   border-color: grey;
   width: 100px;
   height: 24px;
-  margin: -48px 0px 0px 100px;
+  margin: -216px 0px 0px 100px;
 }
 
 .und2{
+  margin: 0px 0px 0px 100px;
+}
+
+.und2001{
+  margin: 0px 0px 0px 100px;
+}
+
+.und2002{
+  margin: 0px 0px 0px 100px;
+}
+
+.und2003{
+  margin: 0px 0px 0px 100px;
+}
+
+.und2004{
+  margin: 0px 0px 0px 100px;
+}
+
+.und2005{
+  margin: 0px 0px 0px 100px;
+}
+
+.und2006{
+  margin: 0px 0px 0px 100px;
+}
+
+.und2007{
   margin: 0px 0px 0px 100px;
 }
 
@@ -420,11 +464,39 @@
   border-color: grey;
   width: 258px;
   height: 24px;
-  margin: -48px 0px 0px 200px;
+  margin: -216px 0px 0px 200px;
 }
 
 .detalle2{
   margin:0px 0px 0px 200px;
+}
+
+.detalle2001{
+  margin: 0px 0px 0px 200px;
+}
+
+.detalle2002{
+  margin: 0px 0px 0px 200px;
+}
+
+.detalle2003{
+  margin: 0px 0px 0px 200px;
+}
+
+.detalle2004{
+  margin: 0px 0px 0px 200px;
+}
+
+.detalle2005{
+  margin: 0px 0px 0px 200px;
+}
+
+.detalle2006{
+  margin: 0px 0px 0px 200px;
+}
+
+.detalle2007{
+  margin: 0px 0px 0px 200px;
 }
 
 .detalleI2 {
@@ -440,10 +512,38 @@
   border-color: grey;
   width: 100px;
   height: 24px;
-  margin: -48px 0px 0px 457px;
+  margin: -216px 0px 0px 457px;
 }
 
 .vr_unit2{
+  margin: 0px 0px 0px 457px;
+}
+
+.vr_unit2001{
+  margin: 0px 0px 0px 457px;
+}
+
+.vr_unit2002{
+  margin: 0px 0px 0px 457px;
+}
+
+.vr_unit2003{
+  margin: 0px 0px 0px 457px;
+}
+
+.vr_unit2004{
+  margin: 0px 0px 0px 457px;
+}
+
+.vr_unit2005{
+  margin: 0px 0px 0px 457px;
+}
+
+.vr_unit2006{
+  margin: 0px 0px 0px 457px;
+}
+
+.vr_unit2007{
   margin: 0px 0px 0px 457px;
 }
 
@@ -460,12 +560,40 @@
   border-color: grey;
   width: 100px;
   height: 24px;
-  margin: -48px 0px 0px 557px;
+  margin: -216px 0px 0px 557px;
 }
 
 .vr_total2{
   margin: 0px 0px 0px 557px;
 }
+
+.vr_total2001{
+  margin: 0px 0px 0px 557px;
+}
+
+.vr_total2002{
+  margin: 0px 0px 0px 557px;  
+}
+
+.vr_total2003{
+  margin: 0px 0px 0px 557px;  
+}
+
+.vr_total2004{
+  margin: 0px 0px 0px 557px;  
+}
+
+.vr_total2005{
+  margin: 0px 0px 0px 557px;  
+} 
+
+.vr_total2006{
+  margin: 0px 0px 0px 557px;  
+} 
+
+.vr_total2007{
+  margin: 0px 0px 0px 557px;  
+} 
 
 .vr_totalI2{
   margin: 0px 0px 0px 557px;
