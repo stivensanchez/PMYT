@@ -70,7 +70,7 @@
      <% @infos.each do |info| %> 
        <%= info.descripcion %>
      <% end %> 
-      </div>
+</div>
      
       <div class="imagen">
         <div class="pruebita">
@@ -85,6 +85,12 @@
       <div class="siete">
              <% @infos.each do |info| %> 
              <%= info.especificaciones %>
+             <% end %> 
+      </div>
+      <div class="panel-heading"><center><b>ESTANDARES DE CALIDAD</b></center></div>
+      <div class="once">
+             <% @infos.each do |info| %> 
+             <%= info.estandares %>
              <% end %> 
       </div>
 <div class="ocho">      

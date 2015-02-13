@@ -8,6 +8,7 @@ class CreateInfos < ActiveRecord::Migration
       t.string :tela
       t.text :descripcion
       t.text :especificaciones
+      t.text :estandares
       t.references :modulo, index: true
       t.references :ficha, index: true
 

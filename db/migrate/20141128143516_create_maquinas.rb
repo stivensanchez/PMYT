@@ -4,7 +4,7 @@ class CreateMaquinas < ActiveRecord::Migration
       t.string :nombre
       t.text :descripcion
       t.references :modulo, index: true
-
+      t.integer :cantidad
       t.timestamps
     end
   end

@@ -60,7 +60,7 @@
 .ocho{
   padding: 3px;
   width: 150px;
-  margin: -690px 0px 0px 568px;
+  margin: -880px 0px 0px 568px;
 }
 .list-group-item{
   padding: 4px;
@@ -71,7 +71,15 @@
   margin: 5px 0px 0px 0px;
 }
 .diez{
-  margin: 655px 0px 0px 0px;
+  margin: 829px 0px 0px 0px;
+}
+.once{
+  padding: 3px;
+  border: solid 1px;
+  width: 717px;
+  height: 150px;
+  border-color: black;
+  border-radius: 3px;
 }
 .imagen{
   border: solid 1px;

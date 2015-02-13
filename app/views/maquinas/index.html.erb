@@ -13,6 +13,7 @@
     <tr>
       <th><%= model_class.human_attribute_name(:nombre) %></th>
       <th><%= model_class.human_attribute_name(:descripcion) %></th>
+      <th><%= model_class.human_attribute_name(:cantidad) %></th>
       <th><%= model_class.human_attribute_name(:Acciones) %></th>
     </tr>
   </thead>
@@ -28,6 +29,7 @@
       <tr>
         <td><%= maquina.nombre %></td>
         <td><%= maquina.descripcion %></td>
+        <td><%= maquina.cantidad %></td>
         <td>
           <%= link_to 'Editar',
     edit_modulo_maquina_path(@modulo,maquina), :class => 'btn btn-default btn-xs btn-lg active' %>

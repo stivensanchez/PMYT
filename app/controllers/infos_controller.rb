@@ -71,6 +71,6 @@ class InfosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def info_params
-      params.require(:info).permit(:referencia, :talla, :talla_promedio, :color, :tela, :descripcion, :especificaciones, :modulo_id, :ficha_id,:image)
+      params.require(:info).permit(:referencia, :talla, :talla_promedio, :color, :tela, :descripcion, :especificaciones, :estandares, :modulo_id, :ficha_id,:image)
     end
 end
