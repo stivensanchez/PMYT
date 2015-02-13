@@ -11,15 +11,18 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:medidas) %></th>
+      <th><%= model_class.human_attribute_name(:talla) %></th>
+      <th><%= model_class.human_attribute_name(:cm) %></th>
       <th><%= model_class.human_attribute_name(:tolerancia) %></th>
-     
-       <th><%= model_class.human_attribute_name(:Acciones) %></th>
+      <th><%= model_class.human_attribute_name(:Acciones) %></th>
     </tr>
   </thead>
   <tbody>
     <% @measures.each do |measure| %>
       <tr>
         <td><%= measure.medidas %></td>
+        <td><%= measure.talla %></td>
+        <td><%= measure.cm %></td>
         <td><%= measure.tolerancia %></td>
         
         <td>

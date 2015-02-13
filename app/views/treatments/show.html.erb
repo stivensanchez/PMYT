@@ -1,0 +1,22 @@
+<%- model_class = Treatment -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:proceso) %>:</strong></dt>
+  <dd><%= @treatment.proceso %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:descripcion) %>:</strong></dt>
+  <dd><%= @treatment.descripcion %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:ubicacion) %>:</strong></dt>
+  <dd><%= @treatment.ubicacion %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:proveedor) %>:</strong></dt>
+  <dd><%= @treatment.proveedor %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:precio) %>:</strong></dt>
+  <dd><%= @treatment.precio %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:info_id) %>:</strong></dt>
+  <dd><%= @treatment.info_id %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              treatments_path, :class => 'btn btn-default'  %>

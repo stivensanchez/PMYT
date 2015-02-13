@@ -3,6 +3,7 @@ class Info < ActiveRecord::Base
   belongs_to :ficha
   belongs_to :nivelation
   has_many :measures
+  has_many :treatments
   has_many :materials
   has_many :prendas
   has_many :developments

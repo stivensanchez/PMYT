@@ -113,6 +113,12 @@
         
     <div class="list-group-item">
       <% @infos.each do |info| %>
+         <center><%= link_to 'PROCESOS DE LA PRENDA', info_treatments_path(info), :class => 'btn btn-default btn-xs btn-lg active' %></center>
+      <% end %>  
+    </div>    
+        
+    <div class="list-group-item">
+      <% @infos.each do |info| %>
          <center><%= link_to 'PIEZAS POR PRENDA', info_prendas_path(info), :class => 'btn btn-default btn-xs btn-lg active' %></center>
       <% end %>  
     </div>    
@@ -121,7 +127,7 @@
       <% @infos.each do |info| %>
          <center><%= link_to 'DESARROLLO', info_developments_path(info), :class => 'btn btn-default btn-xs btn-lg active' %></center>
       <% end %>  
-    </div>  
+      </div>  
 </div>  
 </div>     
        <br>

@@ -1,0 +1,18 @@
+<%= simple_form_for [@ficha,@info,@treatment], :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :proceso %>
+  <%= error_span(@treatment[:proceso]) %>
+  <%= f.input :descripcion %>
+  <%= error_span(@treatment[:descripcion]) %>
+  <%= f.input :ubicacion %>
+  <%= error_span(@treatment[:ubicacion]) %>
+  <%= f.input :proveedor %>
+  <%= error_span(@treatment[:proveedor]) %>
+  <%= f.input :precio %>
+  <%= error_span(@treatment[:precio]) %>
+  <%= f.input :info_id %>
+  <%= error_span(@treatment[:info_id]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                info_treatments_path(@info), :class => 'btn btn-default' %>
+<% end %>

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :tipo_docs
-  
+
   resources :modulos do
     resources :maquinas
   end  
@@ -67,6 +67,13 @@ Rails.application.routes.draw do
   resources :fichas do
     resources :costs
   end
+  
+  resources :infos do
+    resources :treatments
+  end
+  
+
+  
   
   
   # The priority is based upon order of creation: first created -> highest priority.
