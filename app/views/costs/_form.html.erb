@@ -1,4 +1,30 @@
 <%= simple_form_for [@ficha,@cost], :html => { :class => 'form-horizontal' } do |f| %>
+ <script>
+ var total, total001, total002;
+    function cantidadCero(){
+      var cant = document.getElementById('cant').value;
+      var vr_unit = document.getElementById('vr_unit').value;
+      total = (parseInt(cant) * parseInt(vr_unit))
+      document.getElementById('vr_total').value = total;
+      document.getElementById('t_costo_mat').value = total;
+    }  
+    
+    function cantidadUno(){
+      var cant001 = document.getElementById('cant001').value;
+      var vr_unit001 = document.getElementById('vr_unit001').value;
+      total001 = (parseInt(cant001) * parseInt(vr_unit001))
+      document.getElementById('vr_total001').value = total001;
+      document.getElementById('t_costo_mat').value = total + total001;
+    }
+    
+    function cantidadDos(){
+     var cant002 = document.getElementById('cant002').value;
+     var vr_unit002 = document.getElementById('vr_unit002').value;
+     total002 = (parseInt(cant002) * parseInt(vr_unit002))
+     document.getElementById('vr_total002').value = total002;
+     document.getElementById('t_costo_mat').value = total + total001 + total002;
+    }
+ </script>
 <div class="fondo"> 
     <div class="productoo">
       <strong><center>PRODUCTO</center></strong>
@@ -22,16 +48,16 @@
         <div class="panel-heading">
           <h3 class="panel-title"><center><b>Costeo de Materiales</b></center></h3>
         </div>
-  </div>  
+  </div> 
   
   <div class="cant">
-   <%= f.text_field :cant, :class => 'tamaño' %>
+   <%= f.text_field :cant, :class => 'tamaño', :id => 'cant' %>
   </div>
   <div class="cant001">
-   <%= f.text_field :cant001, :class => 'tamaño' %>
+   <%= f.text_field :cant001, :class => 'tamaño', :id => 'cant001' %>
   </div>
   <div class="cant002">
-   <%= f.text_field :cant002, :class => 'tamaño'%>
+   <%= f.text_field :cant002, :class => 'tamaño', :id => 'cant002' %>
   </div>
   <div class="cant003">
    <%= f.text_field :cant003, :class => 'tamaño' %>
@@ -106,13 +132,13 @@
    <strong><center>VR_UNIT</strong></center>
   </div>
   <div class="vr_unit">
-  <%= f.text_field :vr_unit, :class => 'tamaño' %>
+  <%= f.text_field :vr_unit, :class => 'tamaño', :id => 'vr_unit', :onblur => 'cantidadCero()' %>
   </div>
   <div class="vr_unit001">
-   <%= f.text_field :vr_unit001, :class => 'tamaño'%>
+   <%= f.text_field :vr_unit001, :class => 'tamaño', :id => 'vr_unit001', :onblur => 'cantidadUno()' %>
   </div>
   <div class="vr_unit002">
-   <%= f.text_field :vr_unit002, :class => 'tamaño' %>
+   <%= f.text_field :vr_unit002, :class => 'tamaño', :id => 'vr_unit002', :onblur => 'cantidadDos()' %>
   </div>
   <div class="vr_unit003">
    <%= f.text_field :vr_unit003, :class => 'tamaño' %>
@@ -133,13 +159,13 @@
    <strong><center>VR_TOTAL</strong></center>
   </div>
   <div class="vr_total">
-   <%= f.text_field :vr_total, :class => 'tamaño' %>
+   <%= f.text_field :vr_total, :class => 'tamaño', :id => 'vr_total' %>
   </div>
   <div class="vr_total001">
-   <%= f.text_field :vr_total001, :class => 'tamaño'%>
+   <%= f.text_field :vr_total001, :class => 'tamaño', :id => 'vr_total001' %>
   </div>
   <div class="vr_total002">
-   <%= f.text_field :vr_total002, :class => 'tamaño' %>
+   <%= f.text_field :vr_total002, :class => 'tamaño', :id => 'vr_total002' %>
   </div>
   <div class="vr_total003">
    <%= f.text_field :vr_total003, :class => 'tamaño' %>
@@ -160,7 +186,7 @@
    <strong><center>TOTAL COSTO DE MATERIALES</strong></center> 
   </div>
   <div class="t_costo_mat">
-   <%= f.text_field :t_costo_mat, :class => 'tamaño' %>
+   <%= f.text_field :t_costo_mat, :class => 'tamaño', :id => 't_costo_mat' %>
   </div>
   
   <div class="panel panel-default">
