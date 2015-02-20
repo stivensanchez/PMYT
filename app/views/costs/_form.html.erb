@@ -1,6 +1,5 @@
 <%= simple_form_for [@ficha,@cost], :html => { :class => 'form-horizontal' } do |f| %>
 <script>
- var total, total001, total002, total003;
     function cantidadCero(){
       var cant = document.getElementById('cant').value;
       var vr_unit = document.getElementById('vr_unit').value;
@@ -31,6 +30,38 @@
       total003 = (parseInt(cant003) * parseInt(vr_unit003))
       document.getElementById('vr_total003').value = total003;
       document.getElementById('t_costo_mat').value = total + total001 +total002 +total003;
+    }
+    
+    function cantidadCuatro(){
+     var cant004 = document.getElementById('cant004').value;
+     var vr_unit004 = document.getElementById('vr_unit004').value;
+     total004 = (parseInt(cant004) * parseInt(vr_unit004))
+     document.getElementById('vr_total004').value = total004;
+     document.getElementById('t_costo_mat').value = total + total001 + total002 + total003 + total004;
+    }
+    
+    function cantidadCinco(){
+     var cant005 = document.getElementById('cant005').value;
+     var vr_unit005 = document.getElementById('vr_unit005').value;
+     total005 = (parseInt(cant005) * parseInt(vr_unit005))
+     document.getElementById('vr_total005').value = total005;
+     document.getElementById('t_costo_mat').value = total + total001 + total002 + total003 + total004 + total005;
+    }
+    
+    function cantidadSeis(){
+     var cant006 = document.getElementById('cant006').value;
+     var vr_unit006 = document.getElementById('vr_unit006').value;
+     total006 = (parseInt(cant006) * parseInt(vr_unit006))
+     document.getElementById('vr_total006').value = total006;
+     document.getElementById('t_costo_mat').value = total + total001 + total002 + total003 + total004 + total005 + total006;
+    }
+    
+    function cantidadSiete(){
+     var cant007 = document.getElementById('cant007').value;
+     var vr_unit007 = document.getElementById('vr_unit007').value;
+     total007 = (parseInt(cant007) * parseInt(vr_unit007))
+     document.getElementById('vr_total007').value = total007;
+     totii = document.getElementById('t_costo_mat').value = total + total001 + total002 + total003 + total004 + total005 + total006 + total007;
     }
 </script>
 <div class="fondo"> 
@@ -71,16 +102,16 @@
    <%= f.text_field :cant003, :class => 'tamaño', :id => 'cant003' %>
   </div>
   <div class="cant004">
-   <%= f.text_field :cant004, :class => 'tamaño' %>
+   <%= f.text_field :cant004, :class => 'tamaño', :id => 'cant004' %>
   </div>
   <div class="cant005">
-   <%= f.text_field :cant005, :class => 'tamaño' %>
+   <%= f.text_field :cant005, :class => 'tamaño', :id => 'cant005' %>
   </div>
   <div class="cant006">
-   <%= f.text_field :cant006, :class => 'tamaño' %>
+   <%= f.text_field :cant006, :class => 'tamaño', :id => 'cant006' %>
   </div>
   <div class="cant007">
-   <%= f.text_field :cant007, :class => 'tamaño'%>
+   <%= f.text_field :cant007, :class => 'tamaño', :id => 'cant007' %>
   </div>
   <div class="undd">
    <strong><center>UND</strong></center> 
@@ -152,16 +183,16 @@
    <%= f.text_field :vr_unit003, :class => 'tamaño', :id => 'vr_unit003', :onblur => 'cantidadTres()' %>
   </div>
   <div class="vr_unit004">
-   <%= f.text_field :vr_unit004, :class => 'tamaño' %>
+   <%= f.text_field :vr_unit004, :class => 'tamaño', :id => 'vr_unit004', :onblur => 'cantidadCuatro()' %>
   </div>
   <div class="vr_unit005">
-   <%= f.text_field :vr_unit005, :class => 'tamaño' %>
+   <%= f.text_field :vr_unit005, :class => 'tamaño', :id => 'vr_unit005', :onblur => 'cantidadCinco()' %>
   </div>
   <div class="vr_unit006">
-   <%= f.text_field :vr_unit006, :class => 'tamaño' %>
+   <%= f.text_field :vr_unit006, :class => 'tamaño', :id => 'vr_unit006', :onblur => 'cantidadSeis()' %>
   </div>
   <div class="vr_unit007">
-   <%= f.text_field :vr_unit007, :class => 'tamaño' %>
+   <%= f.text_field :vr_unit007, :class => 'tamaño', :id => 'vr_unit007', :onblur => 'cantidadSiete()' %>
   </div>
   <div class="vr_totall">
    <strong><center>VR_TOTAL</strong></center>
@@ -179,16 +210,16 @@
    <%= f.text_field :vr_total003, :class => 'tamaño', :id => 'vr_total003' %>
   </div>
   <div class="vr_total004">
-   <%= f.text_field :vr_total004, :class => 'tamaño' %>
+   <%= f.text_field :vr_total004, :class => 'tamaño', :id => 'vr_total004' %>
   </div>
   <div class="vr_total005">
-   <%= f.text_field :vr_total005, :class => 'tamaño'%>
+   <%= f.text_field :vr_total005, :class => 'tamaño', :id => 'vr_total005' %>
   </div>
   <div class="vr_total006">
-   <%= f.text_field :vr_total006, :class => 'tamaño'%>
+   <%= f.text_field :vr_total006, :class => 'tamaño', :id => 'vr_total006' %>
   </div>
   <div class="vr_total007">
-   <%= f.text_field :vr_total007, :class => 'tamaño' %>
+   <%= f.text_field :vr_total007, :class => 'tamaño', :id => 'vr_total007' %>
   </div>
   <div class="t_costo_matt">
    <strong><center>TOTAL COSTO DE MATERIALES</strong></center> 
@@ -202,33 +233,99 @@
           <h3 class="panel-title"><center><b>Costeo de Mano de Obra</b></center></h3>
         </div>
   </div> 
+    <script>
+    function cantidaddCero(){
+      var cant2 = document.getElementById('cant2').value;
+      var vr_unit2 = document.getElementById('vr_unit2').value;
+      totall = (parseInt(cant2) * parseInt(vr_unit2))
+      document.getElementById('vr_total2').value = totall;
+      document.getElementById('t_costo_mano').value = totall;
+    }  
     
+    function cantidaddUno(){
+      var cant2001 = document.getElementById('cant2001').value;
+      var vr_unit2001 = document.getElementById('vr_unit2001').value;
+      totall001 = (parseInt(cant2001) * parseInt(vr_unit2001))
+      document.getElementById('vr_total2001').value = totall001;
+      document.getElementById('t_costo_mano').value = totall + totall001;
+    }
+    
+    function cantidaddDos(){
+     var cant2002 = document.getElementById('cant2002').value;
+     var vr_unit2002 = document.getElementById('vr_unit2002').value;
+     totall002 = (parseInt(cant2002) * parseInt(vr_unit2002))
+     document.getElementById('vr_total2002').value = totall002;
+     document.getElementById('t_costo_mano').value = totall + totall001 + totall002;
+    }
+    
+    function cantidaddTres(){
+      var cant2003 = document.getElementById('cant2003').value;
+      var vr_unit2003 = document.getElementById('vr_unit2003').value;
+      totall003 = (parseInt(cant2003) * parseInt(vr_unit2003))
+      document.getElementById('vr_total2003').value = totall003;
+      document.getElementById('t_costo_mano').value = totall + totall001 +totall002 +totall003;
+    }
+    
+    function cantidaddCuatro(){
+     var cant2004 = document.getElementById('cant2004').value;
+     var vr_unit2004 = document.getElementById('vr_unit2004').value;
+     totall004 = (parseInt(cant2004) * parseInt(vr_unit2004))
+     document.getElementById('vr_total2004').value = totall004;
+     document.getElementById('t_costo_mano').value = totall + totall001 + totall002 + totall003 + totall004;
+    }
+    
+    function cantidaddCinco(){
+     var cant2005 = document.getElementById('cant2005').value;
+     var vr_unit2005 = document.getElementById('vr_unit2005').value;
+     totall005 = (parseInt(cant2005) * parseInt(vr_unit2005))
+     document.getElementById('vr_total2005').value = totall005;
+     document.getElementById('t_costo_mano').value = totall + totall001 + totall002 + totall003 + totall004 + totall005;
+    }
+    
+    function cantidaddSeis(){
+     var cant2006 = document.getElementById('cant2006').value;
+     var vr_unit2006 = document.getElementById('vr_unit2006').value;
+     totall006 = (parseInt(cant2006) * parseInt(vr_unit2006))
+     document.getElementById('vr_total2006').value = totall006;
+     document.getElementById('t_costo_mano').value = totall + totall001 + totall002 + totall003 + totall004 + totall005 + totall006;
+    }
+    
+    function cantidaddSiete(){
+     var cant2007 = document.getElementById('cant2007').value;
+     var vr_unit2007 = document.getElementById('vr_unit2007').value;
+     totall007 = (parseInt(cant2007) * parseInt(vr_unit2007))
+     document.getElementById('vr_total2007').value = totall007;
+     toti = document.getElementById('t_costo_mano').value = totall + totall001 + totall002 + totall003 + totall004 + totall005 + totall006 + totall007;
+     tote = document.getElementById('cost_to_prod').value = totii + toti;
+     document.getElementById('cost_uni_prod').value = tote;
+    }
+</script>
   <div class="cantt2">
    <strong><center>CANT</strong></center>
   </div>
   <div class="cant2">
-   <%= f.text_field :cant2, :class => 'tamaño' %>
+   <%= f.text_field :cant2, :class => 'tamaño', :id => 'cant2' %>
   </div>
   <div class="cant2001">
-   <%= f.text_field :cant2001, :class => 'tamaño'%>
+   <%= f.text_field :cant2001, :class => 'tamaño', :id => 'cant2001'%>
   </div>  
   <div class="cant2002">
-   <%= f.text_field :cant2002, :class => 'tamaño' %>
+   <%= f.text_field :cant2002, :class => 'tamaño', :id => 'cant2002' %>
   </div>
   <div class="cant2003">
-   <%= f.text_field :cant2003, :class => 'tamaño' %>
+   <%= f.text_field :cant2003, :class => 'tamaño', :id => 'cant2003' %>
   </div>
   <div class="cant2004">
-   <%= f.text_field :cant2004, :class => 'tamaño' %>
+   <%= f.text_field :cant2004, :class => 'tamaño', :id => 'cant2004' %>
   </div>
   <div class="cant2005">
-   <%= f.text_field :cant2005, :class => 'tamaño' %>
+   <%= f.text_field :cant2005, :class => 'tamaño', :id => 'cant2005' %>
   </div>
   <div class="cant2006">
-   <%= f.text_field :cant2006, :class => 'tamaño' %>
+   <%= f.text_field :cant2006, :class => 'tamaño', :id => 'cant2006' %>
   </div>
   <div class="cant2007">
-   <%= f.text_field :cant2007, :class => 'tamaño' %>
+   <%= f.text_field :cant2007, :class => 'tamaño', :id => 'cant2007' %>
   </div>
   <div class="undd2">
    <strong><center>UND</strong></center> 
@@ -288,77 +385,77 @@
    <strong><center>VR_UNIT</strong></center>
   </div>
   <div class="vr_unit2">
-   <%= f.text_field :vr_unit2, :class => 'tamaño' %>
+   <%= f.text_field :vr_unit2, :class => 'tamaño', :id => 'vr_unit2', :onblur => 'cantidaddCero()' %>
   </div>
   <div class="vr_unit2001">
-   <%= f.text_field :vr_unit2001, :class => 'tamaño'%>
+   <%= f.text_field :vr_unit2001, :class => 'tamaño', :id => 'vr_unit2001', :onblur => 'cantidaddUno()'%>
   </div>
   <div class="vr_unit2002">
-   <%= f.text_field :vr_unit2002, :class => 'tamaño' %>
+   <%= f.text_field :vr_unit2002, :class => 'tamaño', :id => 'vr_unit2002', :onblur => 'cantidaddDos()' %>
   </div>
   <div class="vr_unit2003">
-   <%= f.text_field :vr_unit2003, :class => 'tamaño' %>
+   <%= f.text_field :vr_unit2003, :class => 'tamaño', :id => 'vr_unit2003', :onblur => 'cantidaddTres()' %>
   </div>
   <div class="vr_unit2004">
-   <%= f.text_field :vr_unit2004, :class => 'tamaño' %>
+   <%= f.text_field :vr_unit2004, :class => 'tamaño', :id => 'vr_unit2004', :onblur => 'cantidaddCuatro()' %>
   </div>
   <div class="vr_unit2005">
-   <%= f.text_field :vr_unit2005, :class => 'tamaño' %>
+   <%= f.text_field :vr_unit2005, :class => 'tamaño', :id => 'vr_unit2005', :onblur => 'cantidaddCinco()' %>
   </div>
   <div class="vr_unit2006">
-   <%= f.text_field :vr_unit2006, :class => 'tamaño' %>
+   <%= f.text_field :vr_unit2006, :class => 'tamaño', :id => 'vr_unit2006', :onblur => 'cantidaddSeis()' %>
   </div>
   <div class="vr_unit2007">
-   <%= f.text_field :vr_unit2007, :class => 'tamaño' %>
+   <%= f.text_field :vr_unit2007, :class => 'tamaño', :id => 'vr_unit2007', :onblur => 'cantidaddSiete()' %>
   </div>
   <div class="vr_totall2">
    <strong><center>VR_TOTAL</strong></center>
   </div>
   <div class="vr_total2">
-   <%= f.text_field :vr_total2, :class => 'tamaño' %>
+   <%= f.text_field :vr_total2, :class => 'tamaño', :id => 'vr_total2' %>
   </div>
   <div class="vr_total2001">
-   <%= f.text_field :vr_total2001, :class => 'tamaño'%>
+   <%= f.text_field :vr_total2001, :class => 'tamaño', :id => 'vr_total2001' %>
   </div>
   <div class="vr_total2002">
-   <%= f.text_field :vr_total2002, :class => 'tamaño' %>
+   <%= f.text_field :vr_total2002, :class => 'tamaño', :id => 'vr_total2002' %>
   </div>
   <div class="vr_total2003">
-   <%= f.text_field :vr_total2003, :class => 'tamaño' %>
+   <%= f.text_field :vr_total2003, :class => 'tamaño', :id => 'vr_total2003' %>
   </div>
   <div class="vr_total2004">
-   <%= f.text_field :vr_total2004, :class => 'tamaño' %>
+   <%= f.text_field :vr_total2004, :class => 'tamaño', :id => 'vr_total2004' %>
   </div>
   <div class="vr_total2005">
-   <%= f.text_field :vr_total2005, :class => 'tamaño' %>
+   <%= f.text_field :vr_total2005, :class => 'tamaño', :id => 'vr_total2005' %>
   </div>
   <div class="vr_total2006">
-   <%= f.text_field :vr_total2006, :class => 'tamaño' %>
+   <%= f.text_field :vr_total2006, :class => 'tamaño', :id => 'vr_total2006' %>
   </div>
   <div class="vr_total2007">
-   <%= f.text_field :vr_total2007, :class => 'tamaño' %>
+   <%= f.text_field :vr_total2007, :class => 'tamaño', :id => 'vr_total2007' %>
   </div>
   <div class="t_costo_manoo">
    <strong><center>TOTAL COSTO DE MANO DE OBRA</strong></center>
   </div>
   <div class="t_costo_mano">
-   <%= f.text_field :t_costo_mano, :class => 'tamaño' %>
+   <%= f.text_field :t_costo_mano, :class => 'tamaño', :id => 't_costo_mano' %>
   </div>
   
   <div class="cost_to_prodd">
    <strong><center>COSTO TOTAL DE PRODUCCION DEL LOTE</center></strong>
   </div>
   <div class="cost_to_prod">
-   <%= f.text_field :cost_to_prod, :class => 'tamaño' %>
+   <%= f.text_field :cost_to_prod, :class => 'tamaño', :id => 'cost_to_prod' %>
   </div>
   
   <div class="cost_uni_prodd">
    <strong><center>COSTO UNITARIO DE PRODUCCION</center></strong>
   </div>
   <div class="cost_uni_prod">
-   <%= f.text_field :cost_uni_prod, :class => 'tamaño' %>
+   <%= f.text_field :cost_uni_prod, :class => 'tamaño', :id => 'cost_uni_prod' %>
   </div>
-  
+
 </div>  
   <br>
 
