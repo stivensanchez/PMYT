@@ -87,6 +87,10 @@ class CreateCosts < ActiveRecord::Migration
       t.string :t_costo_mano
       t.string :cost_to_prod
       t.string :cost_uni_prod
+      t.string :utilidad
+      t.string :undutilidad
+      t.string :pre_venta
+      t.string :margen
       t.references :ficha, index: true
 
       t.timestamps

@@ -251,6 +251,11 @@
   width: 258px;
 }
 
+.tamañou{
+  width: 100px;
+  height: 48px;
+}
+
 .undI2{
   margin: 0px 0px 0px 100px;
   border:solid 1px;
@@ -1008,3 +1013,67 @@
 
 
   
+/* Nuevos campos de la hoja de costos*/
+
+.utilidad{
+  border:solid 1px;
+  border-color: grey;
+  width: 100px;
+  height: 48px;
+  margin: -0px 0px 0px 0px;
+}
+
+.utilidadd{
+  margin: -48px 0px 0px 100px;
+}
+
+.pre_venta{
+  border:solid 1px;
+  border-color: grey;
+  width: 357px;
+  height: 48px;
+  margin: -48px 0px 0px 200px;
+}
+
+.pre_ventaa{
+  margin: -48px 0px 0px 557px;
+}
+
+.margen{
+  border:solid 1px;
+  border-color: grey;
+  width: 557px;
+  height: 24px;
+}
+
+.margenn{
+  margin: -24px 0px 0px 557px;
+}
+
+#letra{
+  margin: 0px 0px 0px 230px;
+}
+
+.utilidadI{
+  border:solid 1px;
+  border-color: grey;
+  width: 100px;
+  height: 48px;
+  margin: -48px 0px 0px 100px;
+}
+
+.pre_ventaI{
+  border:solid 1px;
+  border-color: grey;
+  width: 100px;
+  height: 48px;
+  margin: -48px 0px 0px 557px;
+}
+
+.margenI{
+  border:solid 1px;
+  border-color: grey;
+  width: 100px;
+  height: 24px;
+  margin: -24px 0px 0px 557px;
+}

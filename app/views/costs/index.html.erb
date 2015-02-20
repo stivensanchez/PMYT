@@ -496,6 +496,31 @@
          <%= cost.cost_uni_prod %>
       <% end %>
     </div>
+    <div class="utilidad">
+        <strong><center>% Politica de utilidad</center></strong>
+    </div>
+    <div class="utilidadI">
+        <% @costs.each do |cost| %>
+           <%= cost.utilidad %>
+        <% end %>
+    </div>
+    <div class="pre_venta">
+        <strong><center>PRECIO DE VENTA</center></strong>
+    </div>
+    <div class="pre_ventaI">
+        <% @costs.each do |cost| %>
+           <%= cost.pre_venta %>
+        <% end %>
+    </div>
+    <div class="margen">
+        <strong><center id="letra">Margen de Contribucion</center></strong>
+    </div>
+    <div class="margenI">
+        <% @costs.each do |cost| %>
+           <%= cost.margen %>
+        <% end %>
+    </div>    
+    </div>
   </div><br>
     <div class=>
          <% @costs.each do |cost| %>
