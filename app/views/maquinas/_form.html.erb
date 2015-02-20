@@ -8,6 +8,10 @@
   <%= f.text_area :descripcion, class: "form-control", placeholder: "Ingrese una descripcion" %>
 </div>
 <div class="form-group">
+  <%= f.label :ficha_tecnica %>
+  <%= f.file_field :ficha %>
+</div>
+<div class="form-group">
   <%= f.label :Cantidad %>
   <%= f.text_area :cantidad, class: "form-control", placeholder: "Ingrese la cantidad de maquinas" %>
 </div>

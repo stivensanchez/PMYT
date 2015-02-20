@@ -27,9 +27,9 @@
         <td><%= operation.nombre %></td>
         <td><%= operation.sam %></td>
         <td><%= operation.descripcion %></td>
-        <td><%= operation.maquina.nombre %></td>
-        <td><%= video_tag(operation.video.url, height: '150', widt: '150', controls: true) %>
-        <td><%= image_tag(operation.image.url, height: '150', width: '150') %></td>
+        <td><%= operation.maquina_id %></td>
+        <td><%= link_to('<button class="btn btn-default">ver</button>'.html_safe, operation.video.url, controls: true) %>
+        <td><%=link_to('<button class="btn btn-default">ver</button>'.html_safe, operation.image.url, ) %></td>
         
         
         <td>

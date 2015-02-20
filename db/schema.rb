@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150213144142) do
+ActiveRecord::Schema.define(version: 20150220160608) do
 
   create_table "costs", force: true do |t|
     t.string   "producto"
@@ -185,6 +185,10 @@ ActiveRecord::Schema.define(version: 20150213144142) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "cantidad"
+    t.string   "ficha_file_name"
+    t.string   "ficha_content_type"
+    t.integer  "ficha_file_size"
+    t.datetime "ficha_updated_at"
   end
 
   create_table "materials", force: true do |t|
@@ -202,6 +206,8 @@ ActiveRecord::Schema.define(version: 20150213144142) do
     t.integer  "info_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "talla",      limit: nil
+    t.integer  "cm"
   end
 
   create_table "modulos", force: true do |t|
@@ -286,12 +292,10 @@ ActiveRecord::Schema.define(version: 20150213144142) do
     t.text     "descripcion"
     t.string   "ubicacion"
     t.string   "proveedor"
-    t.string   "precio"
+    t.float    "precio"
     t.integer  "info_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "treatments", ["info_id"], name: "index_treatments_on_info_id"
 
 end

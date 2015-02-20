@@ -1,6 +1,6 @@
 <%= simple_form_for [@ficha,@cost], :html => { :class => 'form-horizontal' } do |f| %>
- <script>
- var total, total001, total002;
+<script>
+ var total, total001, total002, total003;
     function cantidadCero(){
       var cant = document.getElementById('cant').value;
       var vr_unit = document.getElementById('vr_unit').value;
@@ -24,7 +24,15 @@
      document.getElementById('vr_total002').value = total002;
      document.getElementById('t_costo_mat').value = total + total001 + total002;
     }
- </script>
+    
+    function cantidadTres(){
+      var cant003 = document.getElementById('cant003').value;
+      var vr_unit003 = document.getElementById('vr_unit003').value;
+      total003 = (parseInt(cant003) * parseInt(vr_unit003))
+      document.getElementById('vr_total003').value = total003;
+      document.getElementById('t_costo_mat').value = total + total001 +total002 +total003;
+    }
+</script>
 <div class="fondo"> 
     <div class="productoo">
       <strong><center>PRODUCTO</center></strong>
@@ -60,7 +68,7 @@
    <%= f.text_field :cant002, :class => 'tamaño', :id => 'cant002' %>
   </div>
   <div class="cant003">
-   <%= f.text_field :cant003, :class => 'tamaño' %>
+   <%= f.text_field :cant003, :class => 'tamaño', :id => 'cant003' %>
   </div>
   <div class="cant004">
    <%= f.text_field :cant004, :class => 'tamaño' %>
@@ -141,7 +149,7 @@
    <%= f.text_field :vr_unit002, :class => 'tamaño', :id => 'vr_unit002', :onblur => 'cantidadDos()' %>
   </div>
   <div class="vr_unit003">
-   <%= f.text_field :vr_unit003, :class => 'tamaño' %>
+   <%= f.text_field :vr_unit003, :class => 'tamaño', :id => 'vr_unit003', :onblur => 'cantidadTres()' %>
   </div>
   <div class="vr_unit004">
    <%= f.text_field :vr_unit004, :class => 'tamaño' %>
@@ -168,7 +176,7 @@
    <%= f.text_field :vr_total002, :class => 'tamaño', :id => 'vr_total002' %>
   </div>
   <div class="vr_total003">
-   <%= f.text_field :vr_total003, :class => 'tamaño' %>
+   <%= f.text_field :vr_total003, :class => 'tamaño', :id => 'vr_total003' %>
   </div>
   <div class="vr_total004">
    <%= f.text_field :vr_total004, :class => 'tamaño' %>

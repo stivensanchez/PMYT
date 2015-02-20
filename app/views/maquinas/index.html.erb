@@ -13,6 +13,7 @@
     <tr>
       <th><%= model_class.human_attribute_name(:nombre) %></th>
       <th><%= model_class.human_attribute_name(:descripcion) %></th>
+      <th><%= model_class.human_attribute_name(:ficha_tecnica) %></th>
       <th><%= model_class.human_attribute_name(:cantidad) %></th>
       <th><%= model_class.human_attribute_name(:Acciones) %></th>
     </tr>
@@ -29,6 +30,7 @@
       <tr>
         <td><%= maquina.nombre %></td>
         <td><%= maquina.descripcion %></td>
+        <td><%= link_to('<button class="btn btn-default">ver</button>'.html_safe, maquina.ficha.url) %></td>
         <td><%= maquina.cantidad %></td>
         <td>
           <%= link_to 'Editar',
