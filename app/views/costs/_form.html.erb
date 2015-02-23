@@ -5,7 +5,7 @@
       var vr_unit = document.getElementById('vr_unit').value;
       total = (parseInt(cant) * parseInt(vr_unit))
       document.getElementById('vr_total').value = total;
-      document.getElementById('t_costo_mat').value = total;
+      toti = document.getElementById('t_costo_mat').value = total;
     }  
     
     function cantidadUno(){
@@ -13,7 +13,7 @@
       var vr_unit001 = document.getElementById('vr_unit001').value;
       total001 = (parseInt(cant001) * parseInt(vr_unit001))
       document.getElementById('vr_total001').value = total001;
-      document.getElementById('t_costo_mat').value = total + total001;
+      toti = document.getElementById('t_costo_mat').value = total + total001;
     }
     
     function cantidadDos(){
@@ -21,7 +21,7 @@
      var vr_unit002 = document.getElementById('vr_unit002').value;
      total002 = (parseInt(cant002) * parseInt(vr_unit002))
      document.getElementById('vr_total002').value = total002;
-     document.getElementById('t_costo_mat').value = total + total001 + total002;
+     toti = document.getElementById('t_costo_mat').value = total + total001 + total002;
     }
     
     function cantidadTres(){
@@ -29,7 +29,7 @@
       var vr_unit003 = document.getElementById('vr_unit003').value;
       total003 = (parseInt(cant003) * parseInt(vr_unit003))
       document.getElementById('vr_total003').value = total003;
-      document.getElementById('t_costo_mat').value = total + total001 +total002 +total003;
+      toti = document.getElementById('t_costo_mat').value = total + total001 +total002 +total003;
     }
     
     function cantidadCuatro(){
@@ -37,7 +37,7 @@
      var vr_unit004 = document.getElementById('vr_unit004').value;
      total004 = (parseInt(cant004) * parseInt(vr_unit004))
      document.getElementById('vr_total004').value = total004;
-     document.getElementById('t_costo_mat').value = total + total001 + total002 + total003 + total004;
+     toti = document.getElementById('t_costo_mat').value = total + total001 + total002 + total003 + total004;
     }
     
     function cantidadCinco(){
@@ -45,7 +45,7 @@
      var vr_unit005 = document.getElementById('vr_unit005').value;
      total005 = (parseInt(cant005) * parseInt(vr_unit005))
      document.getElementById('vr_total005').value = total005;
-     document.getElementById('t_costo_mat').value = total + total001 + total002 + total003 + total004 + total005;
+     toti = document.getElementById('t_costo_mat').value = total + total001 + total002 + total003 + total004 + total005;
     }
     
     function cantidadSeis(){
@@ -53,7 +53,7 @@
      var vr_unit006 = document.getElementById('vr_unit006').value;
      total006 = (parseInt(cant006) * parseInt(vr_unit006))
      document.getElementById('vr_total006').value = total006;
-     document.getElementById('t_costo_mat').value = total + total001 + total002 + total003 + total004 + total005 + total006;
+     toti = document.getElementById('t_costo_mat').value = total + total001 + total002 + total003 + total004 + total005 + total006;
     }
     
     function cantidadSiete(){
@@ -61,7 +61,7 @@
      var vr_unit007 = document.getElementById('vr_unit007').value;
      total007 = (parseInt(cant007) * parseInt(vr_unit007))
      document.getElementById('vr_total007').value = total007;
-     totii = document.getElementById('t_costo_mat').value = total + total001 + total002 + total003 + total004 + total005 + total006 + total007;
+     toti = document.getElementById('t_costo_mat').value = total + total001 + total002 + total003 + total004 + total005 + total006 + total007;
     }
 </script>
 <div class="fondo"> 
@@ -171,7 +171,7 @@
    <strong><center>VR_UNIT</strong></center>
   </div>
   <div class="vr_unit">
-  <%= f.text_field :vr_unit, :class => 'tamaño', :id => 'vr_unit', :onblur => 'cantidadCero()' %>
+  <%= f.text_field :vr_unit, :class => 'tamaño', :id => 'vr_unit', :onblur => 'cantidadCero(), cantidadUno()' %>
   </div>
   <div class="vr_unit001">
    <%= f.text_field :vr_unit001, :class => 'tamaño', :id => 'vr_unit001', :onblur => 'cantidadUno()' %>
@@ -239,7 +239,9 @@
       var vr_unit2 = document.getElementById('vr_unit2').value;
       totall = (parseInt(cant2) * parseInt(vr_unit2))
       document.getElementById('vr_total2').value = totall;
-      document.getElementById('t_costo_mano').value = totall;
+      totii = document.getElementById('t_costo_mano').value = totall;
+      tote = document.getElementById('cost_to_prod').value = totii + toti;
+      document.getElementById('cost_uni_prod').value = tote;
     }  
     
     function cantidaddUno(){
@@ -247,7 +249,9 @@
       var vr_unit2001 = document.getElementById('vr_unit2001').value;
       totall001 = (parseInt(cant2001) * parseInt(vr_unit2001))
       document.getElementById('vr_total2001').value = totall001;
-      document.getElementById('t_costo_mano').value = totall + totall001;
+      totii = document.getElementById('t_costo_mano').value = totall + totall001;
+      tote = document.getElementById('cost_to_prod').value = totii + toti;
+      document.getElementById('cost_uni_prod').value = tote;
     }
     
     function cantidaddDos(){
@@ -255,7 +259,9 @@
      var vr_unit2002 = document.getElementById('vr_unit2002').value;
      totall002 = (parseInt(cant2002) * parseInt(vr_unit2002))
      document.getElementById('vr_total2002').value = totall002;
-     document.getElementById('t_costo_mano').value = totall + totall001 + totall002;
+     totii = document.getElementById('t_costo_mano').value = totall + totall001 + totall002;
+     tote = document.getElementById('cost_to_prod').value = totii + toti;
+     document.getElementById('cost_uni_prod').value = tote;
     }
     
     function cantidaddTres(){
@@ -263,7 +269,9 @@
       var vr_unit2003 = document.getElementById('vr_unit2003').value;
       totall003 = (parseInt(cant2003) * parseInt(vr_unit2003))
       document.getElementById('vr_total2003').value = totall003;
-      document.getElementById('t_costo_mano').value = totall + totall001 +totall002 +totall003;
+      totii = document.getElementById('t_costo_mano').value = totall + totall001 +totall002 +totall003;
+      tote = document.getElementById('cost_to_prod').value = totii + toti;
+      document.getElementById('cost_uni_prod').value = tote;
     }
     
     function cantidaddCuatro(){
@@ -271,7 +279,9 @@
      var vr_unit2004 = document.getElementById('vr_unit2004').value;
      totall004 = (parseInt(cant2004) * parseInt(vr_unit2004))
      document.getElementById('vr_total2004').value = totall004;
-     document.getElementById('t_costo_mano').value = totall + totall001 + totall002 + totall003 + totall004;
+     totii = document.getElementById('t_costo_mano').value = totall + totall001 + totall002 + totall003 + totall004;
+     tote = document.getElementById('cost_to_prod').value = totii + toti;
+     document.getElementById('cost_uni_prod').value = tote;
     }
     
     function cantidaddCinco(){
@@ -279,7 +289,9 @@
      var vr_unit2005 = document.getElementById('vr_unit2005').value;
      totall005 = (parseInt(cant2005) * parseInt(vr_unit2005))
      document.getElementById('vr_total2005').value = totall005;
-     document.getElementById('t_costo_mano').value = totall + totall001 + totall002 + totall003 + totall004 + totall005;
+     totii = document.getElementById('t_costo_mano').value = totall + totall001 + totall002 + totall003 + totall004 + totall005;
+     tote = document.getElementById('cost_to_prod').value = totii + toti;
+     document.getElementById('cost_uni_prod').value = tote;
     }
     
     function cantidaddSeis(){
@@ -287,7 +299,9 @@
      var vr_unit2006 = document.getElementById('vr_unit2006').value;
      totall006 = (parseInt(cant2006) * parseInt(vr_unit2006))
      document.getElementById('vr_total2006').value = totall006;
-     document.getElementById('t_costo_mano').value = totall + totall001 + totall002 + totall003 + totall004 + totall005 + totall006;
+     totii = document.getElementById('t_costo_mano').value = totall + totall001 + totall002 + totall003 + totall004 + totall005 + totall006;
+     tote = document.getElementById('cost_to_prod').value = totii + toti;
+     document.getElementById('cost_uni_prod').value = tote;
     }
     
     function cantidaddSiete(){
@@ -295,7 +309,7 @@
      var vr_unit2007 = document.getElementById('vr_unit2007').value;
      totall007 = (parseInt(cant2007) * parseInt(vr_unit2007))
      document.getElementById('vr_total2007').value = totall007;
-     toti = document.getElementById('t_costo_mano').value = totall + totall001 + totall002 + totall003 + totall004 + totall005 + totall006 + totall007;
+     totii = document.getElementById('t_costo_mano').value = totall + totall001 + totall002 + totall003 + totall004 + totall005 + totall006 + totall007;
      tote = document.getElementById('cost_to_prod').value = totii + toti;
      document.getElementById('cost_uni_prod').value = tote;
     }
@@ -459,7 +473,7 @@
    <strong><center>% Politica de utilidad</strong></center>
   </div>
   <div class="utilidadd">
-   <%= f.text_field :utilidad, :class => 'tamañou', :id => 'utilidad' %>
+   <%= f.text_field :utilidad, :class => 'tamañou', :id => 'utilidad', :onblur => 'politicaUtilidad()' %>
   </div>
   <div class="pre_venta">
    <strong><center>PRECIO DE VENTA</center></strong>
@@ -479,4 +493,14 @@
   <%= f.button :submit, :class => 'btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 ficha_costs_path(@ficha), :class => 'btn btn-default' %>
+                
+  <script>
+   function politicaUtilidad(){
+    var utilidad = document.getElementById('utilidad').value;
+    var cost_uni_prod = document.getElementById('cost_uni_prod').value;
+    neto = (parseInt(cost_uni_prod) * (1 + parseInt(utilidad) / 100))
+    document.getElementById('pre_venta').value = neto;
+    document.getElementById('margen').value = neto - cost_uni_prod;
+   }
+  </script>
 <% end %>
