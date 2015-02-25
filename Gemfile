@@ -44,4 +44,5 @@ gem 'twitter-bootstrap-rails'
 gem 'less-rails'
 gem 'nested_form'
 gem 'carrierwave'
+gem 'sorcery'
 
