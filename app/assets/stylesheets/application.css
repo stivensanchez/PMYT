@@ -1077,3 +1077,16 @@
   height: 24px;
   margin: -24px 0px 0px 557px;
 }
+
+.linkex{
+  z-index:9999999;
+  
+}
+.linkex a{
+  text-decoration:none;
+}
+.linkex a:hover{
+  background-color:transparent;
+  color:#073A09;
+  font-size:14px;
+}

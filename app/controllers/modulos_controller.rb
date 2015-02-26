@@ -5,6 +5,12 @@ class ModulosController < ApplicationController
   # GET /modulos.json
   def index
     @modulos = Modulo.all
+    #descargar en xls (excel)
+   respond_to do |format|
+      format.html
+      format.csv { send_data @modulos.to_csv }
+      format.xls
+    end
   end
 
   # GET /modulos/1
