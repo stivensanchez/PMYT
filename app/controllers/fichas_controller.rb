@@ -5,6 +5,12 @@ class FichasController < ApplicationController
   # GET /fichas.json
   def index
     @fichas = Ficha.all
+    #descargar en xls (excel)
+   respond_to do |format|
+      format.html
+      format.csv { send_data @fichas.to_csv }
+      format.xls
+    end
   end
 
   # GET /fichas/1
