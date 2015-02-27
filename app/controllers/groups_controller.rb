@@ -5,6 +5,12 @@ class GroupsController < ApplicationController
   # GET /groups.json
   def index
     @groups = @modulo.groups.all
+    #descargar en xls (excel)
+   respond_to do |format|
+      format.html
+      format.csv { send_data @groups.to_csv }
+      format.xls
+    end
   end
 
   # GET /groups/1
