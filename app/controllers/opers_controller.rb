@@ -5,6 +5,12 @@ class OpersController < ApplicationController
   # GET /opers.json
   def index
     @opers = @group.opers.all
+    #descargar en xls (excel)
+   respond_to do |format|
+      format.html
+      format.csv { send_data @opers.to_csv }
+      format.xls
+    end
   end
 
   # GET /opers/1

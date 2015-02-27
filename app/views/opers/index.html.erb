@@ -7,6 +7,11 @@
             new_group_oper_path(@group),
             :class => 'btn btn-primary btn-lg active' %>
 </div>
+<div class="linkex">
+  <strong class="txt-success"><a><%= link_to "Descargar tabla en ", group_opers_path(format: "xls") %></a></strong>
+  <%= link_to image_tag("excel.png", :size => "20x20"), group_opers_path(format: "xls"), class: 'btn btn-default' %>
+</div>
+<br>
 <table class="table table-bordered table-striped table-hover table-condensed">
   <thead>
     <tr>
