@@ -20,7 +20,7 @@ class Operation < ActiveRecord::Base
     CSV.generate(options) do |csv|
       csv << column_names
       all.each do |product|
-        csv << modulo.maquina.attributes.values_at(*column_names)
+        csv << modulo.operation.attributes.values_at(*column_names)
       end
     end
   end

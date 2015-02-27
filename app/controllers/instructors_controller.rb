@@ -5,6 +5,12 @@ class InstructorsController < ApplicationController
   # GET /instructors.json
   def index
     @instructors = @modulo.instructors.all
+    #descargar en xls (excel)
+   respond_to do |format|
+      format.html
+      format.csv { send_data @instructors.to_csv }
+      format.xls
+    end
   end
 
   # GET /instructors/1
