@@ -79,7 +79,9 @@ Rails.application.routes.draw do
     resources :treatments
   end
   
-
+resources do
+  resources :developments
+end
   
   
   

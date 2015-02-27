@@ -256,6 +256,8 @@ ActiveRecord::Schema.define(version: 20150225205609) do
     t.text     "comentario"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "tiempo_sam",     limit: nil
+    t.string   "tiempo_real",    limit: nil
   end
 
   add_index "nivelations", ["development_id"], name: "index_nivelations_on_development_id"

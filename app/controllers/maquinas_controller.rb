@@ -5,6 +5,12 @@ class MaquinasController < ApplicationController
   # GET /maquinas.json
   def index
     @maquinas = @modulo.maquinas.all
+    #descargar en xls (excel)
+   respond_to do |format|
+      format.html
+      format.csv { send_data @maquinas.to_csv }
+      format.xls
+    end
   end
 
   # GET /maquinas/1

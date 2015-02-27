@@ -29,12 +29,16 @@
       
       <Row>
         <Cell ss:StyleID="head"><Data ss:Type="String">Nombre</Data></Cell>
+        <Cell ss:StyleID="head"><Data ss:Type="String">Sam</Data></Cell>
         <Cell ss:StyleID="head"><Data ss:Type="String">Descripcion</Data></Cell>
+        <Cell ss:StyleID="head"><Data ss:Type="String">Maquina</Data></Cell>
       </Row>
-    <% @modulos.each do |modulo| %>
+    <% @operations.each do |operation| %>
       <Row>
-        <Cell ss:StyleID="body"><Data ss:Type="String"><%= modulo.nombre %></Data></Cell>
-        <Cell ss:StyleID="body"><Data ss:Type="String"><%= modulo.descripcion %></Data></Cell>
+        <Cell ss:StyleID="body"><Data ss:Type="String"><%= operation.nombre %></Data></Cell>
+        <Cell ss:StyleID="body"><Data ss:Type="String"><%= operation.sam %></Data></Cell>
+        <Cell ss:StyleID="body"><Data ss:Type="String"><%= operation.descripcion %></Data></Cell>
+        <Cell ss:StyleID="body"><Data ss:Type="String"><%= operation.maquina.nombre %></Data></Cell>
       </Row>
     <% end %>
     </Table>

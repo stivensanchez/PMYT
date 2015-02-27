@@ -13,6 +13,8 @@
     <tr>
       <th><%= model_class.human_attribute_name(:operario) %></th>
       <th><%= model_class.human_attribute_name(:operación) %></th>
+      <th><%= model_class.human_attribute_name(:tiempo_sam) %></th>
+      <th><%= model_class.human_attribute_name(:tiempo_real) %></th>
       <th><%= model_class.human_attribute_name(:desempeño) %></th>
       <th><%= model_class.human_attribute_name(:comentario) %></th>
       <th><%= model_class.human_attribute_name(:Acciones) %></th>
@@ -23,6 +25,8 @@
       <tr>
         <td><%= nivelation.oper.nombre %></td>
         <td><%= nivelation.development_id %></td>
+        <td><%= nivelation.tiempo_sam %></td>
+        <td><%= nivelation.tiempo_real %></td>
         <td><%= nivelation.desempeño %></td>
         <td><%= nivelation.comentario %></td>
        

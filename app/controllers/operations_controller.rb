@@ -5,6 +5,12 @@
   # GET /operations.json
   def index
     @operations = @modulo.operations.all
+    #descargar en xls (excel)
+   respond_to do |format|
+      format.html
+      format.csv { send_data @maquinas.to_csv }
+      format.xls
+    end
   end
 
   # GET /operations/1

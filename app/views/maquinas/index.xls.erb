@@ -30,11 +30,13 @@
       <Row>
         <Cell ss:StyleID="head"><Data ss:Type="String">Nombre</Data></Cell>
         <Cell ss:StyleID="head"><Data ss:Type="String">Descripcion</Data></Cell>
+        <Cell ss:StyleID="head"><Data ss:Type="String">Cantidad</Data></Cell>
       </Row>
-    <% @modulos.each do |modulo| %>
+    <% @maquinas.each do |maquina| %>
       <Row>
-        <Cell ss:StyleID="body"><Data ss:Type="String"><%= modulo.nombre %></Data></Cell>
-        <Cell ss:StyleID="body"><Data ss:Type="String"><%= modulo.descripcion %></Data></Cell>
+        <Cell ss:StyleID="body"><Data ss:Type="String"><%= maquina.nombre %></Data></Cell>
+        <Cell ss:StyleID="body"><Data ss:Type="String"><%= maquina.descripcion %></Data></Cell>
+        <Cell ss:StyleID="body"><Data ss:Type="String"><%= maquina.cantidad %></Data></Cell>
       </Row>
     <% end %>
     </Table>
