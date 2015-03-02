@@ -1,4 +1,4 @@
 class Nivelation < ActiveRecord::Base
   belongs_to :oper
- belongs_to :developments
+ has_many :developments
 end
