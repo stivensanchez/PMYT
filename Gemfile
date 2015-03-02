@@ -45,4 +45,4 @@ gem 'less-rails'
 gem 'nested_form'
 gem 'carrierwave'
 gem 'sorcery'
-
+gem 'will_paginate'
