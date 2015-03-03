@@ -28,19 +28,19 @@
 <table class="table table-bordered table-striped table-hover table-condensed">
   <thead>
     <tr>
-      <th><center><%= model_class.human_attribute_name(:nombre) %></center></th>
-      <th><center><%= model_class.human_attribute_name(:num_ficha) %></center></th>
-      <th><center><%= model_class.human_attribute_name(:Operarias) %></center></th>
-      <th><center><%= model_class.human_attribute_name(:Acciones) %></center></th>
+      <th><%= model_class.human_attribute_name(:nombre) %></th>
+      <th><%= model_class.human_attribute_name(:num_ficha) %></th>
+      <th><%= model_class.human_attribute_name(:Operarias) %></th>
+      <th><%= model_class.human_attribute_name(:Opciones) %></th>
     </tr>
   </thead>
   <tbody>
     <% @groups.each do |group| %>
       <tr>
-        <td><center><%= group.nombre %></center></td>
-        <td><center><%= group.num_ficha %></center></td>
-        <td><center><%= link_to 'operaria (' + group.opers.count.to_s+ ')',
-    group_opers_path(group), :class => 'btn btn-default btn-xs btn-lg active' %></center></td>
+        <td><%= group.nombre %></td>
+        <td><%= group.num_ficha %></td>
+        <td><center><%= link_to '<button class="btn btn-warning"><small> Operaria </small><i class="fa fa-folder-open-o"></i></button>'.html_safe,
+    group_opers_path(group) %></center></td>
         <td><center>
           <div class="btn-group">
               <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
@@ -57,7 +57,7 @@
 </table>
 
 
-<%= link_to 'atras', modulos_path, :class => 'btn btn-primary btn-lg active' %>
+<%= link_to 'atras', modulos_path, :class => 'btn btn-success btn-lg active' %>
 
 <!-- Paginacion -->
 <nav>
@@ -66,5 +66,5 @@
   </ul>
 </nav>
 <br>
-<span class="label label-warning gran">Grupos Registrados: <%= @groups.count %></span>
+<h4><span class="label label-warning gran">Grupos Registrados: <%= @groups.count %></span></h4>
 

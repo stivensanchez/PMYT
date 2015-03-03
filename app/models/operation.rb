@@ -14,6 +14,7 @@ class Operation < ActiveRecord::Base
   belongs_to :maquina
   belongs_to :modulo
   has_many :nivelations
+  #scope :with_cheap_nivelations, joins(:nivelations) & Nivelation.cheap
   
   #descargar en xls (excel)
  def self.to_csv(options = {})

@@ -42,11 +42,10 @@
       <tr>
         <td><%= modulo.nombre %></td>
         <td><%= modulo.descripcion %></td>
-        <td><%= link_to 'Maquinas(' + modulo.maquinas.count.to_s+ ')', modulo_maquinas_path(modulo), :class => 'btn btn-default btn-xs btn-lg active' %></td>
-        <td><%= link_to 'Operaciones(' + modulo.operations.count.to_s+ ')', modulo_operations_path(modulo), :class => 'btn btn-default btn-xs btn-lg active' %></td>
-        <td><%= link_to 'Instructores(' + modulo.instructors.count.to_s+ ')', modulo_instructors_path(modulo), :class => 'btn btn-default btn-xs btn-lg active' %></td>
-        <td><%= link_to 'Grupos(' + modulo.groups.count.to_s+ ')',
-              modulo_groups_path(modulo),:class => 'btn btn-default btn-xs btn-lg active' %>
+        <td><center><%= link_to '<button class="btn btn-success"><small> Maquinas </small><i class="fa fa-folder-open-o"></i></button>'.html_safe, modulo_maquinas_path(modulo) %></center></td>
+        <td><center><%= link_to '<button class="btn btn-warning"><small> Operaciones </small><i class="fa fa-folder-open-o"></i></button>'.html_safe, modulo_operations_path(modulo) %></center></td>
+        <td><center><%= link_to '<button class="btn btn-success"><small> Instructores </small><i class="fa fa-folder-open-o"></i></button>'.html_safe, modulo_instructors_path(modulo) %></center></td>
+        <td><center><%= link_to '<button class="btn btn-warning"><small> Grupos </small><i class="fa fa-folder-open-o"></i></button>'.html_safe, modulo_groups_path(modulo) %></center></td>
         <td><center> 
         <div class="btn-group">
             <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
@@ -68,7 +67,7 @@
   </ul>
 </nav>
 <br>
-<span class="label label-warning gran">Modulos Registrados: <%= @modulos.count %></span>
+<h4><span class="label label-warning gran">Modulos Registrados: <%= @modulos.count %></span></h4>
 
 
 

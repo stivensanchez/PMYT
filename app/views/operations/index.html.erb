@@ -35,7 +35,7 @@
       <th><%= model_class.human_attribute_name(:maquina_id) %></th>
       <th><%= model_class.human_attribute_name(:video) %></th>
       <th><%= model_class.human_attribute_name(:imagen) %></th>
-      <th><%= model_class.human_attribute_name(:Acciones) %></th>
+      <th><%= model_class.human_attribute_name(:Opciones) %></th>
     </tr>
   </thead>
   <tbody>
@@ -45,8 +45,8 @@
         <td><%= operation.sam %></td>
         <td><%= operation.descripcion %></td>
         <td><%= operation.maquina.nombre %></td>
-        <td><center><%= link_to('<button class="btn btn-default"><small> Ver </small><i class="fa fa-eye"></i></button>'.html_safe, operation.video.url, controls: true) %></center></td>
-        <td><center><%= link_to('<button class="btn btn-default"><small> Ver </small><i class="fa fa-eye"></i></button>'.html_safe, operation.image.url, ) %></center></td>
+        <td><center><%= link_to('<button class="btn btn-warning"><small> Ver </small><i class="fa fa-eye"></i></button>'.html_safe, operation.video.url, controls: true) %></center></td>
+        <td><center><%= link_to('<button class="btn btn-warning"><small> Ver </small><i class="fa fa-eye"></i></button>'.html_safe, operation.image.url, ) %></center></td>
         <td><center>
          <div class="btn-group">
               <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
@@ -71,5 +71,5 @@
   </ul>
 </nav>
 <br>
-<span class="label label-warning gran">Operaciones Registradas: <%= @operations.count %></span>
+<h4><span class="label label-warning gran">Operaciones Registradas: <%= @operations.count %></span></h4>
 
