@@ -4,7 +4,7 @@ class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.json
   def index
-    @groups = @modulo.groups.all
+    @groups = @modulo.groups.search(params[:search], params[:page])
     #descargar en xls (excel)
    respond_to do |format|
       format.html
