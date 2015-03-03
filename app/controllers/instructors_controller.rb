@@ -4,7 +4,7 @@ class InstructorsController < ApplicationController
   # GET /instructors
   # GET /instructors.json
   def index
-    @instructors = @modulo.instructors.all
+    @instructors = @modulo.instructors.search(params[:search], params[:page])
     #descargar en xls (excel)
    respond_to do |format|
       format.html
