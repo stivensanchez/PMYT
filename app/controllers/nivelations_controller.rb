@@ -5,7 +5,7 @@ class NivelationsController < ApplicationController
   # GET /nivelations.json
   def index
     @nivelations = @oper.nivelations.all
-    @nivelations = @development.nivelation_id
+    #@nivelations = @development_id.nive
 
   end
 

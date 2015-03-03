@@ -4,7 +4,8 @@
   # GET /operations
   # GET /operations.json
   def index
-    @operations = @modulo.operations.all
+    #buscador
+    @operations = @modulo.operations.search(params[:search], params[:page])
     #descargar en xls (excel)
    respond_to do |format|
       format.html
