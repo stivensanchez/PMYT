@@ -5,6 +5,8 @@ class NivelationsController < ApplicationController
   # GET /nivelations.json
   def index
     @nivelations = @oper.nivelations.all
+    @nivelations = @development.nivelation_id
+
   end
 
   # GET /nivelations/1
@@ -70,6 +72,6 @@ class NivelationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def nivelation_params
-      params.require(:nivelation).permit(:oper_id, :development_id, :tiempo_sam, :tiempo_real, :desempeño, :comentario)
+      params.require(:nivelation).permit(:oper_id, :development_id, :operation_id, :tiempo_sam, :tiempo_real, :desempeño, :comentario)
     end
 end

@@ -4,7 +4,7 @@ class MaquinasController < ApplicationController
   # GET /maquinas
   # GET /maquinas.json
   def index
-    @maquinas = @modulo.maquinas.all
+    @maquinas = @modulo.maquinas.search(params[:search], params[:page])
     #descargar en xls (excel)
    respond_to do |format|
       format.html
