@@ -4,7 +4,7 @@ class FichasController < ApplicationController
   # GET /fichas
   # GET /fichas.json
   def index
-    @fichas = Ficha.all
+    @fichas = Ficha.search(params[:search], params[:page])
     #descargar en xls (excel)
    respond_to do |format|
       format.html

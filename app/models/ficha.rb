@@ -10,4 +10,10 @@ class Ficha < ActiveRecord::Base
       end
     end
   end
+  
+  #Paginacion y Buscador
+  def self.search(search, page)
+      where(['upper(referencia) like ?',
+      "%#{search}%".upcase]).paginate(page: page, per_page: 5).order("referencia")
+  end
 end
