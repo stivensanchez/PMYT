@@ -60,7 +60,7 @@
 .ocho{
   padding: 3px;
   width: 150px;
-  margin: -880px 0px 0px 568px;
+  margin: -98% 0px 0px 568px;
 }
 .list-group-item{
   padding: 4px;
@@ -1098,3 +1098,10 @@
   margin-bottom: -50px;
 }
 
+.especificaciones{
+  margin: 2% 0% 2% 22%;
+}
+
+.calidad{
+  margin: 2% 0% 2% 27%;
+}

@@ -4,7 +4,7 @@
     <div class="well">
         <%= link_to 'Nuevo', 
             new_ficha_info_path(@ficha),
-            :class => 'btn btn-primary btn-lg active' %>
+            :class => 'btn btn-success btn-lg active' %>
 </div>
  <div class="panel panel-default">
         <div class="panel-heading">
@@ -81,13 +81,13 @@
       </div>
 
 
-      <div class="panel-heading"><center><b>OBSERVACIONES Y ESPECIFICACIONES</b></center></div>
+      <div class="especificaciones"><b>OBSERVACIONES Y ESPECIFICACIONES</b></h5></div>
       <div class="siete">
              <% @infos.each do |info| %> 
              <%= info.especificaciones %>
              <% end %> 
       </div>
-      <div class="panel-heading"><center><b>ESTANDARES DE CALIDAD</b></center></div>
+      <div class="calidad"><b>ESTANDARES DE CALIDAD</b></div>
       <div class="once">
              <% @infos.each do |info| %> 
              <%= info.estandares %>
@@ -146,4 +146,4 @@
 
 </div>
 </div>
-<%= link_to 'atras', fichas_path, :class => 'btn btn-primary btn-lg active' %>
+<%= link_to 'atras', fichas_path, :class => 'btn btn-success btn-lg active' %>
