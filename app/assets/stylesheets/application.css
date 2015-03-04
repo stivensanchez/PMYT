@@ -1105,3 +1105,26 @@
 .calidad{
   margin: 2% 0% 2% 27%;
 }
+
+/* pie de pagina */
+footer .blanca{
+  text-decoration: none;
+  color: white;
+}
+footer .blanca:hover{
+  background:none;
+  font-size: 15px;
+}
+
+#foo{
+  position:fixed;
+  bottom: 0px;
+  left: 0px;
+  background: #447C74 url(devoops_pattern_b10.png) 0 0 repeat;
+  height: 50px;
+  padding: 10px;
+  border-top: 1px solid black;
+  width: 100%;
+  z-index: 999;
+  text-align: center;
+}

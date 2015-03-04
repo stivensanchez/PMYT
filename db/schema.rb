@@ -235,6 +235,8 @@ ActiveRecord::Schema.define(version: 20150225205609) do
   create_table "measures", force: true do |t|
     t.string   "medidas"
     t.string   "tolerancia"
+    t.string   "cm"
+    t.string   "talla"
     t.integer  "info_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -252,12 +254,12 @@ ActiveRecord::Schema.define(version: 20150225205609) do
   create_table "nivelations", force: true do |t|
     t.integer  "oper_id"
     t.integer  "development_id"
+    t.string   "tiempo_sam"
+    t.string   "tiempo_real"
     t.string   "desempeño"
     t.text     "comentario"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "tiempo_sam",     limit: nil
-    t.string   "tiempo_real",    limit: nil
   end
 
   add_index "nivelations", ["development_id"], name: "index_nivelations_on_development_id"
