@@ -4,7 +4,7 @@ class MeasuresController < ApplicationController
   # GET /measures
   # GET /measures.json
   def index
-    @measures = @info.measures.search(params[:search], params[:page])
+    @measures = @info.measures.all 
   end
 
   # GET /measures/1

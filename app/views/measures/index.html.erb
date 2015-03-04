@@ -7,20 +7,6 @@
   new_info_measure_path(@info),
             :class => 'btn btn-success btn-lg active' %>
 </div>
-<!-- buscador -->
-<div class="tbusca"> 
-   <%= form_tag info_measures_path(@info), :method => 'get' do %>
-     <% content_tag :label do %>
-        <div class="form-group">
-          Buscador:
-         <%= text_field_tag :search, params[:search] %>
-         <%= submit_tag "Buscar", class: "btn btn-default"%>
-        </div> 
-     <% end %>
-  <% end %>
-  </div>
-  <br>
-  <br>
 <table class="table table-bordered table-striped table-hover table-condensed">
   <thead>
     <tr>
@@ -52,15 +38,6 @@
     <% end %>
   </tbody>
 </table>
-<%= link_to 'atras', fichas_path, :class => 'btn btn-success btn-lg active' %>
- <!-- Paginacion -->
-<nav>
-  <ul class="pager">
-    <%= will_paginate @measures, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>
-  </ul>
-</nav>
-<br>
-<h4><span class="label label-warning gran">Medidas Registradas: <%= @measures.count %></span></h4>
 ______________________________________
 <br>
 <br>

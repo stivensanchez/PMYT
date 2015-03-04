@@ -4,11 +4,8 @@ class NivelationsController < ApplicationController
   # GET /nivelations
   # GET /nivelations.json
   def index
-    #Vea Omar hagace el cambio que se haga no debe mover ni modifcar el ".search(params[:search], params[:page]"
     @nivelations = @oper.nivelations.search(params[:search], params[:page])
-    #@nivelations = @development_id.nive
-    #(:nivelations, :developments_ids, Development.all, :id, :sam_with_initial)  
-
+    @nivelations_id = Development.select("operation_id") 
   end
 
   # GET /nivelations/1

@@ -4,7 +4,7 @@ class TreatmentsController < ApplicationController
   # GET /treatments
   # GET /treatments.json
   def index
-    @treatments = @info.treatments.all
+    @treatments = @info.treatments.search(params[:search], params[:page])
   end
 
   # GET /treatments/1

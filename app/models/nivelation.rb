@@ -1,7 +1,7 @@
 class Nivelation < ActiveRecord::Base
   belongs_to :oper
   belongs_to :operation_id
-  belongs_to :developments 
+  has_many :developments 
   
   #Paginacion y Buscador
   def self.search(search, page)

@@ -4,7 +4,7 @@ class PrendasController < ApplicationController
   # GET /prendas
   # GET /prendas.json
   def index
-    @prendas = @info.prendas.all
+    @prendas = @info.prendas.search(params[:search], params[:page])
   end
 
   # GET /prendas/1
