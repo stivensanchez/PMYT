@@ -1117,7 +1117,7 @@ footer .blanca:hover{
 }
 
 #foo{
-  position:fixed;
+  position: fixed;
   bottom: 0px;
   left: 0px;
   background: #447C74 url(devoops_pattern_b10.png) 0 0 repeat;
@@ -1127,4 +1127,8 @@ footer .blanca:hover{
   width: 100%;
   z-index: 999;
   text-align: center;
+}
+
+.field{
+  margin: -3.5% 0% 0% 20%;
 }

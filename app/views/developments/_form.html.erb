@@ -3,6 +3,10 @@
 <div class="form-group">
   <%= f.label :Operacion %>  <br>
   <%= f.collection_select :operation_id, Operation.all, :id, :nombre, class: "form-control", prompt: "Seleccione Operacion" %>
+  <div class="field">
+  <%= f.label :Operaria %> <br>
+  <%= f.collection_select :oper_id, Oper.all, :id, :nombre, class: "form-control", prompt: "Seleccione Operario" %>
+</div>  
 </div> 
 
 <div class="form-group">
@@ -33,10 +37,7 @@
   <%= f.label :Observaciones %>
   <%= f.text_area :observaciones, class: "form-control", placeholder: "Ingrese las observaciones" %>
 </div>  
-<div class="form-group">
-  <%= f.label :Operaria %> <br>
-  <%= f.collection_select :oper_id, Oper.all, :id, :nombre, class: "form-control", prompt: "Seleccione Operario" %>
-</div>  
+
 
 
 
