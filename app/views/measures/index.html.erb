@@ -5,8 +5,22 @@
     <div class="well">
         <%= link_to 'Nuevo', 
   new_info_measure_path(@info),
-            :class => 'btn btn-primary btn-lg active' %>
+            :class => 'btn btn-success btn-lg active' %>
 </div>
+<!-- buscador -->
+<div class="tbusca"> 
+   <%= form_tag info_measures_path(@info), :method => 'get' do %>
+     <% content_tag :label do %>
+        <div class="form-group">
+          Buscador:
+         <%= text_field_tag :search, params[:search] %>
+         <%= submit_tag "Buscar", class: "btn btn-default"%>
+        </div> 
+     <% end %>
+  <% end %>
+  </div>
+  <br>
+  <br>
 <table class="table table-bordered table-striped table-hover table-condensed">
   <thead>
     <tr>
@@ -24,20 +38,29 @@
         <td><%= measure.talla %></td>
         <td><%= measure.cm %></td>
         <td><%= measure.tolerancia %></td>
-        
-        <td>
-          <%= link_to 'Editar', 
-                      edit_info_measure_path(@info,measure), :class => 'btn btn-default btn-xs btn-lg active' %>
-          <%= link_to 'Eliminar',
-                      info_measure_path(@info,measure),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-xs btn-danger btn-lg active' %>
-        </td>
+        <td><center>
+         <div class="btn-group">
+              <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
+              ︾</a>
+              <ul class="dropdown-menu">
+                <li> <%= link_to '<i class="fa fa-wrench txt-primary"></i><span> Editar</span>'.html_safe, edit_info_measure_path(@info,measure) %></li>
+                <li> <%= link_to '<i class="fa fa-times txt-danger"></i><span> Eliminar</span>'.html_safe, info_measure_path(@info,measure), method: :delete, data: { confirm: 'Estas segur@?' },remote: true %></li>
+              </ul>
+          </div>
+        </center></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<%= link_to 'atras', fichas_path, :class => 'btn btn-success btn-lg active' %>
+ <!-- Paginacion -->
+<nav>
+  <ul class="pager">
+    <%= will_paginate @measures, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>
+  </ul>
+</nav>
+<br>
+<h4><span class="label label-warning gran">Medidas Registradas: <%= @measures.count %></span></h4>
 ______________________________________
 <br>
 <br>
@@ -46,4 +69,4 @@ ______________________________________
 </div>
 
 
-<%= link_to 'atras', fichas_path, :class => 'btn btn-primary btn-lg active' %>
+
