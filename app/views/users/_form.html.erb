@@ -1,13 +1,13 @@
 <%= simple_form_for @user, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="field"> 
+  <div class="form-group"> 
  <%= f.label :email %><br /> 
  <%= f.text_field :email %> 
   </div> 
-  <div class="field"> 
+  <div class="form-group"> 
  <%= f.label :password %><br /> 
  <%= f.password_field :password %> 
   </div> 
-  <div class="field"> 
+  <div class="form-group"> 
  <%= f.label :password_confirmation %><br /> 
  <%= f.password_field :password_confirmation %> 
   </div> 

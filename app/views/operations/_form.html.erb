@@ -16,12 +16,12 @@
   <%= f.collection_select :maquina_id, @maquinas = @modulo.maquinas.all, :id, :nombre, class: "form-control", prompt: "Seleccione Maquina" %>
 </div> 
 
- <div class="field">
+ <div class="form-group">
   <%= f.label :Imagen %><br>
   <%= f.file_field :image %>
 </div>
 
-<div class="field">
+<div class="form-group">
   <%= f.label :Video %><br>
   <%= f.file_field :video %>
 </div>

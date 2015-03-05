@@ -4,8 +4,8 @@ class NivelationsController < ApplicationController
   # GET /nivelations
   # GET /nivelations.json
   def index
+    Development.select("operation_id").where("oper_id=oper_id") 
     @nivelations = @oper.nivelations.search(params[:search], params[:page])
-    @nivelations = Development.select("operation_id").where("oper_id = oper_id") 
   end
 
   # GET /nivelations/1

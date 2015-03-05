@@ -12,9 +12,9 @@
   <nav class="navbar navbar-inverse navbar-static-top">
     <div class="container">
       <ul class="nav navbar-nav">
-        <li><%= link_to "Modulos", modulos_path %></li>
-        <li><%= link_to "Fichas", fichas_path %></li>
-    
+        <li><%= link_to "Modulos", modulos_path, class: 'navbar-brand'%></li>
+        <li><%= link_to "Fichas", fichas_path, class: 'navbar-brand'%></li>
+        <li><%= link_to 'Home', root_path, class: 'navbar-brand' %></li>
         <% if current_user %>
            <%= link_to "Editar Perfil", edit_user_path(current_user.id) %>
            <%= link_to "Salir", :logout, method: :get %>
@@ -34,7 +34,7 @@
 </body>
 <div id="foo" class="">
      <footer class="txt-default">
-      <a href="/sofcartej/contacto" class="blanca">Contacto</a> | 
+      <a href="" class="blanca">Contacto</a> | 
       <a href="http://senadisenoconfeccionymoda.blogspot.com/"target="_blank" class="blanca">Institucional</a>
       <br><small>PMYT Centro de Diseño Confección y Moda SENA 2015</small>
     </footer>
