@@ -37,15 +37,15 @@
                     <span class="welcome">Bienvenid@</span>
                   </div>
                 </a>
-
-                <ul class="dropdown-menu">
-                    <% if current_user %>
+<% if current_user %>
                      <%= link_to "Editar Perfil", edit_user_path(current_user.id) %>
                      <%= link_to "Salir", :logout %>
                     <% else %>
                      <%= link_to "Registrar", new_user_path %> |
                      <%= link_to "Ingresar", :login %>
                     <% end %>
+                <ul class="dropdown-menu">
+                    
                 </ul>
               </li>
             </ul>
@@ -117,15 +117,8 @@
             
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle account" data-toggle="dropdown">
-                  <div class="avatar">
-                  </div>
                   <i class="fa fa-angle-down pull-right"></i>
                   <div class="user-mini pull-right">
-                    <span class="welcome">Bienvenid@</span>
-                  </div>
-                </a>
-
-                <ul class="dropdown-menu">
                     <% if current_user %>
                      <%= link_to "Editar Perfil", edit_user_path(current_user.id) %>
                      <%= link_to "Salir", :logout %>
@@ -133,6 +126,11 @@
                      <%= link_to "Registrar", new_user_path %> |
                      <%= link_to "Ingresar", :login %>
                     <% end %>
+                  </div>
+                </a>
+
+                <ul class="dropdown-menu">
+                    
                 </ul>
               </li>
             </ul>
@@ -145,8 +143,7 @@
 
 <div id="main" class="container-fluid">
   <div class="row">
-    <!-- Inicio baner de imagenes-->
-       <style>
+      <style>
   .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
       width: 70%;
@@ -184,12 +181,14 @@
 
     <!-- Fin baner de imagenes-->
   </div>
+  <h4><center>PMYT</center></h4>
+  <h5><center>Procesos Metodos y Tiempos</center></h5>
+  <h5><center>Derechos Reservados S&O AND PMYT Corporation</center></h5>
+  <h6><center>Medelli 2015</center></h6>
 </div>  
-
-<h4><center>PMYT</center></h4><br>
-<h5><center>Procesos Metodos Y tiempos</center></h5>
-<h6><center>Derechos Reservados S&O and PMYT Corporation</center></h6>
-<h6><center>Colombia Medellin 2015</center></h6>
+  <div class="container">
+        <%= yield %>
+  </div>
 
 <div id="foo" class="">
      <footer class="txt-default">

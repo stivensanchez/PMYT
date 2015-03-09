@@ -2770,25 +2770,33 @@ height: 200px;
 }
 /* LOGIN*/
 .login{
-background-image:url(login.jpg);
+background-image:url(Esferas.jpg);
 background-repeat: no-repeat;
-margin:370px 0px 0px 250px;
+margin:132px 0px 0px 550px;
 padding: 40px;
 border-radius: 20px ;
-border:solid #FF8000;
-width: 405px;
-background-size: 200%;
-position: absolute;
+width: 350px;
+height:500px;
+background-size: 300%;
+position: relative;
+z-index:100;
 }
+
+
+
+.logo3{
+  border-radius: 7px;
+  margin: 0px 0px 0px -40px;
+  width: 350px;
+  padding: 50px;
+}
+
 .logo2{
  width:10%;
  height:10%;
  border-radius: 5px;
 }
-.logo3{
- width:30%;
- height:30%;
- border-radius: 80px;
- margin: 5% 0% 0% 50%;
 
+email{
+  height: 20px;
 }

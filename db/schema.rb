@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150225205609) do
+ActiveRecord::Schema.define(version: 20150309013455) do
 
   create_table "comentarios", force: true do |t|
     t.datetime "created_at"
@@ -311,6 +311,12 @@ ActiveRecord::Schema.define(version: 20150225205609) do
   end
 
   add_index "prendas", ["info_id"], name: "index_prendas_on_info_id"
+
+  create_table "roles", force: true do |t|
+    t.string   "rol"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "terminations", force: true do |t|
     t.integer  "operation_id"
