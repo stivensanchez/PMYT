@@ -2,13 +2,12 @@
 <div class="well">
 <h1><center>Listado <small>Nivelación</small></center></h1>
 </div>
-<div class="well">
-  <%= link_to t('.Nueva Nivelacion'), 
-            new_oper_nivelation_path(@oper),
-            :class => 'btn btn-success btn-lg active' %>
-            
- </div>          
-            
+<div class="alert alert-dismissable alert-warning">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  <p>En esta página podras visualizar el desempeño de la oparearia en cada una de sus operaciones, tomando como base
+     el tiempo inicial y el tiempo en que la operaria demora en desarrollar esa operacion.</p>
+</div>   
+        
 <table class="table table-bordered table-striped table-hover table-condensed">
   <thead>
     <tr>
@@ -23,9 +22,9 @@
   </thead>
   <tbody>
     <% @nivelations.each do |nivelation| %>
+      <% select * from nivelations %>
       <tr>
-        
-        <td><%= nivelation.development_id %></td>
+        <td><%= nivelation.operation_id %></td> 
         <td><%= nivelation.tiempo_sam %></td>
         <td><%= nivelation.tiempo_real %></td>
         <td><%= nivelation.desempeño %></td>

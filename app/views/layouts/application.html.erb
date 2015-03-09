@@ -1,42 +1,16 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Pmyt</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <Link  rel = "stylesheet"  href = "path / to /-font impresionante / css / font-awesome.min.css" >
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <nav class="navbar navbar-inverse navbar-static-top">
-    <div class="container">
-      <ul class="nav navbar-nav">
-        <li><%= link_to "Modulos", modulos_path, class: 'navbar-brand'%></li>
-        <li><%= link_to "Fichas", fichas_path, class: 'navbar-brand'%></li>
-        <li><%= link_to 'Home', root_path, class: 'navbar-brand' %></li>
-        <% if current_user %>
-           <%= link_to "Editar Perfil", edit_user_path(current_user.id) %>
-           <%= link_to "Salir", :logout, method: :get %>
-        <% else %>
-           <%= link_to "Registrar", new_user_path %> |
-           <%= link_to "Ingresar", :login %>
-        <% end %>
-      
-
-      </ul>
-    </div>
-</nav>
-
-  <div class="container">
-   <%= yield %>
-  </div>
-</body>
-<div id="foo" class="">
-     <footer class="txt-default">
-      <a href="" class="blanca">Contacto</a> | 
-      <a href="http://senadisenoconfeccionymoda.blogspot.com/"target="_blank" class="blanca">Institucional</a>
-      <br><small>PMYT Centro de Diseño Confección y Moda SENA 2015</small>
-    </footer>
-</div>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "PMYT" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Sofcartej" %>">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body >
+    <header>
+      <%= render 'layouts/navigation' %>
+    </header>
+  </body>
 </html>

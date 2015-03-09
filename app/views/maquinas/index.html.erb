@@ -2,6 +2,11 @@
 <div class="well">
     <h1><center>Listado <small>Maquinas</small></center></h1>
 </div>
+<div class="alert alert-dismissable alert-info">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  <p>En esta página del sistema podras registrar todas las maquinas que funcionan o estan activas en este modulo
+  y por medio de la ficha tecnica de la maquina tener una idea clara de como es el trabajo de la misma.</p>
+</div>
 <div class="well">
 <%= link_to t('.nuevo'),
   new_modulo_maquina_path(@modulo),

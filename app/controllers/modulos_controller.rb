@@ -4,7 +4,7 @@ class ModulosController < ApplicationController
   # GET /modulos
   # GET /modulos.json
   def index
-   @modulos = Modulo.search(params[:search], params[:page])
+   @modulos = Modulo.all.search(params[:search], params[:page])
     #descargar en xls (excel)
    respond_to do |format|
       format.html

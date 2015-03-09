@@ -2,6 +2,11 @@
   <div class="well">
     <h1><center>Listado  <small>Modulos</small></center></h1>
 </div>
+<div class="alert alert-dismissable alert-warning">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  <p>En esta página podras visualizar toda la informacion acerca de los modulos registrados en el area de confecciones
+     asi como cada uno de sus componentes y su informacion mas basica, podiendo haceder a ellos por medio de un buscador.</p>
+</div>
     <div class="well"> 
     <%= link_to 'Nuevo modulo',
             new_modulo_path,
@@ -61,13 +66,15 @@
   </tbody>
 </table>
 <!-- Paginacion -->
+<div class="pie">
 <nav>
   <ul class="pager">
     <%= will_paginate @modulos, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>
+    <h4>Modulos Registrados: <%= @modulos.count %></h4>
   </ul>
 </nav>
 <br>
-<h4><span class="label label-warning gran">Modulos Registrados: <%= @modulos.count %></span></h4>
 
+</div>
 
 

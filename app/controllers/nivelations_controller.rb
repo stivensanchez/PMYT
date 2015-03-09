@@ -1,13 +1,13 @@
 class NivelationsController < ApplicationController
   before_action :set_nivelation, only: [:show, :edit, :update, :destroy, :index, :new, :create]
-
+   
   # GET /nivelations
   # GET /nivelations.json
   def index
-    Development.select("operation_id").where("oper_id=oper_id") 
+    #@nivelations = Development.select("id","operation_id").where("oper_id=oper_id") 
     @nivelations = @oper.nivelations.search(params[:search], params[:page])
   end
-
+  
   # GET /nivelations/1
   # GET /nivelations/1.json
   def show

@@ -1,18 +1,8 @@
 Rails.application.routes.draw do
   
-  match '/home', to: 'static_pages#home',  via: 'get'
-  match '/help',	to: 'static_pages#help',  via: 'get'
-  match '/about',   to: 'static_pages#about',  via: 'get'
-  match '/contact', to: 'static_pages#contact',  via: 'get'
-
-  root :to => 'static_pages#home'
-
   resources :user_sessions
+  
   resources :users
-
-  get 'login' => 'user_sessions#new', :as => :login
-  get 'logout' => 'user_sessions#destroy', :as => :logout
-
 
   resources :tipo_docs
 
@@ -86,13 +76,20 @@ Rails.application.routes.draw do
     resources :treatments
   end
   
+  get 'user_session/new'
+  get 'user_session/create'
+  get 'static_pages/home'
+  get 'static_pages/about'
+  
+  get 'login' => 'user_sessions#new', :as => :login
+  get 'logout' => 'user_sessions#destroy', :as => :logout
 
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  #root 'modulos#index'
+ root 'static_pages#home#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -142,4 +139,6 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  
 end

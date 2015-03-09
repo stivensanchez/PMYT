@@ -3,6 +3,7 @@ class Nivelation < ActiveRecord::Base
   belongs_to :operation_id
   has_many :developments 
   
+  
   #Paginacion y Buscador
   def self.search(search, page)
       where(['upper(comentario) like ?',

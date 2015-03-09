@@ -16,7 +16,7 @@ skip_before_filter :require_login, except: [:destroy]
 
   def destroy
 	logout
-	redirect_to(root_url, notice: 'Desconectado!')
+	redirect_to( root_url, notice: 'Desconectado!')
   end
 
 end
