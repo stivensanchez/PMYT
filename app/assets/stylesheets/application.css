@@ -2772,12 +2772,13 @@ height: 200px;
 .login{
 background-image:url(login.jpg);
 background-repeat: no-repeat;
-margin:0px 0px 0px 250px;
+margin:370px 0px 0px 250px;
 padding: 40px;
 border-radius: 20px ;
 border:solid #FF8000;
 width: 405px;
 background-size: 200%;
+position: absolute;
 }
 .logo2{
  width:10%;
