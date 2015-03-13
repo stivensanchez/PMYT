@@ -33,19 +33,13 @@
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle account" data-toggle="dropdown">
                   <i class="fa fa-angle-down pull-right"></i>
-                  <div class="user-mini pull-right">
-                    <span class="welcome">Bienvenid@</span>
-                  </div>
                 </a>
-<% if current_user %>
-                     <%= link_to "Editar Perfil", edit_user_path(current_user.id) %>
-                     <%= link_to "Salir", :logout %>
-                    <% else %>
-                     <%= link_to "Registrar", new_user_path %> |
-                     <%= link_to "Ingresar", :login %>
-                    <% end %>
                 <ul class="dropdown-menu">
-                    
+                <% if current_user %>
+                  <li><%= link_to "<i class='fa fa-user'></i> Editar Perfil".html_safe, edit_user_path(current_user.id) %></li>
+                  <li><%= link_to "<i class='fa fa-sign-out'></i> Salir".html_safe, :logout, method: :get %></li>
+                  <li><%= link_to "<i class='fa fa-plus-square'></i> Registrarse".html_safe, new_user_path %></li>
+                <% end %>
                 </ul>
               </li>
             </ul>
@@ -85,8 +79,7 @@
   <div class="container">
         <%= yield %>
   </div>
-
-<div id="foo" class="">
+  <div id="foo" class="">
      <footer class="txt-default">
       <a href="" class="blanca">Contacto</a> | 
       <a href="http://senadisenoconfeccionymoda.blogspot.com/"target="_blank" class="blanca">Institucional</a>
@@ -119,13 +112,7 @@
                 <a href="#" class="dropdown-toggle account" data-toggle="dropdown">
                   <i class="fa fa-angle-down pull-right"></i>
                   <div class="user-mini pull-right">
-                    <% if current_user %>
-                     <%= link_to "Editar Perfil", edit_user_path(current_user.id) %>
-                     <%= link_to "Salir", :logout %>
-                    <% else %>
-                     <%= link_to "Registrar", new_user_path %> |
-                     <%= link_to "Ingresar", :login %>
-                    <% end %>
+                     <span><li><%= link_to "<i class='fa fa-sign-in'></i> Entrar".html_safe, :login %></li></span>
                   </div>
                 </a>
 
@@ -161,21 +148,22 @@
     </ol>
 
     <!-- Wrapper for slides -->
+  
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <li><%= image_tag ("1.JPG"), class: "img-rounded", :width => '1350', :height => '540'%></li>
+        <li><%= image_tag ("1.JPG"), class: "img-rounded", :width => '1400', :height => '540'%></li>
       </div>
 
       <div class="item">
-        <li><%= image_tag ("2.JPG"), class: "img-rounded", :width => '1350', :height => '540'%></li>
+        <li><%= image_tag ("2.JPG"), class: "img-rounded", :width => '1400', :height => '540'%></li>
       </div>
     
       <div class="item">
-        <li><%= image_tag ("3.JPG"), class: "img-rounded", :width => '1350', :height => '540'%></li>
+        <li><%= image_tag ("3.JPG"), class: "img-rounded", :width => '1400', :height => '540'%></li>
       </div>
 
       <div class="item">
-        <li><%= image_tag ("4.JPG"), class: "img-rounded", :width => '1350', :height => '540'%></li>
+        <li><%= image_tag ("4.JPG"), class: "img-rounded", :width => '1400', :height => '540'%></li>
       </div>
     </div>
 
@@ -184,7 +172,7 @@
   <h4><center>PMYT</center></h4>
   <h5><center>Procesos Metodos y Tiempos</center></h5>
   <h5><center>Derechos Reservados S&O AND PMYT Corporation</center></h5>
-  <h6><center>Medelli 2015</center></h6>
+  <h6><center>Medellin 2015</center></h6>
 </div>  
   <div class="container">
         <%= yield %>

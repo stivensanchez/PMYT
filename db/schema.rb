@@ -358,14 +358,7 @@ ActiveRecord::Schema.define(version: 20150309013455) do
 
   add_index "treatments", ["info_id"], name: "index_treatments_on_info_id"
 
-  create_table "users", force: true do |t|
-    t.string   "email",            null: false
-    t.string   "crypted_password"
-    t.string   "salt"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
+# Could not dump table "users" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
 end

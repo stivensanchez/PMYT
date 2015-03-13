@@ -75,7 +75,7 @@
       <div class="imagen">
         <div class="pruebita">
         <% @infos.each do |info| %>
-          <%= image_tag(info.image.url, height: '390', width: '707') %>
+          <%= image_tag(info.image.url, height: '390', width: '1022') %>
         <% end %>
         </div>
       </div>
@@ -135,6 +135,7 @@
         <% @infos.each do |info| %>  
             <%= link_to 'Editar', 
                       edit_ficha_info_path(@ficha,info), :class => 'btn btn-default btn-xs btn-lg active' %>
+
             <%= link_to 'Eliminar', 
             ficha_info_path(@ficha,info),
                       :method => :delete,

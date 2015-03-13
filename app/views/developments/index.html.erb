@@ -7,6 +7,7 @@
             new_info_development_path(@info),
             :class => 'btn btn-success' %>
 </div>
+
 <table class="table table-bordered table-striped table-hover table-condensed">
   <thead>
     <tr>
@@ -25,7 +26,7 @@
   <tbody>
     <% @developments.each do |development| %>
       <tr>
-        <td><%= development.operation.nombre %></td>
+        <td><%= development.operation_id %></td>
         <td><%= development.sam %></td>
         <td><%= development.maquina %></td>
         <td><%= development.calibre_aguja %></td>
@@ -35,10 +36,7 @@
         <td><%= development.observaciones %></td>
         <td><%= development.oper.nombre %></td>
         <td><center>
-         <div class="btn-group">
-              <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
-              ︾</a>
-              <ul class="dropdown-menu">
+         
                 <li> <%= link_to '<i class="fa fa-wrench txt-primary"></i><span> Editar</span>'.html_safe, edit_info_development_path(@info,development) %></li>
                 <li> <%= link_to '<i class="fa fa-times txt-danger"></i><span> Eliminar</span>'.html_safe, info_development_path(@info,development), method: :delete, data: { confirm: 'Estas segur@?' },remote: true %></li>
               </ul>
