@@ -2,8 +2,8 @@ class Nivelation < ActiveRecord::Base
   belongs_to :oper
   belongs_to :operation_id
   belongs_to :development 
-  has_many :ensambles
-  has_many :terminations
+  belongs_to :ensamble
+  belongs_to :termination
   
   
   #Paginacion y Buscador

@@ -8,8 +8,8 @@ class Development < ActiveRecord::Base
   
   def cal
     r = Nivelation.new
-    r.operation_id = self.operation_id
-    r.tiempo_sam = self.sam
+    
+    r.sam = self.sam
     r.save
   end
 

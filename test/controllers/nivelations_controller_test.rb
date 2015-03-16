@@ -18,7 +18,7 @@ class NivelationsControllerTest < ActionController::TestCase
 
   test "should create nivelation" do
     assert_difference('Nivelation.count') do
-      post :create, nivelation: { comentario: @nivelation.comentario, desempeño: @nivelation.desempeño, oper_id: @nivelation.oper_id, operation_id: @nivelation.operation_id }
+      post :create, nivelation: { comentario: @nivelation.comentario, desempeño: @nivelation.desempeño, development_id: @nivelation.development_id, ensamble_id: @nivelation.ensamble_id, oper_id: @nivelation.oper_id, sam: @nivelation.sam, termination_id: @nivelation.termination_id, tiempo_real: @nivelation.tiempo_real }
     end
 
     assert_redirected_to nivelation_path(assigns(:nivelation))
@@ -35,7 +35,7 @@ class NivelationsControllerTest < ActionController::TestCase
   end
 
   test "should update nivelation" do
-    patch :update, id: @nivelation, nivelation: { comentario: @nivelation.comentario, desempeño: @nivelation.desempeño, oper_id: @nivelation.oper_id, operation_id: @nivelation.operation_id }
+    patch :update, id: @nivelation, nivelation: { comentario: @nivelation.comentario, desempeño: @nivelation.desempeño, development_id: @nivelation.development_id, ensamble_id: @nivelation.ensamble_id, oper_id: @nivelation.oper_id, sam: @nivelation.sam, termination_id: @nivelation.termination_id, tiempo_real: @nivelation.tiempo_real }
     assert_redirected_to nivelation_path(assigns(:nivelation))
   end
 

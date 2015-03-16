@@ -52,10 +52,19 @@
         <td><center><%= link_to('<button class="btn btn-warning"><small> Ver </small><i class="fa fa-eye"></i></button>'.html_safe, operation.video.url, controls: true) %></center></td>
         <td><center><%= link_to('<button class="btn btn-warning"><small> Ver </small><i class="fa fa-eye"></i></button>'.html_safe, operation.image.url, ) %></center></td>
         <td><center>
-        
+        <div id="wrap">
+            <ul id="navbar">
+              <li>
+                <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
+                ︾</a>
+               <ul>
                 <li> <%= link_to '<i class="fa fa-wrench txt-primary"></i><span> Editar</span>'.html_safe, edit_modulo_operation_path(@modulo,operation) %></li>
                 <li> <%= link_to '<i class="fa fa-times txt-danger"></i><span> Eliminar</span>'.html_safe, modulo_operation_path(@modulo,operation), method: :delete, data: { confirm: 'Estas segur@?' } %></li>
-             </td>
+               </ul>
+              </li>
+            </ul>
+       </div>
+             </center></td>
       </tr>
     <% end %>
   </tbody>

@@ -2,11 +2,16 @@ class Termination < ActiveRecord::Base
   belongs_to :operation
   belongs_to :info
   belongs_to :oper
-   after_create :nivelation
+  has_many :nivelations
 
-private
-    def nivelation
-    self.update(:operation_id => operation)
-    end
+after_save :cal
+  
+  def cal
+    r = Nivelation.new
+    
+    r.sam = self.sam
+    r.save
+  end
+
 
 end

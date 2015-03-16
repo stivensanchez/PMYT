@@ -133,14 +133,8 @@
        <br>
       <div class="nueve">
         <% @infos.each do |info| %>  
-            <%= link_to 'Editar', 
-                      edit_ficha_info_path(@ficha,info), :class => 'btn btn-default btn-xs btn-lg active' %>
-
-            <%= link_to 'Eliminar', 
-            ficha_info_path(@ficha,info),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-xs btn-danger btn-lg active' %>
+             <%= link_to '<i class="fa fa-wrench txt-primary"></i><span> Editar</span>'.html_safe, edit_ficha_info_path(@ficha,info) %></li>
+             <%= link_to '<i class="fa fa-times txt-danger"></i><span> Eliminar</span>'.html_safe, ficha_info_path(@ficha,info), method: :delete, data: { confirm: 'Estas segur@?' } %></li>
        <% end %>
      </div>  
 </div> 

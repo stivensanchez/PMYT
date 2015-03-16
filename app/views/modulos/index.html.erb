@@ -52,13 +52,16 @@
         <td><center><%= link_to '<button class="btn btn-success"><small> Instructores </small><i class="fa fa-folder-open-o"></i></button>'.html_safe, modulo_instructors_path(modulo) %></center></td>
         <td><center><%= link_to '<button class="btn btn-warning"><small> Grupos </small><i class="fa fa-folder-open-o"></i></button>'.html_safe, modulo_groups_path(modulo) %></center></td>
         <td><center> 
-        <div class="btn-group">
-            <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
-            ︾</a>
-            <ul class="dropdown-menu">
+        <div id="wrap">
+            <ul id="navbar">
+              <li>
+                <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
+                ︾</a>
+            <ul>
               <li> <%= link_to '<i class="fa fa-wrench txt-primary"></i><span> Editar</span>'.html_safe, edit_modulo_path(modulo) %></li>
               <li> <%= link_to '<i class="fa fa-times txt-danger"></i><span> Eliminar</span>'.html_safe, modulo, method: :delete, data: { confirm: 'Estas segur@?' }%></li>
             </ul>
+            </li>
         </div>
         </center></td>
       </tr>

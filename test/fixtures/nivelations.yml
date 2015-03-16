@@ -1,13 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  oper_id: 
-  operation_id: 
+  sam: MyString
+  tiempo_real: MyString
   desempeño: MyString
-  comentario: MyText
+  comentario: MyString
+  oper_id: 
+  development_id: 
+  ensamble_id: 
+  termination_id: 
 
 two:
-  oper_id: 
-  operation_id: 
+  sam: MyString
+  tiempo_real: MyString
   desempeño: MyString
-  comentario: MyText
+  comentario: MyString
+  oper_id: 
+  development_id: 
+  ensamble_id: 
+  termination_id: 

@@ -1,1 +1,1 @@
-json.extract! @nivelation, :id, :oper_id, :operation_id, :desempeño, :comentario, :created_at, :updated_at
+json.extract! @nivelation, :id, :sam, :tiempo_real, :desempeño, :comentario, :oper_id, :development_id, :ensamble_id, :termination_id, :created_at, :updated_at

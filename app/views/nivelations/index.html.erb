@@ -1,48 +1,51 @@
 <%- model_class = Nivelation -%>
 <div class="well">
-<h1><center>Listado <small>Nivelación</small></center></h1>
+  <h1><center>Listado <small>Nivelación</small></center></h1>
 </div>
 <div class="alert alert-dismissable alert-warning">
   <button type="button" class="close" data-dismiss="alert">×</button>
   <p>En esta página podras visualizar el desempeño de la oparearia en cada una de sus operaciones, tomando como base
      el tiempo inicial y el tiempo en que la operaria demora en desarrollar esa operacion.</p>
 </div> 
-
 <table class="table table-bordered table-striped table-hover table-condensed">
   <thead>
     <tr>
-      
-      <th><%= model_class.human_attribute_name(:operación) %></th>
-      <th><%= model_class.human_attribute_name(:tiempo_sam) %></th>
+      <th><%= model_class.human_attribute_name(:operacion) %></th>
+      <th><%= model_class.human_attribute_name(:sam) %></th>
       <th><%= model_class.human_attribute_name(:tiempo_real) %></th>
       <th><%= model_class.human_attribute_name(:desempeño) %></th>
       <th><%= model_class.human_attribute_name(:comentario) %></th>
-      <th><%= model_class.human_attribute_name(:Opciones) %></th>
+      <th><%= model_class.human_attribute_name(:opciones) %></th>
     </tr>
   </thead>
   <tbody>
-    <% @developments.each do |development| %>
-    <tr>
- <td><%= development.operation_id %></td> 
- 
+     <% @developments.each do |development| %>
+      <tr>
+        <td><%= development.operation.nombre %></td>
+        <td><%= development.sam %></td>
+       <% end %>
+     <% @ensambles.each do |ensamble| %>
+      <tr>
+        <td><%= ensamble.operation.nombre %></td>
+        <td><%= ensamble.sam %></td>
+       <% end %>
+       <% @nivelations.each do |nivelation| %>
+        <td><%= nivelation.tiempo_real %></td>
+        <td><%= nivelation.desempeño %></td>
+        <td><%= nivelation.comentario %></td>
+
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_oper_development_nivelation_path(@oper,nivelation), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      oper_development_nivelation_path(@oper,nivelation),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
       </tr>
-    <% end %>
-    <% @nivelations.each do |nivelation| %>
-    </tr>
-    <td><%= nivelation.tiempo_sam %></td>
- <td><%= nivelation.desempeño %></td>
- <td><%= nivelation.comentario %></td>
     <% end %>
   </tbody>
 </table>
 
- <%= link_to 'atras', modulos_path, :class => 'btn btn-success btn-lg active' %>
- <!-- Paginacion -->
-<nav>
-  <ul class="pager">
-    <%= will_paginate @nivelations, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>
-  </ul>
-</nav>
-<br>
-<h4><span class="label label-warning gran">operaciones en nivelacion: <%= @nivelations.count %></span></h4>
 
