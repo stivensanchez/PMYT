@@ -4,7 +4,8 @@ class NivelationsController < ApplicationController
   # GET /nivelations
   # GET /nivelations.json
   def index
-@ensambles = Ensamble.all
+    
+@developments = Development.all
 @nivelations = @oper.nivelations.search(params[:search], params[:page])
   end
   
