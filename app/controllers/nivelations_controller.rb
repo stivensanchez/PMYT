@@ -6,6 +6,8 @@ class NivelationsController < ApplicationController
   def index
     
 @developments = Development.all
+@ensambles = Ensamble.all
+@terminations = Termination.all
 @nivelations = @oper.nivelations.search(params[:search], params[:page])
   end
   
@@ -30,7 +32,7 @@ class NivelationsController < ApplicationController
     @nivelation.oper_id = @oper.id
     respond_to do |format|
       if @nivelation.save
-        format.html { redirect_to  oper_nivelations_path(@oper), notice: 'Nivelation was successfully created.' }
+        format.html { redirect_to  oper_nivelations_developments_path(@oper), notice: 'Nivelation was successfully created.' }
         format.json { render :show, status: :created, location: @nivelation }
       else
         format.html { render :new }
@@ -44,7 +46,7 @@ class NivelationsController < ApplicationController
   def update
     respond_to do |format|
       if @nivelation.update(nivelation_params)
-        format.html { redirect_to oper_nivelations_path(@oper), notice: 'Nivelation was successfully updated.' }
+        format.html { redirect_to oper_nivelations_developments_path(@oper), notice: 'Nivelation was successfully updated.' }
         format.json { render :show, status: :ok, location: @nivelation }
       else
         format.html { render :edit }
@@ -58,7 +60,7 @@ class NivelationsController < ApplicationController
   def destroy
     @nivelation.destroy
     respond_to do |format|
-      format.html { redirect_to oper_nivelations_url(@oper), notice: 'Nivelation was successfully destroyed.' }
+      format.html { redirect_to oper_nivelations_developments_path_url(@oper), notice: 'Nivelation was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -67,7 +69,8 @@ class NivelationsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_nivelation
       @oper = Oper.find(params[:oper_id])
-      @nivelation = Nivelation.find(params[:id]) if params[:id]
+      @nivelation = Nivelation.find(params[:id]) if params[:id] if params[:id]
+      
     end
 
 

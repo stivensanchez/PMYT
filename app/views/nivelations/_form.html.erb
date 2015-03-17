@@ -1,4 +1,4 @@
-<%= simple_form_for [@oper,@nivelation], :html => { :class => 'form-horizontal' } do |f| %>
+<%= simple_form_for [@oper,@nivelation,@development], :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.input :sam %>
   <%= error_span(@nivelation[:sam]) %>
   <%= f.input :tiempo_real %>

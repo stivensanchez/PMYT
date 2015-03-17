@@ -68,6 +68,7 @@ Rails.application.routes.draw do
     resources :nivelations
   end
   
+  
   resources :fichas do
     resources :costs
   end
