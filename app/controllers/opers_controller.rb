@@ -4,6 +4,7 @@ class OpersController < ApplicationController
   # GET /opers
   # GET /opers.json
   def index
+  
     @opers = @group.opers.search(params[:search], params[:page])
     #descargar en xls (excel)
    respond_to do |format|

@@ -2,17 +2,17 @@ class Development < ActiveRecord::Base
   belongs_to :operation
   belongs_to :info
   belongs_to :oper
-  has_many :nivelations
+  belongs_to :nivelation
   
   
-  after_update :cal
+  after_create :cal
     
   
   def cal
     r = Nivelation.new
     r.oper_id = self.oper_id
-    r.operacion = self.operation.nombre
-    r.sam = self.sam
+    r.development_id = self.operation_id
+    
     r.save
   end
 

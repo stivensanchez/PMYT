@@ -5,9 +5,9 @@ class NivelationsController < ApplicationController
   # GET /nivelations.json
   def index
     
-@developments = Development.all
-@ensambles = Ensamble.all
-@terminations = Termination.all
+@developments = Development.select("id","operation_id","sam")
+@ensambles = Ensamble.select("id","operation_id","sam")
+@terminations = Termination.select("id","operation_id","sam")
 @nivelations = @oper.nivelations.search(params[:search], params[:page])
   end
   
@@ -18,11 +18,13 @@ class NivelationsController < ApplicationController
 
   # GET /nivelations/new
   def new
+    @developments = Development.select("id","operation_id","sam")
     @nivelation = Nivelation.new
   end
 
   # GET /nivelations/1/edit
   def edit
+    @developments = Development.select("operation.nombre","sam")
   end
 
   # POST /nivelations
@@ -30,9 +32,10 @@ class NivelationsController < ApplicationController
   def create
     @nivelation = Nivelation.new(nivelation_params)
     @nivelation.oper_id = @oper.id
+    @nivelation.development_id = @development.id
     respond_to do |format|
       if @nivelation.save
-        format.html { redirect_to  oper_nivelations_developments_path(@oper), notice: 'Nivelation was successfully created.' }
+        format.html { redirect_to  oper_nivelations_path(@oper), notice: 'Nivelation was successfully created.' }
         format.json { render :show, status: :created, location: @nivelation }
       else
         format.html { render :new }
@@ -46,7 +49,7 @@ class NivelationsController < ApplicationController
   def update
     respond_to do |format|
       if @nivelation.update(nivelation_params)
-        format.html { redirect_to oper_nivelations_developments_path(@oper), notice: 'Nivelation was successfully updated.' }
+        format.html { redirect_to oper_nivelations_path(@oper), notice: 'Nivelation was successfully updated.' }
         format.json { render :show, status: :ok, location: @nivelation }
       else
         format.html { render :edit }
@@ -60,7 +63,7 @@ class NivelationsController < ApplicationController
   def destroy
     @nivelation.destroy
     respond_to do |format|
-      format.html { redirect_to oper_nivelations_developments_path_url(@oper), notice: 'Nivelation was successfully destroyed.' }
+      format.html { redirect_to oper_nivelations_path_url(@oper), notice: 'Nivelation was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -68,8 +71,9 @@ class NivelationsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_nivelation
+      @development = Development.all
       @oper = Oper.find(params[:oper_id])
-      @nivelation = Nivelation.find(params[:id]) if params[:id] if params[:id]
+      @nivelation = Nivelation.find(params[:id]) if params[:id] 
       
     end
 

@@ -3,13 +3,12 @@ class CreateNivelations < ActiveRecord::Migration
     create_table :nivelations do |t|
       t.references :oper, index: true
       t.references :development, index: true
-      t.references :ensamble, index: true
-      t.references :termination, index: true
-      t.string :sam
+       t.references :ensamble, index: true
+        t.references :termination, index: true
+      t.string :tiempo_sam
       t.string :tiempo_real
       t.string :desempeño
-      t.string :comentario
-      
+      t.text :comentario
 
       t.timestamps
     end

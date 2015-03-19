@@ -1,20 +1,23 @@
-<%= simple_form_for [@oper,@nivelation,@development], :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :sam %>
-  <%= error_span(@nivelation[:sam]) %>
-  <%= f.input :tiempo_real %>
-  <%= error_span(@nivelation[:tiempo_real]) %>
-  <%= f.input :desempeño %>
-  <%= error_span(@nivelation[:desempeño]) %>
-  <%= f.input :comentario %>
-  <%= error_span(@nivelation[:comentario]) %>
-  <%= f.input :oper_id %>
-  <%= error_span(@nivelation[:oper_id]) %>
-  <%= f.input :development_id %>
-  <%= error_span(@nivelation[:development_id]) %>
-  <%= f.input :ensamble_id %>
-  <%= error_span(@nivelation[:ensamble_id]) %>
-  <%= f.input :termination_id %>
-  <%= error_span(@nivelation[:termination_id]) %>
+<%= simple_form_for [@oper,@nivelation], :html => { :class => 'form-horizontal' } do |f| %>
+ <div class="form-group">
+  <%= f.label :operacion %>
+  <%= f.text_field :development_id, class: "form-control" %>
+</div>
+ <div class="form-group">
+  <%= f.label :sam %>
+  <%= f.text_field :development_id, class: "form-control" %>
+</div>
+<div class="form-group">
+  <%= f.label :desempeño %>
+  <%= f.text_field :desempeño, class: "form-control" %>
+</div>
+<div class="form-group">
+  <%= f.label :comentario %>
+  <%= f.text_field :comentario, class: "form-control" %>
+</div>
+ 
+  
+ 
 
   <%= f.button :submit, :class => 'btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

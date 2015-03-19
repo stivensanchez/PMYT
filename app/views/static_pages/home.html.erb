@@ -10,6 +10,14 @@
     <%= csrf_meta_tags %>
 </head>
 <body>
-    
+  <h1>Que es PMYT? </h1><br>
+  <p>PMYT es un prototipo de una aplicacion para el detallado seguimiento de todos y cada uno de los procesos que se administran el area de confecciones, donde se tendra el registro 
+     de usurios, registro de aprendices e instructores, registro de cada una de las lineas en las que se trabaja con sus respectivas maquinas. Videos e imagenes de 
+     cada una de las operaciones con las que se trabaja.
+     Ademas de esto contara con una clara administracion de las fichas tecnicas y cada uno de sus componetes que la conforman, una hoja de costos para cada ficha tecnica,
+     y el manejo del rendimiento de cada operaria en una operacion determinada. La cual va estar disponible para los aprendices e instructores interezados.</p>
+  <center>
+        <%= video_tag('#', height: '350', width: '550', autobuffer: true, autoplay: true,:loop => true, controls: true) %>
+  </center>      
 </body>
 </html>

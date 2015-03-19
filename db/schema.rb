@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150316150926) do
+ActiveRecord::Schema.define(version: 20150225205609) do
 
   create_table "comentarios", force: true do |t|
     t.datetime "created_at"
@@ -252,14 +252,14 @@ ActiveRecord::Schema.define(version: 20150316150926) do
   end
 
   create_table "nivelations", force: true do |t|
-    t.string   "sam"
-    t.string   "tiempo_real"
-    t.string   "desempeño"
-    t.string   "comentario"
     t.integer  "oper_id"
     t.integer  "development_id"
     t.integer  "ensamble_id"
     t.integer  "termination_id"
+    t.string   "tiempo_sam"
+    t.string   "tiempo_real"
+    t.string   "desempeño"
+    t.text     "comentario"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -316,12 +316,6 @@ ActiveRecord::Schema.define(version: 20150316150926) do
 
   add_index "prendas", ["info_id"], name: "index_prendas_on_info_id"
 
-  create_table "roles", force: true do |t|
-    t.string   "rol"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "terminations", force: true do |t|
     t.integer  "operation_id"
     t.string   "sam"
@@ -362,7 +356,14 @@ ActiveRecord::Schema.define(version: 20150316150926) do
 
   add_index "treatments", ["info_id"], name: "index_treatments_on_info_id"
 
-# Could not dump table "users" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "users", force: true do |t|
+    t.string   "email",            null: false
+    t.string   "crypted_password"
+    t.string   "salt"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end
