@@ -1,11 +1,11 @@
 <%= simple_form_for [@oper,@nivelation], :html => { :class => 'form-horizontal' } do |f| %>
  <div class="form-group">
   <%= f.label :operacion %>
-  <%= f.text_field :development_id, class: "form-control" %>
+  <%= f.text_field :nivelation_id, class: "form-control" %>
 </div>
  <div class="form-group">
   <%= f.label :sam %>
-  <%= f.text_field :development_id, class: "form-control" %>
+  <%= f.text_field :nivelation_id, class: "form-control" %>
 </div>
 <div class="form-group">
   <%= f.label :desempeño %>
@@ -15,9 +15,6 @@
   <%= f.label :comentario %>
   <%= f.text_field :comentario, class: "form-control" %>
 </div>
- 
-  
- 
 
   <%= f.button :submit, :class => 'btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

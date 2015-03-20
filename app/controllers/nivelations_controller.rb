@@ -4,11 +4,11 @@ class NivelationsController < ApplicationController
   # GET /nivelations
   # GET /nivelations.json
   def index
-    
-@developments = Development.select("id","operation_id","sam")
-@ensambles = Ensamble.select("id","operation_id","sam")
-@terminations = Termination.select("id","operation_id","sam")
-@nivelations = @oper.nivelations.search(params[:search], params[:page])
+    @nivelations = @oper.nivelations.search(params[:search], params[:page])
+@developments = Development.select("id","operation_id","sam").where("oper_id=oper_id")
+@ensambles = Ensamble.select("id","operation_id","sam").where("oper_id=oper_id")
+@terminations = Termination.select("id","operation_id","sam").where("oper_id=oper_id")
+
   end
   
   # GET /nivelations/1
@@ -18,13 +18,16 @@ class NivelationsController < ApplicationController
 
   # GET /nivelations/new
   def new
-    @developments = Development.select("id","operation_id","sam")
+   
     @nivelation = Nivelation.new
   end
 
   # GET /nivelations/1/edit
   def edit
     @developments = Development.select("operation.nombre","sam")
+    @ensambles = Ensamble.select("operation.nombre","sam")
+    @terminations = Termination.select("operation.nombre","sam")
+    @nivelations = Nivelation.select("tiempo_real")
   end
 
   # POST /nivelations
@@ -32,7 +35,9 @@ class NivelationsController < ApplicationController
   def create
     @nivelation = Nivelation.new(nivelation_params)
     @nivelation.oper_id = @oper.id
-    @nivelation.development_id = @development.id
+    @nivelation.development_id = @development.id  
+    @nivelation.ensamble_id = @ensamble.id
+    @nivelation.termination_id = @termination.id 
     respond_to do |format|
       if @nivelation.save
         format.html { redirect_to  oper_nivelations_path(@oper), notice: 'Nivelation was successfully created.' }
@@ -47,6 +52,9 @@ class NivelationsController < ApplicationController
   # PATCH/PUT /nivelations/1
   # PATCH/PUT /nivelations/1.json
   def update
+    @developments = Development.select("id","operation_id","sam").where("oper_id=oper_id")
+@ensambles = Ensamble.select("id","operation_id","sam").where("oper_id=oper_id")
+@terminations = Termination.select("id","operation_id","sam").where("oper_id=oper_id")
     respond_to do |format|
       if @nivelation.update(nivelation_params)
         format.html { redirect_to oper_nivelations_path(@oper), notice: 'Nivelation was successfully updated.' }
@@ -60,18 +68,14 @@ class NivelationsController < ApplicationController
 
   # DELETE /nivelations/1
   # DELETE /nivelations/1.json
-  def destroy
-    @nivelation.destroy
-    respond_to do |format|
-      format.html { redirect_to oper_nivelations_path_url(@oper), notice: 'Nivelation was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_nivelation
       @development = Development.all
+      @ensamble = Ensamble.all
+      @termination = Termination.all
       @oper = Oper.find(params[:oper_id])
       @nivelation = Nivelation.find(params[:id]) if params[:id] 
       

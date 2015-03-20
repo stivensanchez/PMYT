@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  administrador: MyString
+  instructor: MyString
+  operaria: MyString
+
+two:
+  administrador: MyString
+  instructor: MyString
+  operaria: MyString

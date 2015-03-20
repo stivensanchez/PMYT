@@ -3,8 +3,7 @@ class Development < ActiveRecord::Base
   belongs_to :info
   belongs_to :oper
   belongs_to :nivelation
-  
-  
+
   after_create :cal
     
   

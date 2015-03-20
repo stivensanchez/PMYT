@@ -1,0 +1,14 @@
+<%= simple_form_for [@manual], :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="form-group">
+  <%= f.label :Manual_Administrador %>
+  <%= f.file_field :administrador %>
+</div>
+  <%= f.input :instructor %>
+  <%= error_span(@manual[:instructor]) %>
+  <%= f.input :operaria %>
+  <%= error_span(@manual[:operaria]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                manuals_path, :class => 'btn btn-default' %>
+<% end %>

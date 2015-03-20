@@ -19,21 +19,16 @@
     </tr>
   </thead>
   <tbody>
-    
+      
        <% @nivelations = @developments.all.each do |nivelation| %>
-        <td><%= nivelation.operation.nombre %></td>
-       <td> <%= nivelation.sam %></td>
-        <td></td>
+       <td><%= nivelation.operation.nombre %></td>
+       <td><%= nivelation.sam %></td>
+       <td></td>
         <td></td>
         <td></td>
           <td>
          <%= link_to '<i class="fa fa-wrench txt-primary"></i><span> Editar</span>'.html_safe, edit_oper_nivelation_path(@oper,nivelation) %></li>
 
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      oper_nivelation_path(@oper,nivelation),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-xs btn-danger' %>
         </td>
       </tr>
     <% end %>
@@ -48,11 +43,7 @@
           <td>
          <%= link_to '<i class="fa fa-wrench txt-primary"></i><span> Editar</span>'.html_safe, edit_oper_nivelation_path(@oper,nivelation) %></li>
 
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      oper_nivelation_path(@oper,nivelation),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-xs btn-danger' %>
+        
         </td>
       </tr>
     <% end %>
@@ -67,30 +58,20 @@
           <td>
          <%= link_to '<i class="fa fa-wrench txt-primary"></i><span> Editar</span>'.html_safe, edit_oper_nivelation_path(@oper,nivelation) %></li>
 
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      oper_nivelation_path(@oper,nivelation),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-xs btn-danger' %>
         </td>
       </tr>
     <% end %>
-    
-     <% @nivelations = @nivelations.each do |nivelation| %>
+    <% @nivelations = @terminations.all.each do |nivelation| %>
         <td><%= nivelation.operation.nombre %></td>
         <td><%= nivelation.sam %></td>
-        <td><%= nivelation.tiempo_real %></td>
-        <td><%= nivelation.desempeño %></td>
+        <td></td>
+        <td></td>
         <td></td>
           <td>
          <%= link_to '<i class="fa fa-wrench txt-primary"></i><span> Editar</span>'.html_safe, edit_oper_nivelation_path(@oper,nivelation) %></li>
 
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      oper_nivelation_path(@oper,nivelation),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-xs btn-danger' %>
         </td>
+        </tr>
         <% end %>
   </tbody>
 </table>

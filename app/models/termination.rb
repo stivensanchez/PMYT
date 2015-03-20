@@ -9,8 +9,8 @@ after_save :cal
   def cal
     r = Nivelation.new
      r.oper_id = self.oper_id
-    r.operacion = self.operation.nombre
-    r.sam = self.sam
+    r.termination_id = self.operation.nombre
+   
     r.save
   end
 

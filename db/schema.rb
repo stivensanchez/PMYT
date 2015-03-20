@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150225205609) do
+ActiveRecord::Schema.define(version: 20150320222853) do
+
+  create_table "ayudas", force: true do |t|
+    t.string   "m_usu"
+    t.string   "m_adm"
+    t.string   "m_oper"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "comentarios", force: true do |t|
     t.datetime "created_at"
@@ -205,6 +213,18 @@ ActiveRecord::Schema.define(version: 20150225205609) do
 
   add_index "instructors", ["modulo_id"], name: "index_instructors_on_modulo_id"
   add_index "instructors", ["tipo_doc_id"], name: "index_instructors_on_tipo_doc_id"
+
+  create_table "manuals", force: true do |t|
+    t.string   "administrador"
+    t.string   "instructor"
+    t.string   "operaria"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "administrador_file_name"
+    t.string   "administrador_content_type"
+    t.integer  "administrador_file_size"
+    t.datetime "administrador_updated_at"
+  end
 
   create_table "maquinas", force: true do |t|
     t.string   "nombre"
