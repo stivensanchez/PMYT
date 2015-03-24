@@ -23,16 +23,14 @@
        <% @nivelations = @developments.all.each do |nivelation| %>
        <td><%= nivelation.operation.nombre %></td>
        <td><%= nivelation.sam %></td>
-       <td></td>
-        <td></td>
-        <td></td>
+       <td><%= nivelation.tiempo_real %></td>
+       <td><%= nivelation.desempeño %></td>
+       <td><%= nivelation.comentario %></td>
           <td>
          <%= link_to '<i class="fa fa-wrench txt-primary"></i><span> Editar</span>'.html_safe, edit_oper_nivelation_path(@oper,nivelation) %></li>
-
         </td>
       </tr>
     <% end %>
-    
     
        <% @nivelations = @ensambles.all.each do |nivelation| %>
         <td><%= nivelation.operation.nombre %></td>
@@ -42,12 +40,9 @@
         <td></td>
           <td>
          <%= link_to '<i class="fa fa-wrench txt-primary"></i><span> Editar</span>'.html_safe, edit_oper_nivelation_path(@oper,nivelation) %></li>
-
-        
-        </td>
+       </td>
       </tr>
     <% end %>
-    
     
        <% @nivelations = @terminations.all.each do |nivelation| %>
         <td><%= nivelation.operation.nombre %></td>
@@ -56,23 +51,9 @@
         <td></td>
         <td></td>
           <td>
-         <%= link_to '<i class="fa fa-wrench txt-primary"></i><span> Editar</span>'.html_safe, edit_oper_nivelation_path(@oper,nivelation) %></li>
-
-        </td>
+         <%= link_to '<i class="fa fa-wrench txt-primary"></i><span> Editar</span>'.html_safe, edit_oper_nivelation_path(@oper,nivelation) %></li>      </td>
       </tr>
     <% end %>
-    <% @nivelations = @terminations.all.each do |nivelation| %>
-        <td><%= nivelation.operation.nombre %></td>
-        <td><%= nivelation.sam %></td>
-        <td></td>
-        <td></td>
-        <td></td>
-          <td>
-         <%= link_to '<i class="fa fa-wrench txt-primary"></i><span> Editar</span>'.html_safe, edit_oper_nivelation_path(@oper,nivelation) %></li>
-
-        </td>
-        </tr>
-        <% end %>
   </tbody>
 </table>
 

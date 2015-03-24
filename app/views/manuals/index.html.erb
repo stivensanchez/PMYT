@@ -1,26 +1,27 @@
 <%- model_class = Manual -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+<div class="well">
+  <h1><center>Manuales del <small>Sistema</small></center></h1>
 </div>
-<table class="table table-striped">
+<div class="alert alert-dismissable alert-info">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  <p>En esta página del sistema podra encontrar todos y cada uno de los manules del sistema los cuales se dividen en 3:
+  Manual de Administrador, Manual de Instructor y por ultimo el Manual de la Operaria.</p>
+</div>
+<table class="table table-bordered table-striped table-hover table-condensed">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:administrador) %></th>
-      <th><%= model_class.human_attribute_name(:instructor) %></th>
-      <th><%= model_class.human_attribute_name(:operaria) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= model_class.human_attribute_name(:manual_administrador) %></th>
+      <th><%= model_class.human_attribute_name(:manual_instructor) %></th>
+      <th><%= model_class.human_attribute_name(:manual_operaria) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @manuals.each do |manual| %>
       <tr>
-        <td><%= link_to manual.id, manual_path(manual) %></td>
-        <td><center><%= link_to('<button class="btn btn-default"><small> Ver </small><i class="fa fa-eye"></i></button>'.html_safe, manual.administrador.url) %></center></td>
-        <td><%= manual.instructor %></td>
-        <td><%= manual.operaria %></td>
-        <td><%=l manual.created_at %></td>
+        <td><center><%= link_to('<button class="btn btn-success"><small> Ver </small><i class="fa fa-eye"></i></button>'.html_safe, manual.administrador.url) %></center></td>
+        <td><center><%= link_to('<button class="btn btn-warning"><small> Ver </small><i class="fa fa-eye"></i></button>'.html_safe, manual.instructor.url) %></center></td>
+        <td><center><%= link_to('<button class="btn btn-success"><small> Ver </small><i class="fa fa-eye"></i></button>'.html_safe, manual.operaria.url) %></center></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_manual_path(manual), :class => 'btn btn-default btn-xs' %>
@@ -35,6 +36,6 @@
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
+<%# link_to t('.new', :default => t("helpers.links.new")),
             new_manual_path,
-            :class => 'btn btn-primary' %>
+            :class => 'btn btn-success' %>

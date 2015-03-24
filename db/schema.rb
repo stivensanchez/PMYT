@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150320222853) do
+ActiveRecord::Schema.define(version: 20150324155620) do
 
   create_table "ayudas", force: true do |t|
     t.string   "m_usu"
@@ -137,6 +137,9 @@ ActiveRecord::Schema.define(version: 20150320222853) do
     t.integer  "info_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "tiempo_real",     limit: nil
+    t.text     "comentario"
+    t.string   "desempeño",       limit: nil
   end
 
   add_index "developments", ["info_id"], name: "index_developments_on_info_id"
@@ -224,6 +227,14 @@ ActiveRecord::Schema.define(version: 20150320222853) do
     t.string   "administrador_content_type"
     t.integer  "administrador_file_size"
     t.datetime "administrador_updated_at"
+    t.string   "instructor_file_name"
+    t.string   "instructor_content_type"
+    t.integer  "instructor_file_size"
+    t.datetime "instructor_updated_at"
+    t.string   "operaria_file_name"
+    t.string   "operaria_content_type"
+    t.integer  "operaria_file_size"
+    t.datetime "operaria_updated_at"
   end
 
   create_table "maquinas", force: true do |t|
