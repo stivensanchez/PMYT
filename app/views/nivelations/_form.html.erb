@@ -1,4 +1,15 @@
 <%= simple_form_for [@oper,@nivelation], :html => { :class => 'form-horizontal' } do |f| %>
+<% if @nivelation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@nivelation.errors.count, "error") %> campos obligatorios:</h2>
+
+      <ul>
+      <% @nivelation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
  <div class="form-group">
   <%= f.label :operacion %>
   <%= f.text_field :development_id, class: "form-control" %>

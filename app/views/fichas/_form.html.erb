@@ -1,4 +1,15 @@
 <%= simple_form_for @ficha, :html => { :class => 'form-group' } do |f| %>
+<% if @ficha.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ficha.errors.count, "error") %> campos obligatorios:</h2>
+
+      <ul>
+      <% @ficha.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 <div class="form-group">
   <%= f.label :Referencia %>
   <%= f.text_field :referencia, class: "form-control", placeholder: "Ingrese la referencia" %>

@@ -1,4 +1,9 @@
 class Maquina < ActiveRecord::Base
+  # Validacion
+   validates :nombre, presence: true
+   validates :descripcion, presence: true
+   validates :cantidad, presence: true
+   
   attr_accessor :ficha_file_maquina
   has_attached_file :ficha, :default_url =>"/maquinas"
   do_not_validate_attachment_file_type :ficha

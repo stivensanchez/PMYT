@@ -1,4 +1,8 @@
 class Ficha < ActiveRecord::Base
+  # Validaciones
+  validates :referencia, presence: true
+  validates :nombre, presence: true
+  
   has_many :infos
   has_many :costs
   #descargar en xls (excel)

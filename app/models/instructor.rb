@@ -1,4 +1,11 @@
 class Instructor < ActiveRecord::Base
+  # Validaciones 
+  validates :numero_doc, presence: true
+  validates :nombres, presence: true 
+  validates :apellidos, presence: true 
+  validates :correo, presence: true
+  validates :telefono, presence: true
+  
   belongs_to :tipo_doc
   belongs_to :modulo
   #descargar en xls (excel)

@@ -1,4 +1,15 @@
 <%= simple_form_for [@ficha,@info,@measure], :html => { :class => 'form-group' } do |f| %>
+<% if @measure.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@measure.errors.count, "error") %> campos obligatorios:</h2>
+
+      <ul>
+      <% @measure.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 <div class="form-group">
   <%= f.label :medida %>
   <%= f.text_field :medidas, class: "form-control", placeholder: "Ingrese las medidas" %>

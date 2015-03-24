@@ -1,4 +1,8 @@
 class Group < ActiveRecord::Base
+  # Validaciones
+  validates :nombre, presence: true
+  validates :num_ficha, presence: true
+  
   belongs_to :modulo
   has_many :opers
   #descargar en xls (excel)

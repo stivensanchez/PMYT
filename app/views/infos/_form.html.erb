@@ -1,4 +1,15 @@
 <%= simple_form_for [@ficha,@info], :html => { :class => 'form-group' } do |f| %>
+<% if @info.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@info.errors.count, "error") %> campos obligatorios:</h2>
+
+      <ul>
+      <% @info.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 <div class="page-header">
   <div class="form-group">
     <%= f.label :Modulo %> <br>

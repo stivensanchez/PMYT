@@ -1,15 +1,26 @@
 <%= simple_form_for [@ficha,@info,@prenda], :html => { :class => 'form-group' } do |f| %>
+<% if @prenda.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@prenda.errors.count, "error") %> campos obligatorios:</h2>
+
+      <ul>
+      <% @prenda.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 <div class="form-group">
   <%= f.label :Nombre%>
-  <%= f.text_field :nombre, class: "form-control",         placeholder: "Ingrese el nombre" %>
+  <%= f.text_field :nombre, class: "form-control", placeholder: "Ingrese el nombre" %>
 </div>
 <div class="form-group">
   <%= f.label :Cantidad%>
-  <%= f.text_field :cantidad, class: "form-control",         placeholder: "Ingrese la cantidad" %>
+  <%= f.text_field :cantidad, class: "form-control",  placeholder: "Ingrese la cantidad" %>
 </div>
 <div class="form-group">
   <%= f.label :Observaciones %>
-  <%= f.text_field :observaciones, class: "form-control",         placeholder: "Ingrese una observacion" %>
+  <%= f.text_field :observaciones, class: "form-control", placeholder: "Ingrese una observacion" %>
 </div>  
 
   <%= f.button :submit, 'Crear Piezas', :class => 'btn-primary' %>

@@ -22,12 +22,16 @@
         <td><%= material.cantidad %></td>
         <td><%= material.observaciones %></td>
          <td><center>
-         <div class="btn-group">
-              <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
-              ︾</a>
-              <ul class="dropdown-menu">
+         <div id="wrap">
+            <ul id="navbar">
+              <li>
+                <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
+                ︾</a>
+            <ul>
                 <li> <%= link_to '<i class="fa fa-wrench txt-primary"></i><span> Editar</span>'.html_safe, edit_info_material_path(@info,material) %></li>
-                <li> <%= link_to '<i class="fa fa-times txt-danger"></i><span> Eliminar</span>'.html_safe, info_material_path(@info,material), method: :delete, data: { confirm: 'Estas segur@?' },remote: true %></li>
+                <li> <%= link_to '<i class="fa fa-times txt-danger"></i><span> Eliminar</span>'.html_safe, info_material_path(@info,material), method: :delete, data: { confirm: 'Estas segur@?' }%></li>
+              </ul>
+              </li>
               </ul>
           </div>
         </center></td>

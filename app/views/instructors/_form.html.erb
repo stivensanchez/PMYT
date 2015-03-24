@@ -1,4 +1,15 @@
 <%= simple_form_for [@modulo,@instructor], :html => { :class => 'form-group' } do |f| %>
+<% if @instructor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@instructor.errors.count, "error") %> campos obligatorios:</h2>
+
+      <ul>
+      <% @instructor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 <div class="form-group">
   <%= f.label :Tipo_Documento %> <br>
   <%= f.collection_select :tipo_doc_id, TipoDoc.all, :id, :nombre, class: "form-contol", prompt: "Seleccione" %>

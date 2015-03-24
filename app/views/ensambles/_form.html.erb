@@ -1,4 +1,15 @@
 <%= simple_form_for [@ficha,@info,@ensamble], :html => { :class => 'form-group' } do |f| %>
+<% if @ensamble.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ensamble.errors.count, "error") %> campos obligatorios:</h2>
+
+      <ul>
+      <% @ensamble.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 <div class="form-group">
   <%= f.label :Operacion %>  <br>
   <%= f.collection_select :operation_id, Operation.all, :id, :nombre, class: "form-control", prompt: "Seleccione Operacion" %>

@@ -1,4 +1,15 @@
 <%= simple_form_for [@ficha,@cost], :html => { :class => 'form-horizontal' } do |f| %>
+<% if @cost.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cost.errors.count, "error") %> campos obligatorios:</h2>
+
+      <ul>
+      <% @cost.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 <script>
     function cantidadCero(){
       var cant = document.getElementById('cant').value;

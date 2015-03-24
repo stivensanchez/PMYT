@@ -1,4 +1,15 @@
 <%= simple_form_for @tipo_doc, :html => { :class => 'form-horizontal' } do |f| %>
+<% if @tipo_doc.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tipo_doc.errors.count, "error") %> campos obligatorios:</h2>
+
+      <ul>
+      <% @tipo_doc.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 <div clas="form-group">
   <%= f.label :nombre %>
   <%= f.text_field :nombre, class: "form-control",  placeholder: "Escriba nombre" %>

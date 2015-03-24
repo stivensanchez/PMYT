@@ -1,4 +1,15 @@
 <%= simple_form_for [@modulo,@operation], :html => { :class => 'form-group' } do |f| %>
+<% if @operation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@operation.errors.count, "error") %> campos obligatorios:</h2>
+
+      <ul>
+      <% @operation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 <div class="form-group">
   <%= f.label :Nombre %>
   <%= f.text_field :nombre, class: "form-control",         placeholder: "Ingrese el nombre" %>
