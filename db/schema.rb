@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150324155620) do
+ActiveRecord::Schema.define(version: 20150331193506) do
 
   create_table "ayudas", force: true do |t|
     t.string   "m_usu"
@@ -346,6 +346,13 @@ ActiveRecord::Schema.define(version: 20150324155620) do
   end
 
   add_index "prendas", ["info_id"], name: "index_prendas_on_info_id"
+
+  create_table "rols", force: true do |t|
+    t.string   "nombre"
+    t.text     "descripcion"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "terminations", force: true do |t|
     t.integer  "operation_id"

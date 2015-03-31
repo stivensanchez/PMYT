@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :rols
+
   resources :manuals
 
   resources :user_sessions

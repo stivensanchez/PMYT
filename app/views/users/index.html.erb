@@ -10,13 +10,14 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:correo_electronico) %></th>
+      <th><%= model_class.human_attribute_name(:rol) %></th>
     </tr>
   </thead>
   <tbody>
     <% @users.each do |user| %>
       <tr>
         <td><%= user.email %></td>
-        
+        <td><%= user.rol.nombre %></td>
           <%# link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_user_path(user), :class => 'btn btn-default btn-xs' %>
           <%# link_to t('.destroy', :default => t("helpers.links.destroy")),

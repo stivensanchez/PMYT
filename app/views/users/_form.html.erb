@@ -22,6 +22,10 @@
     <%= f.label :Confirmar_Contraseña %><br /> 
     <%= f.password_field :password_confirmation %> 
   </div> 
+  <div class="form-group">
+    <%= f.label :Rol %><br>
+    <%= f.collection_select :rol_id, Rol.all, :id, :nombre, class: "form-contol", prompt: "Seleccione un rol" %>
+  </div>
 
     
   <%= f.button :submit, :class => 'btn-success' %>

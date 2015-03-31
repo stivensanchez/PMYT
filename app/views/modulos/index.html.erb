@@ -1,17 +1,21 @@
 <%- model_class = Modulo -%>
-  <div class="well">
+<div class="well">
+  <div id="anim">
     <h1><center>Listado  <small>Modulos</small></center></h1>
-</div>
+  </div>
+</div>  
 <div class="alert alert-dismissable alert-warning">
   <button type="button" class="close" data-dismiss="alert">×</button>
   <p>En esta página podras visualizar toda la informacion acerca de los modulos registrados en el area de confecciones
      asi como cada uno de sus componentes y su informacion mas basica, podiendo haceder a ellos por medio de un buscador.</p>
 </div>
-    <div class="well"> 
+<br>
+    <div class="page-header"> 
     <%= link_to 'Nuevo modulo',
             new_modulo_path,
             class: "btn btn-success btn-lg active" %>
-   </div>
+   </div><br>
+   <br>
    <!-- Buscador -->
   <div class="tbusca"> 
    <%= form_tag modulos_path, :method => 'get' do %>
