@@ -6,6 +6,13 @@ class Oper < ActiveRecord::Base
   has_many :ensambles
   has_many :terminations
   #descargar en xls (excel)
+  #Validaciones
+  validates :numero_documento, presence: true
+  validates :nombre, presence: true
+  validates :apellido, presence: true
+  validates :correo, presence: true
+  validates :telefono, presence: true
+  
  def self.to_csv(options = {})
     CSV.generate(options) do |csv|
       csv << column_names

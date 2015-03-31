@@ -2768,6 +2768,12 @@ height: 200px;
     margin: -103% 0% 0% 17%;
   }
 }
+/*Se creo el tamaño de pantalla para 1024 768...para posibles errores eliminar*/
+@media screen and (max-width:1300px){
+  .container{
+    margin: -113% 0% 0% 16%;
+  }
+}
 .pie{
   margin: 0% 0% 0% -4%;
 }

@@ -15,7 +15,12 @@ class Operation < ActiveRecord::Base
   belongs_to :modulo
   has_many :nivelations
   #scope :with_cheap_nivelations, joins(:nivelations) & Nivelation.cheap
-  
+  #Validaciones 
+  validates :nombre, presence: true
+  validates :sam, presence: true
+  validates :descripcion, presence: true
+  validates :image, presence: true
+  validates :video, presence: true
   #descargar en xls (excel)
  def self.to_csv(options = {})
     CSV.generate(options) do |csv|

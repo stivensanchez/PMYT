@@ -4,6 +4,9 @@ class Modulo < ActiveRecord::Base
   has_many :instructors
   has_many :groups
   has_many :infos
+  #Validaciones
+   validates :nombre, presence: true
+   validates :descripcion, presence: true
   #descargar en xls (excel)
  def self.to_csv(options = {})
     CSV.generate(options) do |csv|
