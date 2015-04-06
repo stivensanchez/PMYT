@@ -1,17 +1,24 @@
 <%- model_class = Maquina -%>
 <div class="well">
+  <div id="anim">
     <h1><center>Listado <small>Maquinas</small></center></h1>
+  </div>  
 </div>
 <div class="alert alert-dismissable alert-info">
   <button type="button" class="close" data-dismiss="alert">×</button>
   <p>En esta página del sistema podras registrar todas las maquinas que funcionan o estan activas en este modulo
   y por medio de la ficha tecnica de la maquina tener una idea clara de como es el trabajo de la misma.</p>
 </div>
-<div class="well">
-<%= link_to t('.nuevo'),
-  new_modulo_maquina_path(@modulo),
-            :class => 'btn btn-success btn-lg active' %>
-</div>
+<br>
+<% if current_user.rol.id == 1 %>
+  <div class="page-header">
+  <%= link_to t('.nuevo'),
+    new_modulo_maquina_path(@modulo),
+              :class => 'btn btn-success btn-lg active' %>
+  </div>
+<% end %>  
+<br>
+<br>
 <!-- buscador -->
 <div class="tbusca"> 
    <%= form_tag modulo_maquinas_path(@modulo), :method => 'get' do %>
@@ -24,12 +31,14 @@
      <% end %>
   <% end %>
   </div>
-<!-- descargar en formato xls(excel) -->
-<div class="linkex">
-  <strong class="txt-success"><a><%= link_to "Descargar tabla en ", modulo_maquinas_path(format: "xls") %></a></strong>
-  <%= link_to image_tag("excel.png", :size => "20x20"), modulo_maquinas_path(format: "xls"), class: 'btn btn-default' %>
-</div>
-<br>
+<% if current_user.rol.id == 1 || current_user.rol.id == 2 %>  
+  <!-- descargar en formato xls(excel) -->
+  <div class="linkex">
+    <strong class="txt-success"><a><%= link_to "Descargar tabla en ", modulo_maquinas_path(format: "xls") %></a></strong>
+    <%= link_to image_tag("excel.png", :size => "20x20"), modulo_maquinas_path(format: "xls"), class: 'btn btn-default' %>
+  </div>
+  <br>
+<% end %>  
 <table class="table table-bordered table-striped table-hover table-condensed">
   <thead>
     <tr>
@@ -37,7 +46,9 @@
       <th><%= model_class.human_attribute_name(:descripcion) %></th>
       <th><%= model_class.human_attribute_name(:ficha_tecnica) %></th>
       <th><%= model_class.human_attribute_name(:cantidad) %></th>
-      <th><%= model_class.human_attribute_name(:Opciones) %></th>
+      <% if current_user.rol.id == 1 %>
+        <th><%= model_class.human_attribute_name(:Opciones) %></th>
+      <% end %>  
     </tr>
   </thead>
   <tbody>
@@ -54,6 +65,7 @@
         <td><%= maquina.descripcion %></td>
         <td><center><%= link_to('<button class="btn btn-default"><small> Ver </small><i class="fa fa-eye"></i></button>'.html_safe, maquina.ficha.url) %></center></td>
         <td><%= maquina.cantidad %></td>
+      <% if current_user.rol.id == 1%>  
         <td><center>
          <div id="wrap">
             <ul id="navbar">
@@ -68,6 +80,7 @@
               </ul>
           </div>
         </center></td>
+      <% end %>  
       </tr>
     <% end %>
     <% end %>

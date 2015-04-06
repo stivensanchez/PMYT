@@ -1,6 +1,8 @@
 <%- model_class = Ficha -%>
 <div class="well">
+  <div id="anim">
     <h1><center>Fichas <small>Tecnicas</small></center></h1>
+  </div>  
 </div>
 <div class="alert alert-dismissable alert-info">
   <button type="button" class="close" data-dismiss="alert">×</button>
@@ -8,11 +10,15 @@
   en el area de confecciones.. Ingresando por medio de una referencia y su respectivo nombre, tambien podras 
   contar con una hoja de costos de cada ficha tecnica.</p>
 </div>
-<div class="well">
-    <%= link_to 'Nueva Ficha',
-            new_ficha_path,
-            :class => 'btn btn-success btn-lg active' %>
-</div>
+<br>
+<% if current_user.rol.id == 1 %>
+  <div class="page-header">
+      <%= link_to 'Nueva Ficha',
+              new_ficha_path,
+              :class => 'btn btn-success btn-lg active' %>
+  </div><br>
+  <br>
+<% end %>  
 <!-- Buscador -->
   <div class="tbusca"> 
    <%= form_tag fichas_path, :method => 'get' do %>
@@ -25,21 +31,24 @@
      <% end %>
   <% end %>
   </div>
-
-<!-- Link de generar xls (excel) -->
+<% if current_user.rol.id == 1 || current_user.rol.id == 2 %>
+   <!-- Link de generar xls (excel) -->
    <div class="linkex">
       <strong class="txt-success"><a><%= link_to "Descargar tabla en ", fichas_path(format: "xls") %></a></strong>
       <%= link_to image_tag("excel.png", :size => "20x20"), fichas_path(format: "xls"), class: 'btn btn-default' %>
    </div>
    <br>
+<% end %>   
 <table class="table table-bordered table-striped">
   <thead>
     <br>
     <tr>
       <th><%= model_class.human_attribute_name(:referencia) %></th>
       <th><%= model_class.human_attribute_name(:nombre) %></th>
+    <% if current_user.rol.id == 1 %>  
       <th><%= model_class.human_attribute_name(:hoja_de_costos) %></th>
-      <th><%= model_class.human_attribute_name(:acciones) %></th>
+      <th><%= model_class.human_attribute_name(:opciones) %></th>
+    <% end %>  
     </tr>
   </thead>
   <tbody>
@@ -48,6 +57,7 @@
         <td><center><%= link_to ficha.referencia, ficha_infos_path(ficha), :class => 'btn btn-warning' %></center></td>
        
        <td><%= ficha.nombre %></td>
+      <% if current_user.rol.id == 1 %> 
         <td><center><%= link_to '<button class="btn btn-success"><small> HOJA DE COSTOS </small><i class="fa fa-cubes"></i></button>'.html_safe, ficha_costs_path(ficha) %></center></td>
         <td><center> 
         <div id="wrap">
@@ -63,6 +73,7 @@
             </ul>
         </div>
         </center></td>
+      <% end %>  
       </tr>
     <% end %>
   </tbody>

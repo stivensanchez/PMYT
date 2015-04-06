@@ -1,17 +1,23 @@
 <%- model_class = Instructor -%>
 <div class="well">
+  <div id="anim">
     <h1><center>Listado <small>Instructores</small></center></h1>
+  </div>  
 </div>
 <div class="alert alert-dismissable alert-warning">
   <button type="button" class="close" data-dismiss="alert">×</button>
   <p>En esta página podras visualizar a todos y cada uno de los instructores que estan registrados
   en el sistema.</p>
-</div>   
-    <div class="well">
+</div>
+<br>
+<% if current_user.rol.id == 1 %>
+    <div class="page-header">
         <%= link_to 'Nuevo Instructor',
                 new_modulo_instructor_path(@modulo),
                             :class => 'btn btn-success btn-lg active' %>
-  </div>
+  </div><br>
+  <br>
+<% end %>  
   <!-- buscador -->
 <div class="tbusca"> 
    <%= form_tag modulo_instructors_path(@modulo), :method => 'get' do %>
@@ -24,12 +30,14 @@
      <% end %>
   <% end %>
 </div>
-<!-- Descargar en formato xls (excel)-->  
-<div class="linkex">
-  <strong class="txt-success"><a><%= link_to "Descargar tabla en ", modulo_instructors_path(format: "xls") %></a></strong>
-  <%= link_to image_tag("excel.png", :size => "20x20"), modulo_instructors_path(format: "xls"), class: 'btn btn-default' %>
-</div>
-<br>
+<% if current_user.rol.id == 1 || current_user.rol.id == 2 %>
+  <!-- Descargar en formato xls (excel)-->  
+  <div class="linkex">
+    <strong class="txt-success"><a><%= link_to "Descargar tabla en ", modulo_instructors_path(format: "xls") %></a></strong>
+    <%= link_to image_tag("excel.png", :size => "20x20"), modulo_instructors_path(format: "xls"), class: 'btn btn-default' %>
+  </div>
+  <br>
+<% end %>  
 <table class="table table-bordered table-striped table-hover table-condensed">
   <thead>
     <tr>
@@ -39,7 +47,9 @@
       <th><%= model_class.human_attribute_name(:apellidos) %></th>
       <th><%= model_class.human_attribute_name(:correo) %></th>
       <th><%= model_class.human_attribute_name(:telefono) %></th>
-      <th><%= model_class.human_attribute_name(:Opciones) %></th>
+      <% if current_user.rol.id == 1 || current_user.rol.id == 2 %>
+        <th><%= model_class.human_attribute_name(:Opciones) %></th>
+      <% end %>  
     </tr>
   </thead>
   <tbody>
@@ -51,6 +61,7 @@
         <td><%= instructor.apellidos %></td>
         <td><%= instructor.correo %></td>
         <td><%= instructor.telefono %></td>
+      <% if current_user.rol.id == 1 %>  
         <td><center>
          <div id="wrap">
             <ul id="navbar">
@@ -65,6 +76,22 @@
               </ul>
           </div>
         </center></td>
+      <% elsif current_user.rol.id == 2 %>  
+           <td><center>
+         <div id="wrap">
+            <ul id="navbar">
+              <li>
+                <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
+                ︾</a>
+            <ul>
+                <li> <%= link_to '<i class="fa fa-wrench txt-primary"></i><span> Editar</span>'.html_safe, edit_modulo_instructor_path(@modulo,instructor) %></li>
+              </ul>
+              </li>
+              </ul>
+          </div>
+        </center></td>
+      <% else %>
+      <% end %>
       </tr>
     <% end %>
   </tbody>

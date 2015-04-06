@@ -36,7 +36,7 @@
             <ul>
                 <% if current_user %>
                   <li><%= link_to "<i class='fa fa-user'></i> Editar Perfil".html_safe, edit_user_path(current_user.id) %></li>
-                  <li><%= link_to "<i class='fa fa-plus-square'></i> Registrarse".html_safe, new_user_path %></li>
+                  <li><%= link_to "<i class='fa fa-plus-square'></i> Registrar".html_safe, new_user_path %></li>
                   <li><%= link_to "<i class='fa fa-sign-out'></i> Salir".html_safe, :logout, method: :get %></li>
                 <% end %>
                 </ul>
@@ -48,51 +48,87 @@
     </div>
   </div>
 </header>
-
-<div id="main" class="container-fluid">
-  <div class="row">
-    <div id="sidebar-l" class="col-xs-2 col-sm-2 ">
-      <ul class="nav main-menu">
-        <li class="nar">
-          <a href="/static_pages/home" class=" ajax-link">
-            <i class="fa fa-th-list"></i>
-            <span class="hidden-xs">INICIO</span>
-          </a>
-        </li>
-        <li class="ver">
-          <a href="/modulos" class=" ajax-link">
-            <i class="fa fa-search"></i>
-            <span class="hidden-xs">Modulos</span>
-          </a>
-        </li>  
-        <li class="nar">
-          <a href="/fichas" class=" ajax-link">
-            <i class="fa fa-hand-o-right"></i>
-            <span class="hidden-xs">Fichas Tecnicas</span>
-          </a>
-        </li>
-        <li class="ver">
-            <a href="/users" class=" ajax-link">
-            <i class="fa fa-male"></i>
-            <span class="hidden-xs">Usuarios</span>
-          </a>
-        </li>
-        <li class="nar">
-            <a href="/tipo_docs" class=" ajax-link">
-            <i class="fa fa-globe"></i>
-            <span class="hidden-xs">Tipo Documentos</span>
-          </a>
-        </li>
-        <li class="ver">
-            <a href="/manuals" class=" ajax-link">
-            <i class="fa fa-star"></i>
-            <span class="hidden-xs">Ayudas</span>
-            </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>  
+<% if current_user.rol.id == 1%>
+      <div id="main" class="container-fluid">
+        <div class="row">
+          <div id="sidebar-l" class="col-xs-2 col-sm-2 ">
+            <ul class="nav main-menu">
+              <li class="nar">
+                <a href="/static_pages/home" class=" ajax-link">
+                  <i class="fa fa-th-list"></i>
+                  <span class="hidden-xs">INICIO</span>
+                </a>
+              </li>
+              <li class="ver">
+                <a href="/modulos" class=" ajax-link">
+                  <i class="fa fa-search"></i>
+                  <span class="hidden-xs">Modulos</span>
+                </a>
+              </li>  
+              <li class="nar">
+                <a href="/fichas" class=" ajax-link">
+                  <i class="fa fa-hand-o-right"></i>
+                  <span class="hidden-xs">Fichas Tecnicas</span>
+                </a>
+              </li>
+              <li class="ver">
+                  <a href="/users" class=" ajax-link">
+                  <i class="fa fa-male"></i>
+                  <span class="hidden-xs">Usuarios</span>
+                </a>
+              </li>
+              <li class="nar">
+                  <a href="/tipo_docs" class=" ajax-link">
+                  <i class="fa fa-globe"></i>
+                  <span class="hidden-xs">Tipo Documentos</span>
+                </a>
+              </li>
+              <li class="ver">
+                  <a href="/manuals" class=" ajax-link">
+                  <i class="fa fa-star"></i>
+                  <span class="hidden-xs">Ayudas</span>
+                  </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+<% elsif current_user.rol.id == 2 || current_user.rol.id == 3 %>    
+      <div id="main" class="container-fluid">
+        <div class="row">
+          <div id="sidebar-l" class="col-xs-2 col-sm-2 ">
+            <ul class="nav main-menu">
+              <li class="nar">
+                <a href="/static_pages/home" class=" ajax-link">
+                  <i class="fa fa-th-list"></i>
+                  <span class="hidden-xs">INICIO</span>
+                </a>
+              </li>
+              <li class="ver">
+                <a href="/modulos" class=" ajax-link">
+                  <i class="fa fa-search"></i>
+                  <span class="hidden-xs">Modulos</span>
+                </a>
+              </li>  
+              <li class="nar">
+                <a href="/fichas" class=" ajax-link">
+                  <i class="fa fa-hand-o-right"></i>
+                  <span class="hidden-xs">Fichas Tecnicas</span>
+                </a>
+              </li>
+              <li class="ver">
+                  <a href="/manuals" class=" ajax-link">
+                  <i class="fa fa-star"></i>
+                  <span class="hidden-xs">Ayudas</span>
+                  </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+<% else %>
+....
+<% end %>
   <div class="container">
         <%= yield %>
   </div>

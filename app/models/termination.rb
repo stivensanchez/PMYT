@@ -13,7 +13,8 @@ class Termination < ActiveRecord::Base
   belongs_to :oper
   has_many :nivelations
 
-after_save :cal
+after_create :cal
+  
   
   def cal
     r = Nivelation.new

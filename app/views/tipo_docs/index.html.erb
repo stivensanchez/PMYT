@@ -1,14 +1,18 @@
 <%- model_class = TipoDoc -%>
 <div class="well">
-  <h1><center>Tipo <small>Documento</small></center></h1>
+  <div id="anim">
+   <h1><center>Tipo <small>Documento</small></center></h1>
+  </div> 
 </div>
 <div class="alert alert-dismissable alert-info">
   <button type="button" class="close" data-dismiss="alert">×</button>
   <p>En esta página del sistema podra visualizar y administrar todos y cada uno los tipos de documentos.</p>
 </div>
-<div class="well">
+<br>
+<div class="page-header">
   <%= link_to 'Nuevo', new_tipo_doc_path, :class => 'btn btn-success btn-lg active' %>
-</div>
+</div><br>
+<br>
 <table class="table table-bordered table-striped table-hover table-condensed">
   <thead>
     <tr>

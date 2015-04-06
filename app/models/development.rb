@@ -14,18 +14,19 @@ class Development < ActiveRecord::Base
   belongs_to :oper
   belongs_to :nivelation
 
-  after_create :cal
-  before_update :cal 
-  
+  before_validation :cal
+  after_save :touch_subject
   
    def cal
     r = Nivelation.new
     r.oper_id = self.oper_id
-    r.development_id = self.operation_id
+    r.development_id = self.operation.nombre
     r.sam = self.sam
-    r.tiempo_real = self.tiempo_real
-    r.save
+     r.save
   end
 
+def touch_subject 
+ subject.touch
+end
  
 end

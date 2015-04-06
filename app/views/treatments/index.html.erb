@@ -1,12 +1,16 @@
 <%- model_class = Treatment -%>
 <div class="well">
-  <h1><center>Procesos de <small>Prenda</small></center></h1>
+  <div id="anim">
+   <h1><center>Procesos de <small>Prenda</small></center></h1>
+  </div> 
 </div>
-<div class="well">
+<br>
+<div class="page-header">
   <%= link_to 'Nuevo',
             new_info_treatment_path(@info),
             :class => 'btn btn-success btn-lg active' %>
-</div>
+</div><br>
+<br>
 <!-- buscador -->
 <div class="tbusca"> 
    <%= form_tag info_treatments_path(@info), :method => 'get' do %>

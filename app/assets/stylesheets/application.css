@@ -2890,11 +2890,11 @@ h5{
 
 #anim {
    -webkit-animation-name: movimiento-diagonal;
-   -webkit-animation-duration: 3s;
+   -webkit-animation-duration: 5s;
    -webkit-animation-iteration-count: infinite;
    -webkit-animation-direction: alternate;/*para que vuelva a su posicion inicial */
    width: 100%;
-   color: #fff;
+   color: black;
    position: relative; 
    padding: 2px;
 }
@@ -2902,4 +2902,7 @@ h5{
 .well{
   height: 100px;
   background-image:url(baner.jpg);
+  background-size: 100%;
 }
+
+

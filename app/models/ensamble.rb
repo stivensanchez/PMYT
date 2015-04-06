@@ -14,11 +14,12 @@ class Ensamble < ActiveRecord::Base
   has_many :nivelations
 
 after_create :cal
+
   
   def cal
     r = Nivelation.new
      r.oper_id = self.oper_id
-    r.ensamble_id = self.operation_id
+    r.ensamble_id = self.operation.nombre
     r.save
   end
 

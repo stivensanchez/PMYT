@@ -1,17 +1,23 @@
 <%- model_class = Group -%>
 <div class="well">
+  <div id="anim">
     <h1><center>Listado <small>Grupos</small></center></h1>
+  </div>  
 </div>
 <div class="alert alert-dismissable alert-warning">
   <button type="button" class="close" data-dismiss="alert">×</button>
   <p>En esta página podras visualizar a todos los grupos del area de confecciones que estan registrados
      en el sistema y trabajan en este modulo.</p>
-</div>   
-    <div class="well">
+</div>
+<br>
+<% if current_user.rol.id == 2 %>
+ <div class="page-header">
       <%= link_to 'Nuevo Grupo',
   new_modulo_group_path(@modulo),
             :class => 'btn btn-success btn-lg active' %>
-</div>
+ </div><br>
+ <br>
+<% end %> 
 <!-- buscador -->
 <div class="tbusca"> 
    <%= form_tag modulo_groups_path(@modulo), :method => 'get' do %>
@@ -24,19 +30,23 @@
      <% end %>
   <% end %>
 </div>
-<!-- Descargar en formato xls (excel) -->
-<div class="linkex">
-  <strong class="txt-success"><a><%= link_to "Descargar tabla en ", modulo_groups_path(format: "xls") %></a></strong>
-  <%= link_to image_tag("excel.png", :size => "20x20"), modulo_groups_path(format: "xls"), class: 'btn btn-default' %>
-</div>
-<br>
+<% if current_user.rol.id == 1 || current_user.rol.id == 2 %>
+  <!-- Descargar en formato xls (excel) -->
+  <div class="linkex">
+    <strong class="txt-success"><a><%= link_to "Descargar tabla en ", modulo_groups_path(format: "xls") %></a></strong>
+    <%= link_to image_tag("excel.png", :size => "20x20"), modulo_groups_path(format: "xls"), class: 'btn btn-default' %>
+  </div>
+  <br>
+<% end %>  
 <table class="table table-bordered table-striped table-hover table-condensed">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:nombre) %></th>
       <th><%= model_class.human_attribute_name(:num_ficha) %></th>
       <th><%= model_class.human_attribute_name(:Operarias) %></th>
-      <th><%= model_class.human_attribute_name(:Opciones) %></th>
+      <% if current_user.rol.id == 2 %>
+        <th><%= model_class.human_attribute_name(:Opciones) %></th>
+      <% end %>  
     </tr>
   </thead>
   <tbody>
@@ -44,8 +54,8 @@
       <tr>
         <td><%= group.nombre %></td>
         <td><%= group.num_ficha %></td>
-        <td><center><%= link_to '<button class="btn btn-warning"><small> Operaria </small><i class="fa fa-folder-open-o"></i></button>'.html_safe,
-    group_opers_path(group) %></center></td>
+        <td><center><%= link_to '<button class="btn btn-warning"><small> Operaria </small><i class="fa fa-folder-open-o"></i></button>'.html_safe, group_opers_path(group) %></center></td>
+      <% if current_user.rol.id == 2 %>  
         <td><center>
          <div id="wrap">
             <ul id="navbar">
@@ -61,6 +71,7 @@
               </div>
           </div>
         </center></td>
+      <% end %>  
       </tr>
     <% end %>
   </tbody>

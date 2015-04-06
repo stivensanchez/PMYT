@@ -1,14 +1,13 @@
 class NivelationsController < ApplicationController
   before_action :set_nivelation, only: [:show, :edit, :update, :destroy, :index, :new, :create]
-  before_action :set_development, except: [:show, :edit, :update, :destroy, :index, :new, :create]
+  
   # GET /nivelations
   # GET /nivelations.json
   def index
-    @developments = Development.select("operation_id","sam","tiempo_real","desempeño","comentario").where("oper_id=oper_id")
+@developments = Development.select("id","operation_id","sam","tiempo_real","desempeño","comentario")
 @ensambles = Ensamble.select("id","operation_id","sam").where("oper_id=oper_id")
 @terminations = Termination.select("id","operation_id","sam").where("oper_id=oper_id")
-
-    @nivelations = @oper.nivelations.search(params[:search], params[:page])
+@nivelations = @oper.nivelations.search(params[:search], params[:page])
   end
   
   # GET /nivelations/1
@@ -18,15 +17,12 @@ class NivelationsController < ApplicationController
 
   # GET /nivelations/new
   def new
-     @nivelation = Nivelation.new
+     
   end
 
   # GET /nivelations/1/edit
   def edit
-    @developments = Development.select("operation_id","sam","tiempo_real","desempeño","comentario")
-    @ensambles = Ensamble.select("operation.nombre","sam")
-    @terminations = Termination.select("operation.nombre","sam")
-    @nivelations = Nivelation.select("tiempo_real")
+ 
   end
 
   # POST /nivelations
@@ -51,8 +47,7 @@ class NivelationsController < ApplicationController
   # PATCH/PUT /nivelations/1
   # PATCH/PUT /nivelations/1.json
   def update
-    
-    @developments = Development.select("operation_id","sam","tiempo_real","desempeño","comentario").where("oper_id=oper_id")
+@developments = Development.select("id","operation_id","sam","tiempo_real","desempeño","comentario")
 @ensambles = Ensamble.select("id","operation_id","sam").where("oper_id=oper_id")
 @terminations = Termination.select("id","operation_id","sam").where("oper_id=oper_id")
     respond_to do |format|
@@ -84,6 +79,6 @@ class NivelationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def nivelation_params
-      params.require(:nivelation).permit(:tiempo_real, :desempeño, :comentario, :sam, :oper_id, :development_id, :ensamble_id, :termination_id)
+      params.require(:nivelation).permit(:tiempo_real, :desempeño, :comentario, :sam, :oper_id, :development_id, :ensamble_id, :termination_id, :operation_id)
     end
 end

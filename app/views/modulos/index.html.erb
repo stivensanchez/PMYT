@@ -10,12 +10,14 @@
      asi como cada uno de sus componentes y su informacion mas basica, podiendo haceder a ellos por medio de un buscador.</p>
 </div>
 <br>
-    <div class="page-header"> 
-    <%= link_to 'Nuevo modulo',
-            new_modulo_path,
-            class: "btn btn-success btn-lg active" %>
-   </div><br>
-   <br>
+<% if current_user.rol.id == 1 %>
+  <div class="page-header"> 
+      <%= link_to 'Nuevo modulo',
+              new_modulo_path,
+              class: "btn btn-success btn-lg active" %>
+  </div><br>
+<% end %>  
+<br>
    <!-- Buscador -->
   <div class="tbusca"> 
    <%= form_tag modulos_path, :method => 'get' do %>
@@ -28,12 +30,13 @@
   <% end %>
   <% end %>
   </div>
-
+<% if current_user.rol.id == 1 || current_user.rol.id == 2 %>
    <!-- Link de generar xls (excel) -->
    <div class="linkex">
       <strong class="txt-success"><a><%= link_to "Descargar tabla en ", modulos_path(format: "xls") %></a></strong>
       <%= link_to image_tag("excel.png", :size => "20x20"), modulos_path(format: "xls"), class: 'btn btn-default' %>
    </div>
+<% end %>   
 <table class="table table-bordered table-striped table-hover table-condensed">
   <thead>
     <br>
@@ -44,7 +47,9 @@
       <th><%= model_class.human_attribute_name(:Operaciones) %></th>
       <th><%= model_class.human_attribute_name(:Instructores) %></th>
       <th><%= model_class.human_attribute_name(:Grupos) %></th>
+      <% if current_user.rol.id == 1 %>
        <th><%= model_class.human_attribute_name(:Opciones) %></th>
+      <% end %> 
   </thead>
   <tbody>
     <% @modulos.each do |modulo| %>
@@ -55,19 +60,21 @@
         <td><center><%= link_to '<button class="btn btn-warning"><small> Operaciones </small><i class="fa fa-folder-open-o"></i></button>'.html_safe, modulo_operations_path(modulo) %></center></td>
         <td><center><%= link_to '<button class="btn btn-success"><small> Instructores </small><i class="fa fa-folder-open-o"></i></button>'.html_safe, modulo_instructors_path(modulo) %></center></td>
         <td><center><%= link_to '<button class="btn btn-warning"><small> Grupos </small><i class="fa fa-folder-open-o"></i></button>'.html_safe, modulo_groups_path(modulo) %></center></td>
-        <td><center> 
-        <div id="wrap">
-            <ul id="navbar">
-              <li>
-                <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
-                ︾</a>
-            <ul>
-              <li> <%= link_to '<i class="fa fa-wrench txt-primary"></i><span> Editar</span>'.html_safe, edit_modulo_path(modulo) %></li>
-              <li> <%= link_to '<i class="fa fa-times txt-danger"></i><span> Eliminar</span>'.html_safe, modulo, method: :delete, data: { confirm: 'Estas segur@?' }%></li>
-            </ul>
-            </li>
-        </div>
-        </center></td>
+        <% if current_user.rol.id == 1 %>
+          <td><center> 
+          <div id="wrap">
+              <ul id="navbar">
+                <li>
+                  <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
+                  ︾</a>
+              <ul>
+                <li> <%= link_to '<i class="fa fa-wrench txt-primary"></i><span> Editar</span>'.html_safe, edit_modulo_path(modulo) %></li>
+                <li> <%= link_to '<i class="fa fa-times txt-danger"></i><span> Eliminar</span>'.html_safe, modulo, method: :delete, data: { confirm: 'Estas segur@?' }%></li>
+              </ul>
+              </li>
+          </div>
+          </center></td>
+        <% end %>  
       </tr>
     <% end %>
   </tbody>

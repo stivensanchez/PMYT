@@ -1,12 +1,16 @@
 <%- model_class = Prenda -%>
 <div class="well">
-    <h1><center>Piezas <small>Prenda</small></center></h1>
+  <div id="anim">
+    <h1><center>Piezas <small>por Prenda</small></center></h1>
+  </div>  
 </div>
-    <div class="well">
+<br>
+    <div class="page-header">
         <%= link_to 'Nuevo', 
             new_info_prenda_path(@info),
             :class => 'btn btn-success' %>
-</div>
+</div><br>
+<br>
 <!-- buscador -->
 <div class="tbusca"> 
    <%= form_tag info_prendas_path(@info), :method => 'get' do %>
