@@ -34,9 +34,15 @@
   <%= f.label :Telefono %>
   <%= f.text_field :telefono, class: "form-control", placeholder: "Ingrese el telefono" %>
   
-</div>  
-  
+</div>
   <%= f.button :submit, 'Crear instructor', :class => 'btn-primary' %>
   <%= link_to 'Cancelar', 
   modulo_instructors_path(@modulo), :class => 'btn btn-default' %>
+  <br>
+  <br><br>
+<h1> Registrar Usuario </h1>
+__________________________________<br>
+  <%= link_to 'Usuario',
+                new_user_path , :class => 'btn btn-success' %></center>
+                
 <% end %>

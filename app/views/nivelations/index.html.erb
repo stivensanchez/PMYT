@@ -17,48 +17,91 @@
       <th><%= model_class.human_attribute_name(:tiempo_real) %></th>
       <th><%= model_class.human_attribute_name(:desempeño) %></th>
       <th><%= model_class.human_attribute_name(:comentario) %></th>
-      <% if current_user.rol.id == 2 %>
-        <th><%= model_class.human_attribute_name(:opciones) %></th>
-      <% end %>  
+        <th></th>
     </tr>
   </thead>
   <tbody>
       
-       <% @nivelations = @developments.all.each do |nivelation| %>
-       <td><%= nivelation.operation.nombre %></td>
-       <td><%= nivelation.sam %></td>
-       <td><%= nivelation.tiempo_real %></td>
-       <td><%= nivelation.desempeño %></td>
-       <td><%= nivelation.comentario %></td>
-      <% if current_user.rol.id == 2 %> 
-       <td><%= link_to '<i class="fa fa-wrench txt-primary"></i><span> Editar</span>'.html_safe, edit_oper_nivelation_path(@oper,nivelation) %></td>
-      <% end %> 
-      </tr>
-    <% end %>
-    
-       <% @nivelations = @ensambles.all.each do |nivelation| %>
-        <td><%= nivelation.operation.nombre %></td>
-        <td><%= nivelation.sam %></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      <% if current_user.rol.id == 2 %>  
-        <td><%= link_to '<i class="fa fa-wrench txt-primary"></i><span> Editar</span>'.html_safe, edit_oper_nivelation_path(@oper,nivelation) %></td>
+    <% @nivelations = @developments.all.each do |nivelation| %>
+    <!-- condicional operaria development con operaria nivelation -->
+       <% if nivelation.oper_id == @oper.id  %>
+         <td><%= nivelation.operation.nombre %></td>
+         <td><%= nivelation.sam %></td>
+         <td><%= nivelation.tiempo_real %></td>
+         <td><%= nivelation.desempeño %></td>
+         <td><%= nivelation.comentario %></td>
+         <td>
+          <% if nivelation.desempeño.to_i <= 50 %>
+          <%= image_tag("calavera.gif",size: "40x40") %>
+          <% elsif nivelation.desempeño.to_i <= 80 && nivelation.desempeño.to_i > 50  %>
+          <%= image_tag("triste.gif",size: "40x40") %>
+          <% elsif nivelation.desempeño.to_i > 80 && nivelation.desempeño.to_i <= 100  %>
+          <%= image_tag("penguin.gif",size: "40x40") %>
+          <% end %>
+         </td>
+        <% if current_user.rol.id == 2 %> 
+         </tr>
+        <% end %>
+       
+        </tr>
       <% end %>
-      </tr>
     <% end %>
     
-       <% @nivelations = @terminations.all.each do |nivelation| %>
-        <td><%= nivelation.operation.nombre %></td>
-        <td><%= nivelation.sam %></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      <% if current_user.rol.id == 2 %>  
-        <td><%= link_to '<i class="fa fa-wrench txt-primary"></i><span> Editar</span>'.html_safe, edit_oper_nivelation_path(@oper,nivelation) %></td>
-      <% end %>  
-      </tr>
+    
+    <% @nivelations = @ensambles.all.each do |nivelation| %>
+    <!-- condicional operaria ensamble con operaria nivelation -->
+       <% if nivelation.oper_id == @oper.id  %>
+         <td><%= nivelation.operation.nombre %></td>
+         <td><%= nivelation.sam %></td>
+         <td><%= nivelation.tiempo_real %></td>
+         <td><%= nivelation.desempeño %></td>
+         <td><%= nivelation.comentario %></td>
+         <td>
+          <% if nivelation.desempeño.to_i <= 50 %>
+          <%= image_tag("calavera.gif",size: "40x40") %>
+          <% elsif nivelation.desempeño.to_i <= 80 && nivelation.desempeño.to_i > 50  %>
+          <%= image_tag("triste.gif",size: "40x40") %>
+          <% elsif nivelation.desempeño.to_i > 80 && nivelation.desempeño.to_i <= 100  %>
+          <%= image_tag("penguin.gif",size: "40x40") %>
+          <% end %>
+         </td>
+        <% if current_user.rol.id == 2 %> 
+         </tr>
+        <% end %>
+       
+        </tr>
+      <% end %>
     <% end %>
+    
+    
+    <% @nivelations = @terminations.all.each do |nivelation| %>
+    <!-- condicional operaria development con operaria nivelation -->
+       <% if nivelation.oper_id == @oper.id  %>
+         <td><%= nivelation.operation.nombre %></td>
+         <td><%= nivelation.sam %></td>
+         <td><%= nivelation.tiempo_real %></td>
+         <td><%= nivelation.desempeño %></td>
+         <td><%= nivelation.comentario %></td>
+         <td>
+          <% if nivelation.desempeño.to_i <= 50 %>
+          <%= image_tag("calavera.gif",size: "40x40") %>
+          <% elsif nivelation.desempeño.to_i <= 80 && nivelation.desempeño.to_i > 50  %>
+          <%= image_tag("triste.gif",size: "40x40") %>
+          <% elsif nivelation.desempeño.to_i > 80 && nivelation.desempeño.to_i <= 100  %>
+          <%= image_tag("penguin.gif",size: "40x40") %>
+          <% end %>
+         </td>
+        <% if current_user.rol.id == 2 %> 
+         </tr>
+        <% end %>
+       
+        </tr>
+      <% end %>
+    <% end %>
+    
   </tbody>
 </table>
 
+<center>
+  <%= @oper.nombre %>
+</center>

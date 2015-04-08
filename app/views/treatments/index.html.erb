@@ -5,11 +5,13 @@
   </div> 
 </div>
 <br>
-<div class="page-header">
-  <%= link_to 'Nuevo',
-            new_info_treatment_path(@info),
-            :class => 'btn btn-success btn-lg active' %>
-</div><br>
+<% if current_user.rol.id == 1 %>
+  <div class="page-header">
+    <%= link_to 'Nuevo',
+              new_info_treatment_path(@info),
+              :class => 'btn btn-success btn-lg active' %>
+  </div><br>
+<% end %>  
 <br>
 <!-- buscador -->
 <div class="tbusca"> 
@@ -33,7 +35,9 @@
       <th><%= model_class.human_attribute_name(:ubicacion) %></th>
       <th><%= model_class.human_attribute_name(:proveedor) %></th>
       <th><%= model_class.human_attribute_name(:precio) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <% if current_user.rol.id == 1 %>
+       <th><%= model_class.human_attribute_name(:opciones)%></th>
+      <% end %> 
     </tr>
   </thead>
   <tbody>
@@ -44,6 +48,7 @@
         <td><%= treatment.ubicacion %></td>
         <td><%= treatment.proveedor %></td>
         <td><%= treatment.precio %></td>
+      <% if current_user.rol.id == 1 %>  
         <td><center>
          <div id="wrap">
             <ul id="navbar">
@@ -58,6 +63,7 @@
               </ul>
           </div>
         </center></td>
+      <% end %>  
       </tr>
     <% end %>
   </tbody>

@@ -13,14 +13,16 @@
 <div class="form-group">
   <%= f.label :Operacion %>  <br>
   <%= f.collection_select :operation_id, Operation.all, :id, :nombre, class: "form-control", prompt: "Seleccione Operacion" %>
+<% if current_user.rol.id == 2 %>
   <div class="field">
-  <%= f.label :Operaria %> <br>
-  <%= f.collection_select :oper_id, Oper.all, :id, :nombre, class: "form-control", prompt: "Seleccione Operario" %>
-</div>
+    <%= f.label :Operaria %> <br>
+    <%= f.collection_select :oper_id, Oper.all, :id, :nombre, class: "form-control", prompt: "Seleccione Operario" %>
+  </div>
+<% end %>  
 </div>
 <div class="form-group">
   <%= f.label :Sam %>
-  <%= f.text_field :sam, class: "form-control" %>
+  <%= f.text_field :sam, class: "form-control",  prompt: "Escriba sam", :id => "sam" %>
 </div>
 <div class="form-group">
   <%= f.label :Maquina%>
@@ -46,6 +48,41 @@
   <%= f.label :Observaciones %>
   <%= f.text_field :observaciones, class: "form-control", placeholder: "Ingrese las observaciones" %>
 </div>
+
+<% if current_user.rol.id == 2 %>
+  <h1>Nivelacion Operaria</h1>
+  <div class="form-group">
+    <%= f.label :tiempo_real %>
+    <%= f.text_field :tiempo_real, class: "form-control", placeholder: "Ingrese el tiempo real", :id => "t" , :onblur => 'ope()' %>
+  </div> 
+  
+  <script>
+      function ope(){
+        var sam = document.getElementById('sam').value;
+        var ti = document.getElementById('t').value;
+        des = (parseInt(sam) / parseInt(ti)*100  );
+        des = des.toFixed();
+        
+        if(des >= 100){
+          document.getElementById('dese').value = 100+"%";
+        }else{
+          document.getElementById('dese').value = des+"%";
+        }
+        
+        
+      }  
+  </script>
+  <div class="form-group">
+    <%= f.label :desempeño %>
+    <%= f.text_field :desempeño, class: "form-control", :id => "dese" %>
+  </div>  
+  
+  <div class="form-group">
+    <%= f.label :comentario %>
+    <%= f.text_area :comentario, class: "form-control", placeholder: "Ingrese comentario" %>
+  </div>  
+<% end %>
+
 
   <%= f.button :submit, 'Crear ensamble', :class => 'btn-primary' %>
   <%= link_to 'Cancelar', info_developments_path(@info), :class => 'btn btn-default' %>

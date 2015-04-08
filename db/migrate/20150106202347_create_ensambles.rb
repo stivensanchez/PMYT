@@ -8,6 +8,9 @@ class CreateEnsambles < ActiveRecord::Migration
       t.string :ppp
       t.string :margen_costura
       t.string :guia_accesorios
+      t.string :tiempo_real
+      t.string :desempeño
+      t.text :comentario
       t.text :observaciones
       t.string :imagen
       t.references :oper, index: true

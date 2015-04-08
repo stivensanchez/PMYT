@@ -17,10 +17,12 @@ class Development < ActiveRecord::Base
     after_save :cal
    
     def cal
-     self.operation_id = operation.nombre
-     self.sam  = sam
-     self.tiempo_real = tiempo_real 
-     self.desempeño = desempeño 
-     r.save
+     r = Nivelation.new
+     r.oper_id = self.oper_id
+     r.development_id = self.operation.nombre
+     r.tiempo_real = self.tiempo_real 
+     r.desempeño = self.desempeño 
+     r.comentario = self.comentario
+    r.save
    end
-end
+  end

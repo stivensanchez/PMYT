@@ -17,10 +17,12 @@ after_create :cal
   
   
   def cal
-    r = Nivelation.new
+     r = Nivelation.new
      r.oper_id = self.oper_id
-    r.termination_id = self.operation.nombre
-   
+     r.development_id = self.operation.nombre
+     r.tiempo_real = self.tiempo_real 
+     r.desempeño = self.desempeño 
+     r.comentario = self.comentario
     r.save
   end
 

@@ -5,9 +5,10 @@ class NivelationsController < ApplicationController
   # GET /nivelations.json
   def index
     @nivelations = @oper.nivelations.all
-    @developments = Development.select("id","operation_id","sam","tiempo_real","desempeño","comentario")
-    @ensambles = Ensamble.select("id","operation_id","sam").where("oper_id=oper_id")
-    @terminations = Termination.select("id","operation_id","sam").where("oper_id=oper_id")
+    @developments = Development.select("operation_id","sam","tiempo_real","desempeño","comentario","oper_id")
+    @ensambles = Ensamble.select("operation_id","sam","tiempo_real","desempeño","comentario","oper_id")
+    @terminations = Termination.select("operation_id","sam","tiempo_real","desempeño","comentario","oper_id")
+    
   end
   
   # GET /nivelations/1
@@ -29,7 +30,6 @@ class NivelationsController < ApplicationController
   # POST /nivelations.json
   def create
     @nivelation = Nivelation.new(nivelation_params)
-    @nivelation.oper_id = @oper.id
     @nivelation.development_id = @development.id  
     @nivelation.ensamble_id = @ensamble.id
     @nivelation.termination_id = @termination.id 

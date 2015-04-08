@@ -23,11 +23,19 @@
     <%= f.label :Confirmar_Contraseña %><br /> 
     <%= f.password_field :password_confirmation %> 
   </div></center> 
+<% if current_user.rol.id == 1 %>  
   <center><div class="form-group">
     <%= f.label :Rol %><br>
     <%= f.collection_select :rol_id, Rol.all, :id, :nombre, class: "form-contol", prompt: "Seleccione un rol" %>
   </div></center>
-
+<% elsif current_user.rol.id == 2 %>  
+  <center><div class="form-group">
+    <%= f.label :Rol %><br>
+    <%= f.collection_select :rol_id, Rol.all, :id, :nombre, class: "form-contol", prompt: "Seleccione un rol" %>
+  </div></center>
+<% else %>
+<% end %>
+   
     
   <center><%= f.button :submit ,'Crear', :class => 'btn-success' %>
   <%= link_to t('.Cancelar', :default => t("helpers.links.cancel")),
