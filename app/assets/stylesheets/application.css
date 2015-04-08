@@ -53,10 +53,11 @@
 .siete{
   padding: 3px;
   border: solid 1px;
-  width: 767px;
+  width: 1030px;
   height: 150px;
   border-color: black;
   border-radius: 3px;
+  margin: 0px 0px 0px -175px;
 }
 .ocho{
   padding: 3px;
@@ -74,9 +75,10 @@
 @media screen and (max-width:1500px){
   .ocho{
     width:250px;
-    margin:-908px 0px 0px 612px;
+    margin:-988px 0px 0px 612px;
   }
 }
+
 .list-group-item{
   padding: 4px;
   background-color: ghostwhite;
@@ -86,15 +88,17 @@
   margin: 5px 0px 0px 0px;
 }
 .diez{
-  margin: 829px 0px 0px 0px;
+  margin: 870px 0px 0px 30px;
+  width: 1030px;
 }
 .once{
   padding: 3px;
   border: solid 1px;
-  width: 717px;
+  width: 1030px;
   height: 150px;
   border-color: black;
   border-radius: 3px;
+  margin: 0px 0px 0px -175px;
 }
 .imagen{
   border: solid 1px;
@@ -2796,12 +2800,31 @@ position:relative;
 z-index:1;
 }
 
+.loginn{
+background-image:url(Esferas.jpg);
+background-repeat: no-repeat;
+margin:30px 0px 0px 380px;
+padding: 40px;
+border-radius: 20px ;
+width: 350px;
+height:500px;
+background-size: 300%;
+position:relative;
+z-index:1;
+
+}
+
 @media screen and (max-width:1500px){
  .login{
    margin: 755px 0px 0px 550px;
  } 
 }
 
+@media screen and (max-width:1400px){
+ .login{
+   margin: 680px 0px 0px 550px;
+ } 
+}
 .logo3{
   border-radius: 7px;
   margin: 0px 0px 0px -40px;

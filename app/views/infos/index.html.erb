@@ -1,11 +1,14 @@
 
 <%- model_class = Info -%>
-<div class="page-header">
-    <div class="well">
-        <%= link_to 'Nuevo', 
-            new_ficha_info_path(@ficha),
-            :class => 'btn btn-success btn-lg active' %>
-</div>
+    <div class="page-header">
+        <div class="well">
+         <% if @infos.count == 0 %>    
+            <%= link_to 'Nuevo', 
+                new_ficha_info_path(@ficha),
+                :class => 'btn btn-success btn-lg active' %>
+         <% else %>
+         <% end %>        
+    </div>
  <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title"><center><b>CENTRO DE FORMACION EN DISEÑO CONFECCION Y MODA</b></center></h3>
@@ -92,7 +95,7 @@
              <% @infos.each do |info| %> 
              <%= info.estandares %>
              <% end %> 
-      </div>
+      </div><br><br><br><br>
 <div class="ocho">      
     <div class="list-group-item"> 
       <b>MOD</b>

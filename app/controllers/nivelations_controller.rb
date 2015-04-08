@@ -4,10 +4,10 @@ class NivelationsController < ApplicationController
   # GET /nivelations
   # GET /nivelations.json
   def index
-@developments = Development.select("id","operation_id","sam","tiempo_real","desempeño","comentario")
-@ensambles = Ensamble.select("id","operation_id","sam").where("oper_id=oper_id")
-@terminations = Termination.select("id","operation_id","sam").where("oper_id=oper_id")
-@nivelations = @oper.nivelations.search(params[:search], params[:page])
+    @nivelations = @oper.nivelations.all
+    @developments = Development.select("id","operation_id","sam","tiempo_real","desempeño","comentario")
+    @ensambles = Ensamble.select("id","operation_id","sam").where("oper_id=oper_id")
+    @terminations = Termination.select("id","operation_id","sam").where("oper_id=oper_id")
   end
   
   # GET /nivelations/1
@@ -47,9 +47,9 @@ class NivelationsController < ApplicationController
   # PATCH/PUT /nivelations/1
   # PATCH/PUT /nivelations/1.json
   def update
-@developments = Development.select("id","operation_id","sam","tiempo_real","desempeño","comentario")
-@ensambles = Ensamble.select("id","operation_id","sam").where("oper_id=oper_id")
-@terminations = Termination.select("id","operation_id","sam").where("oper_id=oper_id")
+    @developments = Development.select("operation_id","sam","tiempo_real","desempeño","comentario")
+    @ensambles = Ensamble.select("id","operation_id","sam").where("oper_id=oper_id")
+    @terminations = Termination.select("id","operation_id","sam").where("oper_id=oper_id")
     respond_to do |format|
       if @nivelation.update(nivelation_params)
         format.html { redirect_to oper_nivelations_path(@oper), notice: 'Nivelation was successfully updated.' }

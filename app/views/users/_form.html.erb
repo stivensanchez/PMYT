@@ -9,26 +9,27 @@
       <% end %>
       </ul>
     </div>
-  <% end %>
-  <div class="form-group"> 
+  <% end %><br>
+  <br>
+  <center><div class="form-group"> 
     <%= f.label :Correo %><br /> 
     <%= f.text_field :email %> 
-  </div> 
-  <div class="form-group"> 
+  </div></center> 
+  <center><div class="form-group"> 
     <%= f.label :Contraseña %><br /> 
     <%= f.password_field :password %> 
-  </div> 
-  <div class="form-group"> 
+  </div></center> 
+  <center><div class="form-group"> 
     <%= f.label :Confirmar_Contraseña %><br /> 
     <%= f.password_field :password_confirmation %> 
-  </div> 
-  <div class="form-group">
+  </div></center> 
+  <center><div class="form-group">
     <%= f.label :Rol %><br>
     <%= f.collection_select :rol_id, Rol.all, :id, :nombre, class: "form-contol", prompt: "Seleccione un rol" %>
-  </div>
+  </div></center>
 
     
-  <%= f.button :submit, :class => 'btn-success' %>
-  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                static_pages_home_path , :class => 'btn btn-default' %>
+  <center><%= f.button :submit ,'Crear', :class => 'btn-success' %>
+  <%= link_to t('.Cancelar', :default => t("helpers.links.cancel")),
+                static_pages_home_path , :class => 'btn btn-default' %></center>
 <% end %>
