@@ -1,12 +1,12 @@
 class Operation < ActiveRecord::Base
-  
- has_attached_file :image, styles: { medium: '60000000x60000000>', thumb: '10000000x1000000000>' }
-  
- has_attached_file :video
-  
+ 
+ attr_accessor :video_file_operation 
+ has_attached_file :video, :default_url =>"operations"
  do_not_validate_attachment_file_type :video
-  
-  validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif", "image/flv"]
+ 
+ attr_accessor :image_file_opeartion
+ has_attached_file :image, :default_url =>"operations"
+ do_not_validate_attachment_file_type :image
   
   has_many :developments
   has_many :ensambles
@@ -20,7 +20,7 @@ class Operation < ActiveRecord::Base
   validates :sam, presence: true
   validates :descripcion, presence: true
   validates :image, presence: true
-  validates :video, presence: true
+  #validates :video, presence: true
   #descargar en xls (excel)
  def self.to_csv(options = {})
     CSV.generate(options) do |csv|

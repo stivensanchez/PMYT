@@ -31,7 +31,7 @@
 <% elsif current_user.rol.id == 2 %>  
   <center><div class="form-group">
     <%= f.label :Rol %><br>
-    <%= f.collection_select :rol_id, Rol.all, :id, :nombre, class: "form-contol", prompt: "Seleccione un rol" %>
+    <%= f.collection_select :rol_id, Rol.find(3, 4), :id, :nombre, class: "form-contol", prompt: "Seleccione un rol" %>
   </div></center>
 <% else %>
 <% end %>

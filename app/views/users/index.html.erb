@@ -19,7 +19,7 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.email %></td>
-        <td><%= user.rol.nombre %></td>
+        <td><%= user.rol.nombre rescue nil %></td>
           <%# link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_user_path(user), :class => 'btn btn-default btn-xs' %>
           <%# link_to t('.destroy', :default => t("helpers.links.destroy")),
